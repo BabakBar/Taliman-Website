@@ -244,11 +244,14 @@ npm run build
 Comprehensive documentation is available in the `docs/` directory:
 
 - **[PRD.md](docs/PRD.md)** - Product Requirements Document
-- **[TECHNICAL_SPECS.md](docs/TECHNICAL_SPECS.md)** - Technical Architecture
-- **[CONTENT_STRATEGY.md](docs/CONTENT_STRATEGY.md)** - Content & Asset Strategy  
+- **[TECHNICAL_SPECS.md](docs/TECHNICAL_SPECS.md)** - Technical Architecture  
+- **[CONTENT_STRATEGY.md](docs/CONTENT_STRATEGY.md)** - Content & Asset Strategy
 - **[IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md)** - Development Roadmap
 - **[DEVELOPMENT.md](docs/DEVELOPMENT.md)** - Development Guidelines
 - **[MVP_PLAN.md](docs/MVP_PLAN.md)** - MVP Development Plan
+
+**Progress Tracking**: [PROGRESS.md](PROGRESS.md) - Daily development log  
+**Claude Configuration**: [CLAUDE.md](CLAUDE.md) - Development workflow
 
 ## 🤝 Contributing
 
