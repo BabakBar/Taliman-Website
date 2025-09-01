@@ -13,11 +13,5 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  return (
-    <html className={inter.variable}>
-      <body className="font-sans antialiased">
-        {children}
-      </body>
-    </html>
-  );
+  return children;
 }

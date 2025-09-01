@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes, forwardRef } from 'react';
+import { Slot } from '@radix-ui/react-slot';
 import { cn } from '@/lib/utils';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -6,6 +7,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg';
   loading?: boolean;
   fullWidth?: boolean;
+  asChild?: boolean;
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -15,6 +17,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     size = 'md', 
     loading = false,
     fullWidth = false,
+    asChild = false,
     disabled,
     children, 
     ...props 
@@ -35,9 +38,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     const widthClass = fullWidth ? 'w-full' : '';
+    
+    const Comp = asChild ? Slot : 'button';
 
     return (
-      <button
+      <Comp
         className={cn(
           baseClasses,
           variants[variant],
@@ -53,7 +58,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-current" />
         )}
         {children}
-      </button>
+      </Comp>
     );
   }
 );

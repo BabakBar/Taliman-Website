@@ -128,21 +128,21 @@ const Navigation = ({ locale }: NavigationProps) => {
         ))}
         
         {/* Desktop Contact CTA */}
-        <Button asChild size="sm">
-          <Link href={`/${locale}#contact`}>
+        <Link href={`/${locale}#contact`}>
+          <Button size="sm">
             {t('contact')}
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </div>
 
       {/* Mobile Navigation */}
       <div className="md:hidden flex items-center gap-3">
         {/* Mobile Contact CTA - Always Visible */}
-        <Button asChild size="sm" variant="outline" className="text-xs px-3 py-2">
-          <Link href={`/${locale}#contact`}>
+        <Link href={`/${locale}#contact`}>
+          <Button size="sm" variant="outline" className="text-xs px-3 py-2">
             {t('contact')}
-          </Link>
-        </Button>
+          </Button>
+        </Link>
 
         {/* Mobile Menu Button */}
         <button

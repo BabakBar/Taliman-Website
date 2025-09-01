@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "title": "CHQ Wire Processing Specialists",
+    "subtitle": "Taliman Sakhtehaye Felezi Kara, leading CHQ wire processing company with state-of-the-art facilities and uncompromising quality standards for the automotive industry",
+    "cta": {
+      "primary": "Learn More About Us",
+      "secondary": "Contact Us"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "processes": "Processes",
+    "equipment": "Equipment", 
+    "quality": "Quality",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "about": {
+    "title": "About Taliman",
+    "subtitle": "CHQ Wire Processing Specialists"
+  },
+  "footer": {
+    "description": "Taliman Sakhtehaye Felezi Kara - CHQ wire processing specialists for automotive industry",
+    "company": "Company",
+    "services": "Services",
+    "contact": "Contact", 
+    "rights": "All rights reserved",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "copyright": "© 2024 Taliman Sakhtehaye Felezi Kara. All rights reserved."
+  },
+  "contact": {
+    "info": {
+      "address": "Tehran, District 18, Industrial Zone, Main Street",
+      "phone": "+98 21 1234 5678",
+      "email": "info@taliman.ir",
+      "hours": "Business Hours: Saturday to Wednesday 8:00 AM - 5:00 PM"
+    }
+  }
+}

@@ -1,41 +1,25 @@
-import { useTranslations } from 'next-intl';
+import HeroSection from '@/components/sections/hero-section';
+import AboutSection from '@/components/sections/about-section';
 
 interface HomePageProps {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }
 
-export default function HomePage({ params: { locale } }: HomePageProps) {
-  const t = useTranslations('hero');
-
+export default async function HomePage({ params }: HomePageProps) {
+  const { locale } = await params;
   return (
-    <div className="min-h-screen">
-      {/* Temporary content for testing */}
-      <div className="container-responsive section-padding">
-        <h1 className="heading-1 text-center">
-          {t('title')}
-        </h1>
-        <p className="body-large text-center mt-6 text-industrial-600">
-          {t('subtitle')}
-        </p>
-        <div className="flex justify-center mt-8 gap-4">
-          <button className="btn-base bg-primary-600 text-white px-6 py-3 hover:bg-primary-700">
-            {t('cta.primary')}
-          </button>
-          <button className="btn-base border border-primary-600 text-primary-600 px-6 py-3 hover:bg-primary-50">
-            {t('cta.secondary')}
-          </button>
-        </div>
-        
-        {/* Debug info */}
-        <div className="mt-12 p-4 bg-gray-100 rounded-lg">
-          <p className="text-sm text-gray-600">
-            Current locale: <strong>{locale}</strong>
-          </p>
-          <p className="text-sm text-gray-600">
-            Direction: <strong>{locale === 'fa' ? 'RTL' : 'LTR'}</strong>
+    <div>
+      <HeroSection locale={locale} />
+      <AboutSection locale={locale} />
+
+      <section id="contact" className="section-padding bg-industrial-50">
+        <div className="container-responsive">
+          <h2 className="heading-2 text-center mb-8">Contact Us</h2>
+          <p className="body-large text-center text-industrial-600 max-w-3xl mx-auto">
+            Get in touch to discuss your CHQ wire processing requirements.
           </p>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

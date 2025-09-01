@@ -4,24 +4,26 @@ Production-grade bilingual corporate website for Taliman Sakhtehaye Felezi Kara,
 
 ## 🚀 Current Status
 
-**Phase**: Foundation Complete ✅ → MVP Development 🚧  
-**Next**: App Router structure and core UI components
+**Phase**: Bug Fixes Complete ✅ → Content Development Ready 🚧  
+**Next**: Processes section, Equipment section, and Contact form
 
 ## 🛠 Development Commands
 
 ### Quality Checks (Run before commits)
 ```bash
-npm run lint:fix      # Fix ESLint issues
-npm run type-check    # TypeScript validation
-npm run format        # Prettier formatting
+bun run lint:fix      # Fix ESLint issues
+bun run type-check    # TypeScript validation
+bun run format        # Prettier formatting
 ```
 
 ### Development
 ```bash
-npm run dev          # Start development server
-npm run build        # Production build
-npm run analyze      # Bundle size analysis
+bun run dev          # Start development server (PREFERRED)
+bun run build        # Production build
+bun run analyze      # Bundle size analysis
 ```
+
+**Note**: Using Bun package manager for faster development experience
 
 ## 🎯 Performance Targets
 
@@ -29,12 +31,13 @@ npm run analyze      # Bundle size analysis
 
 ## 🏗 Key Architecture
 
-- **Framework**: Next.js 14 + App Router + SSG
+- **Framework**: Next.js 15.5.2 + App Router + Standard SSR
 - **Languages**: TypeScript + Farsi (primary) + English
 - **Styling**: Tailwind CSS + RTL support
 - **Forms**: React Hook Form + Zod validation
-- **Animations**: Framer Motion + LazyMotion
+- **Animations**: Framer Motion (standard library)
 - **Icons**: Lucide React
+- **Package Manager**: Bun (preferred for performance)
 
 ## 📋 Development Principles
 
@@ -62,17 +65,17 @@ src/
 
 ## 🎯 MVP Development Phases
 
-### Phase 1: App Structure & Components (Current)
-- [ ] App Router layout structure
-- [ ] Core UI component library
-- [ ] Responsive navigation with mobile menu
-- [ ] LazyMotion animation setup
+### Phase 1: App Structure & Components ✅ COMPLETE
+- [x] App Router layout structure
+- [x] Core UI component library  
+- [x] Responsive navigation with mobile menu
+- [x] Framer Motion animation setup
 
-### Phase 2: Content Sections  
-- [ ] Hero section with animations
-- [ ] About section with company info
+### Phase 2: Content Sections (Current)
+- [x] Hero section with animations
+- [x] About section with company info
 - [ ] Processes section (CHQ details)
-- [ ] Equipment section (specifications)
+- [ ] Equipment section (specifications) 
 - [ ] Quality section (certifications)
 - [ ] Contact section with form
 

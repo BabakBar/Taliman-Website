@@ -20,17 +20,18 @@
     "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
-    "next": "^14.2.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "next-intl": "^3.15.3",
-    "react-hook-form": "^7.52.1",
-    "zod": "^3.23.8",
     "@hookform/resolvers": "^3.9.0",
+    "@radix-ui/react-slot": "^1.0.2",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.3.8",
     "lucide-react": "^0.408.0",
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^2.4.0"
+    "next": "^15.5.2",
+    "next-intl": "^3.15.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.52.1",
+    "tailwind-merge": "^2.4.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "typescript": "^5.5.3",
@@ -59,8 +60,9 @@
   },
   "engines": {
     "node": ">=18.17.0",
-    "npm": ">=9.0.0"
+    "bun": ">=1.0.0"
   },
+  "packageManager": "bun@1.0.0",
   "browserslist": [
     "> 1%",
     "last 2 versions",
