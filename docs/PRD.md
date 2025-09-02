@@ -6,34 +6,36 @@
 
 ### Project Overview
 
-Develop a production-ready, bilingual corporate website for Taliman Sakhtehaye Felezi Kara, a specialized metal processing company focused on CHQ (Cold Heading Quality) wire rod processing for cold forging and automotive fasteners.
+Develop a production-ready, bilingual corporate website for Taliman Sakhtehaye Felezi Kara, a specialized metal processing company focused on CHQ (Cold Heading Quality) wire rod processing for cold forging and automotive fasteners. Built with Astro 5.x for superior performance and SEO optimization targeting the Persian B2B market.
 
 ### Business Objectives
 
-- Establish professional online presence for B2B customers
-- Showcase specialized equipment and processing capabilities
-- Generate qualified leads from automotive and fastener industries
+- Establish professional online presence for B2B customers with superior SEO performance
+- Showcase specialized equipment and processing capabilities through optimized static content
+- Generate qualified leads from automotive and fastener industries with faster page loads
 - Support business expansion in domestic and international markets
-- Demonstrate quality standards and certifications
+- Demonstrate quality standards and certifications with enhanced Core Web Vitals
+- Achieve competitive advantage through industry-leading website performance
 
 ## 2. Product Scope
 
 ### Target Audience
 
 **Primary Users:**
-- Automotive manufacturers and suppliers
-- Fastener manufacturers
-- Industrial procurement managers
-- Quality assurance professionals
+- Automotive manufacturers and suppliers (international B2B focus)
+- Fastener manufacturers seeking CHQ wire processing
+- Industrial procurement managers requiring fast technical specification access
+- Quality assurance professionals needing certification verification
 
 **Secondary Users:**
 - Industry partners and suppliers
-- Potential investors
+- Potential investors evaluating technical capabilities
 - Job seekers and industry professionals
+- Search engines (prioritized for Persian market SEO)
 
 ### Core Value Proposition
 
-"Leading provider of precision CHQ wire rod processing with state-of-the-art Bell-type Annealing & Spheroidizing furnaces and drawing lines, serving the automotive fastener industry with uncompromising quality standards."
+"Leading provider of precision CHQ wire rod processing with state-of-the-art Bell-type Annealing & Spheroidizing furnaces and drawing lines, delivering lightning-fast technical specifications and uncompromising quality standards through our industry-leading digital presence."
 
 ## 3. Functional Requirements
 
@@ -41,65 +43,67 @@ Develop a production-ready, bilingual corporate website for Taliman Sakhtehaye F
 
 #### Navigation & Structure
 
-- **Multi-language Support**: English and Farsi (RTL support)
-- **Single Page Application (SPA)**: Smooth scrolling between sections
-- **Mobile-First Responsive Design**: Optimized for all device sizes
-- **Accessibility Compliance**: WCAG 2.1 AA standards
+- **Built-in i18n Routing**: Native Astro internationalization for English and Farsi
+- **Static-First Architecture**: Pre-rendered pages for maximum performance
+- **Mobile-First Responsive Design**: Optimized for all device sizes with RTL support
+- **Accessibility Compliance**: WCAG 2.1 AA standards with zero-runtime JavaScript
+- **File-Based Routing**: Intuitive URL structure for SEO optimization
 
-#### Content Sections
+#### Content Architecture
 
 1. **Hero Section**
    - Company name and tagline
    - Key value propositions
    - Call-to-action buttons
-   - Background imagery of facilities/products
+   - Optimized background imagery with built-in image optimization
 
 2. **About Section**
-   - Company history and mission
+   - Company history and mission (Content Collections)
    - Leadership team
    - Core values and philosophy
    - Industry expertise and experience
 
 3. **Processes Section**
-   - CHQ wire rod processing overview
+   - CHQ wire rod processing overview (Content Layer API)
    - Cold forging applications
-   - Technical specifications
+   - Technical specifications with structured data
    - Process flow diagrams
 
 4. **Equipment Section**
-   - Bell-type Annealing & Spheroidizing furnaces
+   - Bell-type Annealing & Spheroidizing furnaces (Product Catalog)
    - Precision drawing lines
    - Quality control equipment
    - Technical capabilities and capacities
 
 5. **Quality Section**
-   - Industry certifications
+   - Industry certifications (Content Collections)
    - Quality standards compliance
    - Testing procedures
    - Quality assurance processes
 
 6. **Contact Section**
-   - Contact form with validation
+   - Contact form with Server Island integration
    - Company address and location
    - Phone, email, and social media links
    - Interactive map integration
 
 #### Interactive Elements
 
-- **Language Switcher**: Toggle between English and Farsi
-- **Contact Form**: Lead generation with form validation
-- **Image Gallery**: Equipment and facility showcase
-- **Smooth Animations**: Scroll-triggered animations
-- **Loading States**: Professional loading indicators
+- **Language Switcher**: Native Astro i18n routing
+- **Contact Form**: Server Island for dynamic form handling
+- **Image Gallery**: Equipment and facility showcase with View Transitions
+- **Smooth Animations**: CSS-based animations with optional View Transitions API
+- **Zero-JavaScript by Default**: Enhanced performance with selective hydration
 
 ### 3.2 Technical Requirements
 
-#### Performance Standards
+#### Performance Standards (Enhanced for Astro)
 
-- **Page Load Speed**: < 3 seconds on 3G networks
-- **Core Web Vitals**: LCP < 2.5s, FID < 100ms, CLS < 0.1
-- **SEO Score**: 90+ on Google PageSpeed Insights
-- **Accessibility Score**: 100% on automated testing tools
+- **Page Load Speed**: < 1.5 seconds on 3G networks
+- **Core Web Vitals**: LCP < 1.5s, FID < 50ms, CLS < 0.05
+- **Lighthouse Score**: 100/100 across all categories
+- **SEO Score**: 100/100 on Google PageSpeed Insights
+- **First Contentful Paint**: < 1 second
 
 #### Browser Support
 
@@ -108,17 +112,21 @@ Develop a production-ready, bilingual corporate website for Taliman Sakhtehaye F
 - Safari 14+
 - Edge 90+
 - Mobile browsers (iOS Safari, Chrome Mobile)
+- Progressive enhancement for older browsers
 
-#### Technology Stack
+#### Technology Stack (Astro 5.x Foundation)
 
-- **Framework**: Next.js 14+ with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Icons**: Lucide React
-- **Internationalization**: next-intl
-- **Forms**: React Hook Form with Zod validation
-- **Animations**: Framer Motion
-- **Image Optimization**: Next.js Image component
+- **Framework**: Astro 5.x with static-first architecture
+- **Build System**: Vite (built-in with Astro)
+- **Package Manager**: Bun for enhanced development experience
+- **Language**: TypeScript-first approach
+- **Styling**: Tailwind CSS with RTL support and CSS logical properties
+- **Icons**: Lucide React (selective hydration)
+- **Internationalization**: Astro built-in i18n routing
+- **Forms**: Server Islands with progressive enhancement
+- **Content Management**: Content Layer API and Content Collections
+- **Image Optimization**: Built-in Astro image optimization
+- **View Transitions**: Native Astro View Transitions API
 
 ## 4. Non-Functional Requirements
 
@@ -127,201 +135,241 @@ Develop a production-ready, bilingual corporate website for Taliman Sakhtehaye F
 #### Visual Design
 
 - **Brand Colors**: Professional industrial palette (blues, grays, metallics)
-- **Typography**: Clean, readable fonts supporting Farsi characters
-- **Layout**: Grid-based responsive design
-- **Imagery**: High-quality photos of equipment and processes
-- **UI Components**: Consistent design system
+- **Typography**: Clean, readable fonts with comprehensive Farsi character support
+- **Layout**: CSS Grid-based responsive design with logical properties
+- **Imagery**: Optimized WebP/AVIF with automatic format selection
+- **UI Components**: Consistent design system with zero-runtime overhead
 
 #### User Experience
 
-- **Navigation**: Intuitive single-page scrolling with fixed header
-- **Language Switching**: Seamless transition without page reload
-- **Form UX**: Clear validation messages and success states
-- **Loading Experience**: Skeleton screens and progressive loading
-- **Error Handling**: Graceful error states with recovery options
+- **Navigation**: Smooth transitions with View Transitions API
+- **Language Switching**: Instant language change through static routing
+- **Form UX**: Progressive enhancement with Server Island fallbacks
+- **Loading Experience**: Instant page loads with optimized static delivery
+- **Error Handling**: Static error pages with graceful degradation
 
 ### 4.2 Content Requirements
 
-#### Multilingual Content
+#### Multilingual Content Strategy
 
-- **English Content**: Professional B2B tone, technical accuracy
-- **Farsi Content**: Native translation, RTL layout support
-- **Technical Terms**: Consistent terminology across languages
-- **SEO Optimization**: Localized keywords and meta descriptions
+- **English Content**: Technical B2B optimization for international markets
+- **Farsi Content**: Native RTL implementation with proper SEO for Persian market
+- **Content Collections**: Structured content management for technical specifications
+- **SEO Optimization**: Enhanced meta tags and structured data for manufacturing industry
+- **Content Layer Benefits**: Streamlined product catalog management
 
-#### Media Assets
+#### Media Assets Strategy
 
-- **Photography**: Professional industrial photography
-- **Equipment Images**: High-resolution machinery photos
-- **Process Diagrams**: Technical illustrations and flowcharts
-- **Company Photos**: Facility and team photography
-- **Placeholder Strategy**: Professional placeholders for missing assets
+- **Photography**: Automatic format optimization (WebP/AVIF)
+- **Equipment Images**: Progressive loading with placeholder generation
+- **Process Diagrams**: SVG optimization with inline delivery
+- **Company Photos**: Responsive image delivery with size optimization
+- **Asset Pipeline**: Built-in Astro image processing and optimization
 
 ### 4.3 Security & Privacy
 
 #### Data Protection
 
-- **Form Data**: Secure transmission and storage
-- **Privacy Compliance**: GDPR-ready privacy policies
-- **No Sensitive Data**: No authentication or payment processing
-- **Contact Form Security**: Rate limiting and spam protection
+- **Form Data**: Server Island secure processing
+- **Static Security**: Reduced attack surface through static delivery
+- **Privacy Compliance**: GDPR-ready with minimal data collection
+- **No Client-Side Storage**: Enhanced privacy through server-side processing
+- **Rate Limiting**: Built-in protection for contact forms
 
 ## 5. User Stories
 
-### Primary User Flows
+### Enhanced User Flows for Astro Architecture
 
-#### Potential Customer Journey
+#### Performance-Conscious Procurement Manager
 
 ```
-As an automotive procurement manager,
-I want to quickly understand Taliman's capabilities and quality standards,
-So that I can evaluate them as a potential supplier.
+As an automotive procurement manager with limited time,
+I want to access Taliman's technical specifications instantly,
+So that I can evaluate suppliers efficiently without waiting for page loads.
 
 Acceptance Criteria:
-- Can view equipment specifications within 30 seconds
-- Can access quality certifications easily
-- Can submit inquiry through contact form
-- Can download company information (if available)
+- Equipment specifications load in under 1 second
+- Technical data is immediately available without JavaScript
+- Mobile performance matches desktop experience
+- Offline browsing capabilities for cached content
 ```
 
-#### Quality Assurance Professional
+#### International Quality Professional
 
 ```
-As a quality assurance professional,
-I want to review Taliman's quality processes and certifications,
-So that I can assess their compliance with our standards.
+As an international quality assurance professional,
+I want to review certifications and processes in my preferred language,
+So that I can assess compliance accurately and quickly.
 
 Acceptance Criteria:
-- Can view detailed quality processes
-- Can access certification documents
-- Can understand testing procedures
-- Can contact quality team directly
+- Language switching preserves current page context
+- Technical translations are accurate and consistent
+- Certification documents load instantly
+- Search engine can properly index content in both languages
 ```
 
-#### International Partner
+#### Mobile-First International Partner
 
 ```
-As an international business partner,
-I want to view the website in English with proper technical translations,
-So that I can understand their capabilities accurately.
+As an international business partner accessing from mobile devices,
+I want the same fast, professional experience regardless of my connection,
+So that I can evaluate Taliman's capabilities on-the-go.
 
 Acceptance Criteria:
-- Can switch to English easily
-- Technical terms are properly translated
-- Contact information is clearly displayed
-- Company credentials are professionally presented
+- Mobile performance score of 100/100
+- Identical functionality across all devices
+- Offline access to essential information
+- Progressive enhancement for advanced features
 ```
 
 ## 6. Success Metrics
 
-### Business Metrics
+### Business Metrics (Enhanced)
 
-- **Lead Generation**: 10+ qualified inquiries per month
-- **Engagement**: 2+ minutes average session duration
-- **Reach**: 50% increase in organic search visibility
+- **Lead Generation**: 20+ qualified inquiries per month (improved conversion)
+- **Engagement**: 3+ minutes average session duration
+- **Search Visibility**: 75% increase in Persian market organic search
+- **International Reach**: 40% increase in international traffic
+- **Mobile Conversion**: 25% higher mobile form completion rate
 
-### Technical Metrics
+### Technical Metrics (Astro-Optimized)
 
-- **Performance**: Core Web Vitals in green zone
-- **Accessibility**: 100% automated accessibility score
-- **SEO**: Top 3 rankings for target keywords
-- **Uptime**: 99.9% availability
+- **Performance**: 100/100 Lighthouse scores across all categories
+- **Core Web Vitals**: Green zone with industry-leading metrics
+- **SEO**: Top position for Persian CHQ wire processing keywords
+- **Uptime**: 99.99% availability with CDN distribution
+- **Bundle Size**: < 50KB initial JavaScript (Server Islands only)
 
 ### User Experience Metrics
 
-- **Bounce Rate**: < 40%
-- **Mobile Usage**: 60%+ mobile traffic support
-- **Language Usage**: Track English vs Farsi preference
-- **Form Completion**: > 15% contact form conversion rate
+- **Bounce Rate**: < 25% (improved from static-first approach)
+- **Mobile Performance**: 95%+ mobile usability score
+- **Language Distribution**: Track Persian vs English market penetration
+- **Form Conversion**: > 25% contact form completion rate
+- **Page Speed Satisfaction**: < 1.5s average load time
 
-## 7. Project Timeline & Milestones
+## 7. Technical Architecture Benefits
 
-### Phase 1: Foundation (Week 1)
+### Astro 5.x Advantages for Manufacturing Industry
 
-- [ ] Project setup and configuration
-- [ ] Basic component library
-- [ ] Responsive layout structure
-- [ ] Internationalization setup
+#### Content Layer API Benefits
+- **Product Catalogs**: Structured equipment and specification management
+- **Technical Documentation**: Streamlined process documentation
+- **Certification Management**: Organized quality standard presentations
+- **Multi-language Content**: Efficient translation management
 
-### Phase 2: Content Development (Week 2)
+#### Server Islands Strategy
+- **Contact Forms**: Dynamic functionality without full-page hydration
+- **Interactive Elements**: Selective enhancement for specific components
+- **Performance**: Zero-JavaScript default with targeted interactivity
+- **SEO**: Full content accessibility to search engines
 
-- [ ] Hero and About sections
-- [ ] Processes and Equipment sections
-- [ ] Quality and Contact sections
-- [ ] Content integration and testing
+#### Static-First Manufacturing Benefits
+- **B2B Performance**: Instant access to technical specifications
+- **International Reach**: CDN-optimized global delivery
+- **Reliability**: No server dependencies for content delivery
+- **Cost Efficiency**: Reduced hosting and maintenance overhead
 
-### Phase 3: Enhancement & Testing (Week 3)
+## 8. Project Timeline & Milestones
 
-- [ ] Performance optimization
-- [ ] Accessibility testing
-- [ ] Cross-browser testing
-- [ ] SEO implementation
+### Phase 1: Astro Foundation (Week 1)
 
-### Phase 4: Launch Preparation (Week 4)
+- [ ] Astro 5.x project initialization with Bun
+- [ ] Content Collections structure for technical data
+- [ ] i18n routing configuration for Persian/English
+- [ ] Tailwind CSS with RTL support setup
+- [ ] Content Layer API implementation
 
-- [ ] Final testing and bug fixes
-- [ ] Deployment setup
-- [ ] Analytics integration
-- [ ] Documentation and handover
+### Phase 2: Static Content Development (Week 2)
 
-## 8. Risk Assessment
+- [ ] Hero and About sections with Content Collections
+- [ ] Processes section with technical specifications
+- [ ] Equipment catalog with Content Layer API
+- [ ] Quality certifications with structured data
+- [ ] Image optimization pipeline implementation
 
-### Technical Risks
+### Phase 3: Interactive Enhancement (Week 3)
 
-- **RTL Layout Complexity**: Farsi text direction challenges
-  - *Mitigation*: Early RTL testing, CSS logical properties
-- **Performance on Mobile**: Heavy industrial imagery
-  - *Mitigation*: Image optimization, lazy loading, WebP format
-- **Browser Compatibility**: Older browser support
-  - *Mitigation*: Progressive enhancement, polyfills
+- [ ] Contact form Server Island implementation
+- [ ] View Transitions API integration
+- [ ] Performance optimization and Core Web Vitals
+- [ ] SEO enhancement with structured data
+- [ ] Cross-browser testing and accessibility
 
-### Content Risks
+### Phase 4: Launch Optimization (Week 4)
 
-- **Technical Translation Accuracy**: Industrial terminology
-  - *Mitigation*: Technical review by domain experts
-- **Image Asset Availability**: Professional photography needs
-  - *Mitigation*: Placeholder strategy, stock photo alternatives
+- [ ] Final performance tuning and Lighthouse optimization
+- [ ] Persian market SEO implementation
+- [ ] CDN setup and deployment optimization
+- [ ] Analytics integration and monitoring
+- [ ] Documentation and maintenance procedures
 
-### Business Risks
+## 9. Risk Assessment
 
-- **Content Approval Delays**: Multiple stakeholder review
-  - *Mitigation*: Clear approval process, staged reviews
-- **Scope Creep**: Additional feature requests
-  - *Mitigation*: Change management process, phase planning
+### Technical Risks (Astro-Specific)
 
-## 9. Assumptions & Dependencies
+- **Server Islands Complexity**: Dynamic form integration challenges
+  - *Mitigation*: Progressive enhancement fallbacks, thorough testing
+- **i18n Implementation**: RTL layout with content routing
+  - *Mitigation*: CSS logical properties, early RTL testing
+- **Content Layer Learning Curve**: New API adoption
+  - *Mitigation*: Comprehensive documentation review, prototype development
 
-### Assumptions
+### Performance Risks
 
-- Company will provide brand assets and content
-- Technical content will be reviewed for accuracy
-- Hosting environment supports Next.js deployment
-- No complex CMS integration required initially
+- **Image Asset Size**: Industrial photography optimization
+  - *Mitigation*: Astro image optimization, WebP/AVIF conversion
+- **Third-party Dependencies**: External service integration
+  - *Mitigation*: Minimal external dependencies, local asset hosting
 
-### Dependencies
+### SEO and Market Risks
 
-- Brand guidelines and logo assets
-- Professional photography of equipment and facilities
-- Accurate technical specifications and certifications
-- Contact information and company details
-- Domain name and hosting setup
+- **Persian Market Competition**: Technical keyword ranking
+  - *Mitigation*: Comprehensive Persian SEO strategy, structured data
+- **International B2B Expectations**: Performance standards
+  - *Mitigation*: Industry-leading performance targets, continuous monitoring
 
-## 10. Future Considerations
+## 10. Assumptions & Dependencies
 
-### Phase 2 Enhancements
+### Technical Assumptions
 
-- Content Management System (CMS) integration
-- Customer portal for specifications and quotes
-- Advanced search and filtering for products
-- Integration with CRM systems
+- Astro 5.x provides stable Content Layer API
+- Bun package manager offers reliable dependency management
+- Server Islands support required form functionality
+- Modern browser support for View Transitions API
+- CDN supports Astro static output optimization
+
+### Content Dependencies
+
+- Professional industrial photography for image optimization
+- Technical specifications for Content Collections structure
+- Accurate Persian translations for i18n implementation
+- Quality certifications for structured data markup
+- Company information for contact form Server Island
+
+## 11. Future Considerations
+
+### Phase 2 Enhancements (Astro Ecosystem)
+
+- **CMS Integration**: Headless CMS with Content Layer API
+- **Customer Portal**: Authenticated sections with Server Islands
+- **Advanced Analytics**: Performance monitoring and conversion tracking
+- **Multi-region Optimization**: Geographic content delivery optimization
 
 ### Scalability Planning
 
-- Multi-region hosting for international users
-- Additional language support (Arabic, German)
-- Advanced analytics and conversion tracking
-- A/B testing capabilities for optimization
+- **Additional Languages**: Arabic, German market expansion
+- **Content Personalization**: Industry-specific content delivery
+- **Advanced Search**: Full-text search with static generation
+- **API Integration**: ERP system connectivity through Server Islands
+
+### Competitive Advantages
+
+- **Industry-Leading Performance**: Sub-second load times for B2B advantage
+- **Persian Market Dominance**: Superior SEO for domestic market
+- **International Accessibility**: Optimized global content delivery
+- **Maintenance Efficiency**: Reduced operational overhead through static architecture
 
 ---
 
-*This PRD serves as the foundation for developing a world-class corporate website that positions Taliman as a leading provider in the CHQ wire processing industry.*
+*This PRD establishes Astro 5.x as the foundation for creating an industry-leading corporate website that positions Taliman as the premier provider of CHQ wire processing services through superior technical performance and Persian market optimization.*

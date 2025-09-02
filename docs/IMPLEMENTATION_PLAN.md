@@ -1,452 +1,513 @@
-# Development Roadmap & Implementation Plan
+# Astro 5.x Development Roadmap & Implementation Plan
 # Taliman Website Project
 
 ## 1. Project Overview
 
 ### Development Approach
-This implementation plan follows a structured, phased approach to deliver a production-ready website for Taliman Sakhtehaye Felezi Kara. The plan prioritizes core functionality, followed by enhancements and optimization.
+This implementation plan follows a structured, phased approach to deliver a production-ready website for Taliman Sakhtehaye Felezi Kara using Astro 5.x. The plan leverages Astro's static-first architecture, Content Layer API, and built-in optimizations to achieve exceptional performance and SEO results.
 
 ### Timeline Summary
-- **Phase 1**: Foundation & Setup (Days 1-3)
-- **Phase 2**: Core Development (Days 4-8)  
-- **Phase 3**: Content Integration (Days 9-12)
-- **Phase 4**: Testing & Optimization (Days 13-16)
-- **Phase 5**: Deployment & Launch (Days 17-18)
+- **Phase 1**: Astro Foundation Setup (Days 1-3)
+- **Phase 2**: Core Architecture & Content (Days 4-8)  
+- **Phase 3**: Static Pages & SEO (Days 9-12)
+- **Phase 4**: Interactive Features (Days 13-16)
+- **Phase 5**: Optimization & Launch (Days 17-18)
 
-## 2. Phase 1: Foundation & Setup (Days 1-3)
+## 2. Phase 1: Astro Foundation Setup (Days 1-3)
 
-### Day 1: Project Initialization
+### Day 1: Astro Project Initialization
 **Morning (4 hours)**
-- [ ] Initialize Next.js project with TypeScript
-- [ ] Configure Tailwind CSS and base styling
-- [ ] Set up ESLint, Prettier, and TypeScript configurations
-- [ ] Create basic project structure and directories
+- [ ] Initialize Astro 5.x project with TypeScript template
+- [ ] Configure Bun package manager and development workflow
+- [ ] Install essential integrations (@astrojs/tailwind, @astrojs/sitemap, @astrojs/check)
+- [ ] Set up ESLint, Prettier, and TypeScript configurations for Astro
 
 **Afternoon (4 hours)**
-- [ ] Configure internationalization (next-intl)
-- [ ] Set up Farsi font support and RTL configurations
-- [ ] Create basic layout components (Header, Footer)
-- [ ] Implement language switching functionality
+- [ ] Configure built-in i18n routing for fa/en languages
+- [ ] Set up Farsi font support and RTL configurations with Tailwind
+- [ ] Create basic Astro layout structure (BaseLayout.astro)
+- [ ] Configure Astro content security and type checking
 
-### Day 2: Component Architecture
+### Day 2: Content Layer API & Collections
 **Morning (4 hours)**
-- [ ] Create UI component library (Button, Card, Input, etc.)
-- [ ] Implement responsive grid system
-- [ ] Set up animation system with Framer Motion
-- [ ] Create theme configuration and design tokens
+- [ ] Set up Content Collections schema for products, processes, equipment
+- [ ] Configure Content Layer API for bilingual content management
+- [ ] Create content validation schemas with Zod
+- [ ] Set up bilingual content organization (/src/content/fa/, /src/content/en/)
 
 **Afternoon (4 hours)**
-- [ ] Build navigation component with mobile menu
-- [ ] Implement smooth scrolling navigation
-- [ ] Create loading states and skeleton screens
-- [ ] Set up error boundaries and error pages
+- [ ] Build base Astro components library (Button.astro, Card.astro, etc.)
+- [ ] Implement responsive grid system with Tailwind
+- [ ] Create layout components (Header.astro, Footer.astro, Navigation.astro)
+- [ ] Set up Astro component TypeScript definitions
 
-### Day 3: Development Environment
+### Day 3: Development Environment & Tooling
 **Morning (4 hours)**
-- [ ] Configure form handling with React Hook Form
-- [ ] Set up Zod validation schemas
-- [ ] Create development scripts and commands
-- [ ] Implement image optimization setup
+- [ ] Configure Astro's built-in image optimization
+- [ ] Set up automatic sitemap generation
+- [ ] Create development scripts and Astro commands
+- [ ] Configure Astro dev server for optimal development
 
 **Afternoon (4 hours)**
-- [ ] Set up SEO configuration and metadata
-- [ ] Create sitemap and robots.txt
-- [ ] Configure performance monitoring
-- [ ] Test basic functionality and responsive behavior
+- [ ] Set up SEO configuration with Astro meta components
+- [ ] Configure robots.txt and basic SEO structure
+- [ ] Set up Astro integration testing
+- [ ] Test basic Astro functionality and build process
 
 **Deliverables:**
-- Fully configured Next.js project
-- Complete component library
-- Working internationalization
-- Basic layout structure
+- Fully configured Astro 5.x project with TypeScript
+- Content Collections and Content Layer API setup
+- Built-in i18n routing configuration
+- Essential integrations and tooling
 
-## 3. Phase 2: Core Development (Days 4-8)
+## 3. Phase 2: Core Architecture & Content (Days 4-8)
 
-### Day 4: Hero Section & Layout
+### Day 4: File-based Routing & Layout Structure
 **Morning (4 hours)**
-- [ ] Build hero section with animations
-- [ ] Implement responsive background images
-- [ ] Create call-to-action buttons
-- [ ] Add hero content in both languages
+- [ ] Implement Astro file-based routing structure
+- [ ] Create main page layouts using Astro Layout system
+- [ ] Set up nested layouts for different page types
+- [ ] Configure route parameters for bilingual URLs
 
 **Afternoon (4 hours)**
-- [ ] Build main page layout structure
-- [ ] Implement section navigation
-- [ ] Add scroll-triggered animations
-- [ ] Test hero section across devices
+- [ ] Build responsive Hero section with Astro Image optimization
+- [ ] Implement Astro's ViewTransitions API for smooth navigation
+- [ ] Create call-to-action components with proper accessibility
+- [ ] Set up Astro component props validation
 
-### Day 5: About Section
+### Day 5: Content Collections Implementation
 **Morning (4 hours)**
-- [ ] Create About section layout
-- [ ] Implement company information display
-- [ ] Add team/leadership placeholder content
-- [ ] Create image gallery component
+- [ ] Create About section using Content Collections
+- [ ] Implement dynamic content rendering from collections
+- [ ] Set up content frontmatter schemas for company information
+- [ ] Add bilingual content querying with getCollection()
 
 **Afternoon (4 hours)**
-- [ ] Add mission and values content
-- [ ] Implement interactive elements
-- [ ] Test About section functionality
-- [ ] Optimize for mobile devices
+- [ ] Build image gallery using Astro's built-in Image component
+- [ ] Implement content-driven navigation
+- [ ] Add mission and values content from collections
+- [ ] Test Content Collections across both languages
 
-### Day 6: Processes Section
+### Day 6: Processes Section with Content Layer
 **Morning (4 hours)**
-- [ ] Build Processes section layout
-- [ ] Create process flow visualization
-- [ ] Implement technical specifications display
-- [ ] Add CHQ processing information
+- [ ] Create Processes content collection with CHQ specifications
+- [ ] Build process flow visualization components
+- [ ] Implement technical specifications display from content
+- [ ] Set up content relationships between processes and applications
 
 **Afternoon (4 hours)**
-- [ ] Create process steps component
-- [ ] Add interactive process diagrams
-- [ ] Implement applications showcase
-- [ ] Test section functionality
+- [ ] Create interactive process diagrams using Astro components
+- [ ] Implement content-driven process steps
+- [ ] Add applications showcase from Content Collections
+- [ ] Test processes section with real content data
 
-### Day 7: Equipment Section
+### Day 7: Equipment Content Integration
 **Morning (4 hours)**
-- [ ] Build Equipment section layout
-- [ ] Create equipment showcase cards
-- [ ] Implement technical specifications
-- [ ] Add equipment imagery placeholders
+- [ ] Set up Equipment content collection with specifications
+- [ ] Create equipment showcase using Astro's Image optimization
+- [ ] Implement technical specifications from content schema
+- [ ] Build dynamic equipment cards from collection data
 
 **Afternoon (4 hours)**
-- [ ] Create capability listings
-- [ ] Add interactive equipment features
-- [ ] Implement equipment galleries
-- [ ] Test equipment section
+- [ ] Create capability listings from content collections
+- [ ] Implement equipment galleries with optimized images
+- [ ] Add content-driven equipment features
+- [ ] Test equipment section performance and loading
 
-### Day 8: Quality & Contact Sections
+### Day 8: Quality & Contact Architecture
 **Morning (4 hours)**
-- [ ] Build Quality section with certifications
-- [ ] Create standards compliance display
-- [ ] Add quality process information
-- [ ] Implement certification showcase
+- [ ] Build Quality section using Content Collections for certifications
+- [ ] Create standards compliance display from structured content
+- [ ] Implement certification showcase with proper image optimization
+- [ ] Add quality process information from content schema
 
 **Afternoon (4 hours)**
-- [ ] Build Contact section layout
-- [ ] Create contact form with validation
-- [ ] Add company contact information
-- [ ] Implement map integration placeholder
+- [ ] Set up contact page structure with Astro layouts
+- [ ] Prepare form structure (will be enhanced with Server Islands in Phase 4)
+- [ ] Add company contact information from content
+- [ ] Create map integration placeholder component
 
 **Deliverables:**
-- All main sections implemented
-- Working contact form
-- Responsive design across sections
-- Basic content integration
+- Complete Astro routing and layout structure
+- Content Collections fully implemented
+- All main sections with content-driven architecture
+- Optimized image loading across all sections
 
-## 4. Phase 3: Content Integration (Days 9-12)
+## 4. Phase 3: Static Pages & SEO (Days 9-12)
 
-### Day 9: Content Population
+### Day 9: Static Page Generation & Meta Optimization
 **Morning (4 hours)**
-- [ ] Integrate English content across all sections
-- [ ] Add technical specifications and data
-- [ ] Implement proper content formatting
-- [ ] Add placeholder images and assets
+- [ ] Generate all static catalog pages using Astro's build process
+- [ ] Implement dynamic meta tags with Astro's SEO components
+- [ ] Configure structured data (JSON-LD) for business information
+- [ ] Set up Open Graph and Twitter Card meta tags
 
 **Afternoon (4 hours)**
-- [ ] Integrate Farsi content with RTL support
-- [ ] Test language switching functionality
-- [ ] Verify content accuracy and formatting
-- [ ] Test RTL layout across all sections
+- [ ] Optimize page titles and descriptions for both languages
+- [ ] Implement canonical URLs for bilingual content
+- [ ] Configure hreflang tags for international SEO
+- [ ] Test meta tag generation across all pages
 
-### Day 10: Asset Integration
+### Day 10: Image Optimization & Asset Performance
 **Morning (4 hours)**
-- [ ] Add professional placeholder images
-- [ ] Implement image optimization
-- [ ] Create image galleries and showcases
-- [ ] Add company branding elements
+- [ ] Implement Astro's built-in Image component across all pages
+- [ ] Configure responsive images with proper sizes and formats
+- [ ] Set up automatic WebP/AVIF conversion
+- [ ] Add lazy loading and priority hints
 
 **Afternoon (4 hours)**
-- [ ] Create technical diagrams and illustrations
-- [ ] Add process flow visualizations
-- [ ] Implement icon system throughout site
-- [ ] Test image loading and performance
+- [ ] Create optimized image galleries with Astro Image
+- [ ] Implement proper alt text and image SEO
+- [ ] Add company branding with optimized assets
+- [ ] Test image loading performance and Core Web Vitals
 
-### Day 11: Interactive Features
+### Day 11: Automatic Sitemap & Technical SEO
 **Morning (4 hours)**
-- [ ] Enhance form functionality and validation
-- [ ] Add success/error states
-- [ ] Implement form submission handling
-- [ ] Add loading states for interactions
+- [ ] Configure automatic sitemap generation with @astrojs/sitemap
+- [ ] Set up robots.txt with proper directives
+- [ ] Implement breadcrumb navigation for SEO
+- [ ] Add schema markup for technical processes and equipment
 
 **Afternoon (4 hours)**
-- [ ] Fine-tune animations and transitions
-- [ ] Add scroll-triggered effects
-- [ ] Implement hover states and interactions
-- [ ] Test all interactive elements
+- [ ] Optimize URL structures for both languages
+- [ ] Implement 404 and error pages with proper SEO
+- [ ] Add internal linking strategy
+- [ ] Test sitemap generation and indexability
 
-### Day 12: Content Review & Polish
+### Day 12: Lighthouse Optimization & Performance
 **Morning (4 hours)**
-- [ ] Review all content for accuracy
-- [ ] Test language switching edge cases
-- [ ] Verify technical information
-- [ ] Polish content presentation
+- [ ] Run Lighthouse audits and optimize for 100/100 scores
+- [ ] Implement critical CSS inlining
+- [ ] Optimize font loading with font-display strategies
+- [ ] Configure proper caching headers
 
 **Afternoon (4 hours)**
-- [ ] Implement content-based improvements
-- [ ] Add any missing content sections
-- [ ] Test content flow and readability
-- [ ] Prepare content for final review
+- [ ] Test Core Web Vitals across all pages
+- [ ] Optimize bundle size and eliminate unused code
+- [ ] Implement resource hints (preload, prefetch)
+- [ ] Final performance validation and optimization
 
 **Deliverables:**
-- Complete content integration
-- Working multilingual content
-- All interactive features functional
-- Professional asset integration
+- All static pages generated with optimal performance
+- Complete SEO optimization with structured data
+- 100/100 Lighthouse scores across all metrics
+- Automatic sitemap and technical SEO setup
 
-## 5. Phase 4: Testing & Optimization (Days 13-16)
+## 5. Phase 4: Interactive Features (Days 13-16)
 
-### Day 13: Performance Optimization
+### Day 13: Server Islands Implementation
 **Morning (4 hours)**
-- [ ] Analyze Core Web Vitals performance
-- [ ] Optimize images and assets loading
-- [ ] Implement lazy loading strategies
-- [ ] Optimize bundle size and code splitting
+- [ ] Implement Server Islands for contact form functionality
+- [ ] Set up form handling with Astro's server-side capabilities
+- [ ] Configure form validation using Zod schemas
+- [ ] Add form submission processing and email integration
 
 **Afternoon (4 hours)**
-- [ ] Test performance on mobile devices
-- [ ] Optimize font loading and rendering
-- [ ] Implement caching strategies
-- [ ] Run performance audits and fixes
+- [ ] Implement form success/error states with Server Islands
+- [ ] Add loading states for form submissions
+- [ ] Test form functionality across different scenarios
+- [ ] Configure spam protection and rate limiting
 
-### Day 14: Accessibility Testing
+### Day 14: View Transitions & Navigation
 **Morning (4 hours)**
-- [ ] Run automated accessibility tests
-- [ ] Test keyboard navigation
-- [ ] Verify screen reader compatibility
-- [ ] Check color contrast ratios
+- [ ] Enhance View Transitions API for smooth page navigation
+- [ ] Implement custom transitions between different page types
+- [ ] Add loading animations using View Transitions
+- [ ] Configure transition fallbacks for older browsers
 
 **Afternoon (4 hours)**
-- [ ] Test with assistive technologies
-- [ ] Implement accessibility improvements
-- [ ] Add proper ARIA labels and roles
-- [ ] Verify WCAG 2.1 AA compliance
+- [ ] Implement smooth scroll navigation within pages
+- [ ] Add scroll-triggered animations and effects
+- [ ] Test navigation performance and user experience
+- [ ] Optimize transition performance for mobile devices
 
-### Day 15: Cross-Browser Testing
+### Day 15: Analytics & Monitoring Integration
 **Morning (4 hours)**
-- [ ] Test across major browsers
-- [ ] Fix browser-specific issues
-- [ ] Test mobile browser compatibility
-- [ ] Verify responsive behavior
+- [ ] Set up analytics tracking with minimal client-side JavaScript
+- [ ] Implement performance monitoring and Core Web Vitals tracking
+- [ ] Configure error tracking and reporting
+- [ ] Add user interaction analytics
 
 **Afternoon (4 hours)**
-- [ ] Test internationalization across browsers
-- [ ] Verify RTL layout support
-- [ ] Fix any browser-specific bugs
-- [ ] Test form functionality across browsers
+- [ ] Test analytics functionality across all pages
+- [ ] Implement privacy-compliant tracking
+- [ ] Set up conversion tracking for contact form
+- [ ] Configure performance alerts and monitoring
 
-### Day 16: SEO & Final Testing
+### Day 16: Cross-Browser Testing & Accessibility
 **Morning (4 hours)**
-- [ ] Implement final SEO optimizations
-- [ ] Test meta tags and structured data
-- [ ] Verify sitemap and robots.txt
-- [ ] Test social media sharing
+- [ ] Test across major browsers and devices
+- [ ] Verify Astro's built-in accessibility features
+- [ ] Test keyboard navigation and screen reader compatibility
+- [ ] Check color contrast and WCAG 2.1 AA compliance
 
 **Afternoon (4 hours)**
-- [ ] Conduct final end-to-end testing
-- [ ] Test all user journeys
-- [ ] Verify all functionality works
-- [ ] Create test report and bug fixes
+- [ ] Test internationalization across all browsers
+- [ ] Verify RTL layout support and font rendering
+- [ ] Test Server Islands functionality across platforms
+- [ ] Conduct final end-to-end testing of all features
 
 **Deliverables:**
-- Performance-optimized website
-- Accessibility-compliant implementation
-- Cross-browser compatibility
-- SEO-ready website
+- Working contact form with Server Islands
+- Smooth View Transitions across all pages
+- Analytics and performance monitoring setup
+- Cross-browser compatibility and accessibility compliance
 
-## 6. Phase 5: Deployment & Launch (Days 17-18)
+## 6. Phase 5: Optimization & Launch (Days 17-18)
 
-### Day 17: Deployment Preparation
+### Day 17: VPS Deployment & CDN Configuration
 **Morning (4 hours)**
-- [ ] Set up production environment
-- [ ] Configure deployment pipeline
-- [ ] Set up domain and DNS
-- [ ] Configure analytics and monitoring
+- [ ] Configure VPS environment for Astro static site deployment
+- [ ] Set up Nginx with optimal configuration for static assets
+- [ ] Configure CDN integration for global content delivery
+- [ ] Set up automated deployment pipeline with GitHub Actions
 
 **Afternoon (4 hours)**
-- [ ] Deploy to staging environment
-- [ ] Conduct final staging tests
-- [ ] Test production configuration
-- [ ] Prepare launch checklist
+- [ ] Deploy to staging environment for final testing
+- [ ] Configure domain and SSL certificates
+- [ ] Test production build performance and functionality
+- [ ] Set up backup and monitoring systems
 
-### Day 18: Launch & Handover
+### Day 18: Production Launch & Monitoring
 **Morning (4 hours)**
-- [ ] Deploy to production
-- [ ] Verify production functionality
-- [ ] Test live website performance
-- [ ] Monitor for any issues
+- [ ] Deploy to production with zero-downtime strategy
+- [ ] Verify all static pages and assets load correctly
+- [ ] Test Contact form functionality in production
+- [ ] Monitor Core Web Vitals and performance metrics
 
 **Afternoon (4 hours)**
-- [ ] Create documentation and handover materials
-- [ ] Provide maintenance guidelines
-- [ ] Set up monitoring and alerts
-- [ ] Conduct project review
+- [ ] Set up production monitoring and alerts
+- [ ] Create comprehensive documentation and maintenance guide
+- [ ] Configure search engine indexing and submission
+- [ ] Conduct final project review and handover
 
 **Deliverables:**
-- Live production website
-- Complete documentation
-- Maintenance guidelines
-- Project handover
+- Live production website with optimal performance
+- CDN-optimized global content delivery
+- Complete monitoring and maintenance setup
+- Production deployment documentation
 
-## 7. Technical Implementation Details
+## 7. Astro-Specific Technical Implementation
 
-### 7.1 Development Standards
+### 7.1 Astro Development Standards
 
-#### Code Quality
+#### Essential Astro Integrations
 ```json
 {
-  "eslint": "^8.57.0",
-  "prettier": "^3.0.0",
-  "typescript": "^5.0.0",
-  "husky": "^9.0.0",
-  "lint-staged": "^15.0.0"
+  "astro": "^5.0.0",
+  "@astrojs/tailwind": "^5.1.2",
+  "@astrojs/sitemap": "^3.2.1",
+  "@astrojs/check": "^0.9.4",
+  "@astrojs/typescript": "^1.7.1",
+  "bun-types": "latest"
 }
 ```
 
-#### Git Workflow
-- Feature branch strategy
-- Conventional commit messages
-- Pre-commit hooks for code quality
-- Automated testing on PR
-
-#### Performance Targets
-- **First Contentful Paint**: < 1.5s
-- **Largest Contentful Paint**: < 2.5s
-- **Time to Interactive**: < 3.0s
-- **Core Web Vitals**: All metrics in green
-
-### 7.2 Testing Strategy
-
-#### Automated Testing
+#### Astro Configuration Best Practices
 ```typescript
-// Component testing with React Testing Library
-describe('ContactForm', () => {
-  it('submits form with valid data', async () => {
-    render(<ContactForm />);
-    // Test implementation
-  });
-});
-
-// E2E testing with Playwright
-test('user can navigate and submit contact form', async ({ page }) => {
-  await page.goto('/');
-  // Test implementation
+// astro.config.mjs
+export default defineConfig({
+  output: 'static',
+  site: 'https://taliman.com',
+  i18n: {
+    defaultLocale: 'fa',
+    locales: ['fa', 'en'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
+  integrations: [
+    tailwind(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'fa',
+        locales: {
+          fa: 'fa-IR',
+          en: 'en-US'
+        }
+      }
+    })
+  ]
 });
 ```
 
-#### Manual Testing Checklist
-- [ ] Mobile responsiveness (iOS/Android)
-- [ ] Language switching functionality
-- [ ] Form submission and validation
-- [ ] Cross-browser compatibility
-- [ ] Accessibility with screen readers
+#### Performance Targets (Astro Optimized)
+- **First Contentful Paint**: < 1.0s (Astro's zero-JS by default)
+- **Largest Contentful Paint**: < 1.8s (optimized static generation)
+- **Time to Interactive**: < 2.0s (minimal client-side JavaScript)
+- **Lighthouse Scores**: 100/100 across all categories
 
-### 7.3 Performance Monitoring
+### 7.2 Astro Testing & Validation Strategy
 
-#### Key Metrics
-- Core Web Vitals tracking
-- Bundle size monitoring
-- Image optimization metrics
-- Form conversion rates
+#### Content Collections Validation
+```typescript
+// Content schema validation with Zod
+import { z, defineCollection } from 'astro:content';
 
-#### Tools Integration
-- Google Analytics 4
-- Google PageSpeed Insights
-- Lighthouse CI
-- Real User Monitoring
+const processesCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    specifications: z.array(z.string()),
+    applications: z.array(z.string()),
+    images: z.array(z.string()).optional()
+  })
+});
 
-## 8. Risk Mitigation Strategies
+export const collections = {
+  processes: processesCollection
+};
+```
+
+#### Astro Build Testing
+```bash
+# TypeScript checking
+bun astro check
+
+# Build validation
+bun astro build
+
+# Preview production build
+bun astro preview
+```
+
+#### Testing Checklist (Astro-Specific)
+- [ ] Content Collections schema validation
+- [ ] Static page generation across all routes
+- [ ] Image optimization and WebP/AVIF conversion
+- [ ] i18n routing and content localization
+- [ ] Server Islands functionality
+- [ ] View Transitions compatibility
+
+### 7.3 Astro Performance Monitoring
+
+#### Astro-Specific Metrics
+- Static asset optimization (CSS, JS bundle size)
+- Image processing and conversion efficiency
+- Content Collections build performance
+- Server Islands response times
+
+#### Monitoring Tools Integration
+```typescript
+// Astro integration for analytics
+export default defineConfig({
+  integrations: [
+    // Minimal client-side tracking
+    // Custom analytics integration
+  ]
+});
+```
+
+## 8. Astro-Specific Risk Mitigation
 
 ### 8.1 Technical Risks
 
-#### RTL Layout Issues
-**Risk**: Complex RTL layout bugs with Farsi content
+#### Content Collections Complexity
+**Risk**: Complex content relationships and multilingual content management
 **Mitigation**: 
-- Early RTL testing with real content
-- CSS logical properties usage
-- Dedicated RTL testing phase
+- Start with simple content schemas and iterate
+- Use Astro's built-in validation early in development
+- Test content queries with real data from day one
 
-#### Performance on Mobile
-**Risk**: Poor performance on slower mobile connections
+#### Static Generation Performance
+**Risk**: Slow build times with large amounts of content and images
 **Mitigation**:
-- Image optimization and lazy loading
-- Critical resource prioritization
-- Performance budgets and monitoring
+- Leverage Astro's incremental builds
+- Optimize image processing pipeline
+- Use Content Layer API efficiently
 
-### 8.2 Content Risks
-
-#### Translation Accuracy
-**Risk**: Technical terminology translation errors
+#### Server Islands Integration
+**Risk**: Form functionality issues in static-first architecture
 **Mitigation**:
-- Industry expert content review
-- Consistent terminology glossary
-- Native speaker content validation
+- Thoroughly test Server Islands in development
+- Implement proper fallbacks for JavaScript-disabled environments
+- Use progressive enhancement principles
 
-#### Asset Availability
-**Risk**: Delayed or unavailable professional photography
+### 8.2 Content & Localization Risks
+
+#### i18n Routing Complexity
+**Risk**: URL structure and SEO issues with bilingual routing
 **Mitigation**:
-- High-quality placeholder strategy
-- Stock photo alternatives
-- Flexible asset integration timeline
+- Use Astro's built-in i18n routing from the start
+- Test hreflang and canonical URL generation
+- Validate sitemap generation for both languages
 
-### 8.3 Timeline Risks
-
-#### Scope Creep
-**Risk**: Additional features requested during development
+#### Content Schema Evolution
+**Risk**: Changes to content structure during development
 **Mitigation**:
-- Clear change management process
-- Documented scope boundaries
-- Phase-based delivery approach
+- Design flexible content schemas with optional fields
+- Use TypeScript for compile-time validation
+- Implement gradual schema migration strategies
 
-#### Technical Complexity
-**Risk**: Underestimated technical complexity
+### 8.3 Performance & Deployment Risks
+
+#### CDN and Caching Issues
+**Risk**: Static asset delivery and cache invalidation problems
 **Mitigation**:
-- Buffer time in schedule
-- Prototype complex features early
-- Regular progress reviews
+- Test CDN configuration thoroughly in staging
+- Implement proper cache headers and versioning
+- Monitor asset delivery performance post-launch
 
-## 9. Success Criteria & Acceptance
+#### Third-party Integration Limits
+**Risk**: Analytics or form processing service limitations
+**Mitigation**:
+- Choose lightweight, privacy-focused analytics
+- Implement form handling with proper error boundaries
+- Have backup solutions for critical third-party services
 
-### 9.1 Technical Acceptance
-- [ ] All Core Web Vitals in green zone
-- [ ] 100% accessibility score (automated)
-- [ ] Cross-browser compatibility verified
-- [ ] Mobile responsiveness confirmed
-- [ ] SEO optimization complete
+## 9. Astro Success Criteria & Acceptance
 
-### 9.2 Functional Acceptance
-- [ ] All sections implemented and working
-- [ ] Language switching functional
-- [ ] Contact form working with validation
-- [ ] All content integrated correctly
-- [ ] Professional visual presentation
+### 9.1 Technical Acceptance (Astro-Specific)
+- [ ] Lighthouse scores: 100/100 across all categories
+- [ ] Static site generation completing without errors
+- [ ] Content Collections validation passing
+- [ ] Built-in i18n routing working correctly
+- [ ] Server Islands functionality operational
+- [ ] Automatic sitemap generation working
 
-### 9.3 Performance Acceptance
-- [ ] Page load speed < 3 seconds
-- [ ] Mobile performance optimized
-- [ ] Image loading optimized
-- [ ] Form submission working
-- [ ] Analytics tracking active
+### 9.2 Performance Acceptance (Astro Optimized)
+- [ ] First Contentful Paint < 1.0s
+- [ ] Largest Contentful Paint < 1.8s
+- [ ] Time to Interactive < 2.0s
+- [ ] Image optimization (WebP/AVIF) working
+- [ ] Bundle size optimized (minimal client-side JS)
+- [ ] Core Web Vitals all green
 
-## 10. Post-Launch Activities
+### 9.3 Content & SEO Acceptance
+- [ ] All static pages generated correctly
+- [ ] Bilingual content rendering properly
+- [ ] Structured data and meta tags implemented
+- [ ] Sitemap includes all localized pages
+- [ ] hreflang tags configured correctly
+- [ ] Search engine indexing optimized
 
-### 10.1 Immediate Post-Launch (Week 1)
-- [ ] Monitor website performance and errors
-- [ ] Track user engagement metrics
-- [ ] Collect initial user feedback
-- [ ] Address any critical issues
+## 10. Astro Post-Launch Strategy
 
-### 10.2 Short-term Optimization (Weeks 2-4)
-- [ ] Analyze user behavior data
-- [ ] Optimize based on real usage patterns
-- [ ] Improve conversion rates
-- [ ] Add any missing content
+### 10.1 Performance Monitoring (Week 1)
+- [ ] Monitor Core Web Vitals with real user data
+- [ ] Track static asset delivery performance
+- [ ] Validate Server Islands response times
+- [ ] Monitor build and deployment performance
 
-### 10.3 Long-term Enhancements (Months 2-6)
-- [ ] Consider CMS integration
-- [ ] Add advanced analytics
-- [ ] Implement A/B testing
-- [ ] Plan additional features
+### 10.2 Content & SEO Optimization (Weeks 2-4)
+- [ ] Analyze search engine indexing results
+- [ ] Monitor bilingual SEO performance
+- [ ] Track form conversion rates
+- [ ] Optimize content based on user behavior
+
+### 10.3 Astro Ecosystem Enhancements (Months 2-6)
+- [ ] Consider headless CMS integration with Content Layer API
+- [ ] Explore additional Astro integrations
+- [ ] Implement advanced image optimization
+- [ ] Plan content expansion using Content Collections
+
+### 10.4 Maintenance & Updates
+- [ ] Regular Astro version updates
+- [ ] Content Collections schema evolution
+- [ ] Performance monitoring and optimization
+- [ ] Security updates and dependency management
 
 ---
 
-*This implementation plan provides a comprehensive roadmap for delivering a world-class website for Taliman, ensuring quality, performance, and user satisfaction while meeting all business objectives.*
+*This Astro 5.x implementation plan leverages modern static site generation, built-in optimizations, and cutting-edge web standards to deliver exceptional performance and user experience for the Taliman website, while maintaining the highest development velocity with Bun and TypeScript.*

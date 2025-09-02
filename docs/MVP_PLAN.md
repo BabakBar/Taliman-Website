@@ -1,305 +1,347 @@
-# MVP Development Plan
+# Astro 5.x MVP Development Plan
 # Taliman Website
 
-## MVP Scope Definition
+## Astro MVP Strategy Overview
 
-### Core MVP Features
-The Minimum Viable Product will include:
+**Framework Choice**: Astro 5.x for maximum performance and rapid development  
+**Core Philosophy**: Static-first with strategic hydration for critical interactivity  
+**Target Timeline**: 5-7 days to production-ready MVP  
+**Performance Goal**: 100/100 Lighthouse scores from day one
 
-1. **Single Page Application** with smooth scrolling navigation
-2. **Bilingual Support** (Farsi primary, English secondary)
-3. **Essential Sections**: Hero, About, Processes, Equipment, Quality, Contact
-4. **Contact Form** with validation and basic functionality
-5. **Responsive Design** optimized for mobile-first
-6. **SEO Optimization** with proper meta tags and structure
-7. **Performance Optimization** meeting Core Web Vitals targets
+### Why Astro 5.x for This MVP
 
-### MVP Exclusions (Phase 2)
-- Advanced CMS integration
-- User authentication/login
-- Blog or news section
-- Advanced analytics dashboard
-- A/B testing capabilities
-- Third-party integrations (CRM, etc.)
+1. **Static-First Architecture**: Perfect for corporate website with minimal interactivity
+2. **Built-in i18n Routing**: Native bilingual support without configuration complexity
+3. **Zero-JavaScript by Default**: Maximum performance with selective hydration
+4. **Content Collections**: Type-safe, structured data management for products/services
+5. **Built-in Optimizations**: Image optimization, bundle splitting, Core Web Vitals excellence
 
-## Development Phases
+## MVP Phase Structure
 
-### Phase 1: Foundation & Layout (Day 1-2)
-**Goal**: Create the basic app structure and core components
+### Phase 1: Astro Foundation Setup (Day 1)
+**Goal**: Establish Astro project with essential integrations
 
-#### Tasks:
-- [x] Project setup and configuration
-- [x] Internationalization configuration
-- [x] Global styles and theme setup
-- [ ] App layout structure
-- [ ] Navigation component with mobile menu
-- [ ] Footer component
-- [ ] Basic UI components (Button, Card, Input)
+#### Core Setup Tasks:
+- [x] Initialize Astro 5.x project with TypeScript
+- [ ] Configure essential integrations:
+  - `@astrojs/tailwind` for styling
+  - `@astrojs/sitemap` for automatic SEO
+  - `@astrojs/compress` for asset optimization
+- [ ] Setup i18n routing (`src/i18n/`)
+- [ ] Configure Content Collections for structured data
+- [ ] Establish file-based routing structure
 
-#### Deliverables:
-- Working Next.js app with routing
-- Responsive header and footer
-- Language switching functionality
-- Basic component library
-
----
-
-### Phase 2: Content Sections (Day 3-5)
-**Goal**: Implement all main content sections
-
-#### Tasks:
-- [ ] Hero section with animations
-- [ ] About section with company info
-- [ ] Processes section with technical details
-- [ ] Equipment section with specifications
-- [ ] Quality section with certifications
-- [ ] Contact section with form
-
-#### Deliverables:
-- Complete single-page layout
-- All content sections with placeholder content
-- Smooth scroll navigation
-- Basic animations and interactions
-
----
-
-### Phase 3: Forms & Functionality (Day 6-7)
-**Goal**: Implement interactive features and form handling
-
-#### Tasks:
-- [ ] Contact form with React Hook Form + Zod
-- [ ] Form validation and error handling
-- [ ] Success/error states
-- [ ] Basic form submission (console/email)
-- [ ] Loading states and animations
-
-#### Deliverables:
-- Fully functional contact form
-- Proper validation in both languages
-- User feedback mechanisms
-- Error handling
-
----
-
-### Phase 4: Polish & Optimization (Day 8-10)
-**Goal**: Performance optimization and final polish
-
-#### Tasks:
-- [ ] Image optimization and lazy loading
-- [ ] Animation refinements with LazyMotion
-- [ ] SEO meta tags and structured data
-- [ ] Accessibility testing and improvements
-- [ ] Performance optimization
-- [ ] Cross-browser testing
-
-#### Deliverables:
-- Performance-optimized website
-- SEO-ready meta tags
-- Accessibility compliant (WCAG 2.1 AA)
-- Cross-browser compatibility
-
----
-
-## Technical Implementation Strategy
-
-### Component Architecture
-```
-App Layout
-├── Header (Navigation + Language Switcher)
-├── Main Content
-│   ├── HeroSection
-│   ├── AboutSection
-│   ├── ProcessesSection
-│   ├── EquipmentSection
-│   ├── QualitySection
-│   └── ContactSection
-└── Footer
+#### Astro-Specific Configurations:
+```typescript
+// astro.config.mjs
+export default defineConfig({
+  site: 'https://taliman.com',
+  i18n: {
+    defaultLocale: 'fa',
+    locales: ['fa', 'en'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
+  integrations: [
+    tailwind({ applyBaseStyles: false }),
+    sitemap({ i18n: true }),
+    compress()
+  ]
+});
 ```
 
-### Data Flow
-1. **Static Content**: Stored in translation files (`messages/`)
-2. **Dynamic Content**: Generated at build time (SSG)
-3. **Form Data**: Client-side validation, future server submission
-4. **State Management**: React hooks for local state, no external store needed
-
-### Performance Strategy
-1. **Static Generation**: Pre-render all content at build time
-2. **Image Optimization**: WebP/AVIF with responsive sizing
-3. **Code Splitting**: Automatic with Next.js + manual for heavy components
-4. **Bundle Optimization**: LazyMotion for animations, tree-shaking
-5. **Caching**: Aggressive caching headers for static assets
-
-## Content Strategy
-
-### Section Content Requirements
-
-#### Hero Section
-- **Primary headline** in both languages
-- **Subheading** describing CHQ processing expertise
-- **Call-to-action buttons** (Explore Capabilities, Contact Us)
-- **Background image** (equipment or facility)
-
-#### About Section
-- **Company overview** and history
-- **Mission statement**
-- **Core values** (Quality, Innovation, Reliability)
-- **Key statistics** or achievements
-
-#### Processes Section
-- **CHQ process overview**
-- **5-step process flow** with icons
-- **Technical specifications**
-- **Applications and use cases**
-
-#### Equipment Section
-- **Bell-type furnaces** description and specs
-- **Drawing lines** capabilities
-- **Quality control equipment**
-- **Technical diagrams** or photos
-
-#### Quality Section
-- **Certifications** (ISO 9001, ISO/TS 16949)
-- **Compliance standards**
-- **Quality processes** and controls
-- **Continuous improvement**
-
-#### Contact Section
-- **Contact form** (Name, Email, Company, Phone, Message)
-- **Company contact information**
-- **Business hours**
-- **Location and map** (future: embedded map)
-
-### Multilingual Content
-- **Farsi (Primary)**: Complete, native translation
-- **English (Secondary)**: Professional B2B tone
-- **Technical Terms**: Consistent across languages
-- **SEO Content**: Optimized keywords for each language
-
-## Design System
-
-### Colors
-- **Primary**: Blue tones for trust and professionalism
-- **Industrial**: Gray tones for technical/industrial feel
-- **Accent**: Subtle accent colors for CTAs and highlights
-- **Neutral**: Clean whites and grays for background
-
-### Typography
-- **English**: Inter font family (clean, modern)
-- **Farsi**: Vazirmatn (readable, professional Persian font)
-- **Hierarchy**: Clear heading sizes and spacing
-- **Responsive**: Fluid typography scales
-
-### Spacing & Layout
-- **Grid**: Consistent 12-column grid
-- **Containers**: Max-width responsive containers
-- **Sections**: Generous vertical spacing
-- **Mobile-first**: Progressive enhancement approach
-
-### Animation & Interaction
-- **Scroll Animations**: Subtle fade-in and slide effects
-- **Hover States**: Button and card interactions
-- **Loading States**: Skeleton screens and spinners
-- **Transitions**: Smooth state changes
-
-## Quality Assurance
-
-### Performance Targets
-- **First Contentful Paint**: < 1.5s
-- **Largest Contentful Paint**: < 2.5s
-- **Cumulative Layout Shift**: < 0.1
-- **Time to Interactive**: < 3.0s
-- **Bundle Size**: Initial JS < 200KB
-
-### Accessibility Requirements
-- **WCAG 2.1 AA** compliance
-- **Keyboard navigation** for all interactive elements
-- **Screen reader** compatibility
-- **Color contrast** ratios 4.5:1 minimum
-- **Focus management** and indicators
-
-### Browser Support
-- **Chrome** 90+
-- **Firefox** 88+
-- **Safari** 14+
-- **Edge** 90+
-- **Mobile browsers** (iOS Safari, Chrome Mobile)
-
-### Testing Checklist
-- [ ] Functional testing (all features work)
-- [ ] Responsive testing (mobile, tablet, desktop)
-- [ ] Cross-browser testing
-- [ ] Accessibility testing (automated + manual)
-- [ ] Performance testing (Lighthouse)
-- [ ] Internationalization testing (both languages)
-- [ ] Form validation testing
-- [ ] SEO testing (meta tags, structure)
-
-## Launch Readiness
-
-### Pre-Launch Checklist
-- [ ] All content sections complete
-- [ ] Contact form functional
-- [ ] Performance targets met
-- [ ] Accessibility compliance verified
-- [ ] SEO optimization complete
-- [ ] Cross-browser testing passed
-- [ ] Mobile responsiveness confirmed
-- [ ] Both languages tested
-- [ ] Error handling implemented
-- [ ] Analytics configured (if applicable)
-
-### Deployment Requirements
-- [ ] Production build successful
-- [ ] Static files optimized
-- [ ] Environment variables configured
-- [ ] Domain and hosting ready
-- [ ] SSL certificate installed
-- [ ] CDN configured (if using external assets)
-
-### Post-Launch Monitoring
-- [ ] Core Web Vitals monitoring
-- [ ] Contact form submissions working
-- [ ] Analytics data collection
-- [ ] Error monitoring and logging
-- [ ] Performance monitoring
-- [ ] User feedback collection
-
-## Success Metrics
-
-### Technical Metrics
-- **Performance Score**: Lighthouse score 90+
-- **Accessibility Score**: 100% automated testing
-- **SEO Score**: 90+ with proper indexing
-- **Bundle Size**: Under performance budgets
-- **Core Web Vitals**: All metrics in green
-
-### Business Metrics
-- **Contact Form**: Functional with validation
-- **Language Usage**: Track Persian vs English preference
-- **Page Engagement**: Scroll depth and time on page
-- **Mobile Usage**: Responsive experience metrics
-- **Load Time**: Fast loading across all devices
-
-## Risk Mitigation
-
-### Technical Risks
-1. **RTL Layout Issues**: Early testing with Persian content
-2. **Performance Problems**: Regular monitoring and optimization
-3. **Cross-browser Bugs**: Comprehensive testing matrix
-4. **Accessibility Issues**: Automated and manual testing
-
-### Content Risks
-1. **Translation Accuracy**: Native speaker review
-2. **Technical Terminology**: Industry expert validation
-3. **Content Length**: Design flexibility for text expansion
-4. **Image Assets**: Professional placeholder strategy
-
-### Timeline Risks
-1. **Scope Creep**: Clear MVP boundaries
-2. **Technical Complexity**: Phased development approach
-3. **Quality Issues**: Built-in testing phases
-4. **Resource Constraints**: Realistic timeline and buffers
+#### Deliverables:
+- Working Astro development server
+- Automatic bilingual routing (`/` for Farsi, `/en/` for English)
+- Content Collections schema definition
+- Basic layout components
 
 ---
 
-*This MVP plan provides a clear roadmap for delivering a production-ready website that meets all core requirements while maintaining high quality and performance standards.*
+### Phase 2: Content Collections & Static Pages (Day 2-3)
+**Goal**: Leverage Astro's Content Collections for type-safe data management
+
+#### Content Structure:
+```
+src/content/
+├── config.ts                 # Content Collections schemas
+├── pages/
+│   ├── about.md              # Company information
+│   ├── processes.md          # CHQ processing details
+│   ├── equipment.md          # Technical specifications
+│   └── quality.md           # Certifications
+├── services/                # Service offerings
+└── translations/            # i18n content
+```
+
+#### Key Features Implementation:
+- **Content Collections API**: Type-safe content with Zod schemas
+- **Markdown/MDX Pages**: Rapid content creation with frontmatter
+- **Automatic Routing**: File-based routing for instant page creation
+- **Built-in i18n**: Content translation management
+
+#### Tasks:
+- [ ] Define Content Collections schemas for all data types
+- [ ] Create Markdown templates for each major section
+- [ ] Implement dynamic page generation from collections
+- [ ] Setup bilingual content structure with proper SEO
+
+#### Deliverables:
+- Complete static page structure
+- Type-safe content management
+- Bilingual content routing
+- Automatic sitemap generation
+
+---
+
+### Phase 3: Styling & RTL Support (Day 4)
+**Goal**: Implement Tailwind CSS with comprehensive RTL support
+
+#### Tailwind Configuration:
+```javascript
+// tailwind.config.mjs
+export default {
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  theme: {
+    extend: {
+      fontFamily: {
+        'vazir': ['Vazirmatn', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif']
+      }
+    }
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms')
+  ]
+}
+```
+
+#### RTL Implementation Strategy:
+- **CSS Logical Properties**: `margin-inline-start` instead of `margin-left`
+- **Tailwind RTL Plugin**: Automatic directional classes
+- **Font Loading**: Optimal font strategy for Persian/English
+- **Layout Mirroring**: Automatic layout direction switching
+
+#### Tasks:
+- [ ] Configure Tailwind with RTL support
+- [ ] Implement responsive design system
+- [ ] Setup font loading optimization
+- [ ] Create reusable UI components in Astro format
+- [ ] Test RTL layout across all sections
+
+#### Deliverables:
+- Complete responsive design system
+- RTL-compatible layout components
+- Optimized font loading
+- Mobile-first responsive implementation
+
+---
+
+### Phase 4: Server Islands for Forms (Day 5)
+**Goal**: Implement contact forms using Astro's Server Islands
+
+#### Server Islands Strategy:
+```typescript
+// src/islands/ContactForm.tsx
+export default function ContactForm() {
+  // Hydrated React component for form interactivity
+  // Only this component loads JavaScript
+}
+```
+
+#### Implementation:
+- **Minimal JavaScript**: Only contact form requires client-side code
+- **Progressive Enhancement**: Forms work without JavaScript
+- **Server-Side Validation**: Secure form processing
+- **Type-Safe Forms**: Zod schemas for validation
+
+#### Tasks:
+- [ ] Create Server Island for contact form
+- [ ] Implement React Hook Form with Zod validation
+- [ ] Setup form submission endpoints
+- [ ] Add loading states and success/error feedback
+- [ ] Test form functionality across browsers
+
+#### Deliverables:
+- Fully functional contact forms
+- Server-side form processing
+- Client-side validation and UX
+- Email integration ready
+
+---
+
+### Phase 5: SEO Optimization & Deployment (Day 6-7)
+**Goal**: Production optimization and launch preparation
+
+#### Astro SEO Advantages:
+- **Automatic Sitemap**: Built-in sitemap generation with i18n
+- **Meta Tag Management**: Component-based SEO optimization
+- **Structured Data**: JSON-LD generation for rich snippets
+- **Performance by Default**: Static generation ensures perfect Core Web Vitals
+
+#### Optimization Tasks:
+- [ ] Implement SEO component with schema.org markup
+- [ ] Configure automatic image optimization
+- [ ] Setup RSS feeds (if needed)
+- [ ] Implement proper canonical URLs for bilingual content
+- [ ] Configure compression and caching headers
+
+#### Deployment Preparation:
+- [ ] Build optimization (`astro build`)
+- [ ] Static asset optimization
+- [ ] VPS deployment configuration
+- [ ] CDN setup for global performance
+- [ ] SSL and security headers
+
+#### Deliverables:
+- Production-optimized build
+- Perfect Lighthouse scores
+- SEO-ready multilingual site
+- Production deployment
+
+---
+
+## Content-First Development Approach
+
+### Structured Content Management
+```typescript
+// src/content/config.ts
+const servicesCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.object({
+      fa: z.string(),
+      en: z.string()
+    }),
+    description: z.object({
+      fa: z.string(),
+      en: z.string()
+    }),
+    specifications: z.array(z.string()),
+    image: z.string().optional()
+  })
+});
+```
+
+### Rapid Content Creation
+- **Markdown Workflows**: Content creators work in familiar Markdown
+- **Frontmatter Validation**: Type-safe content with automatic validation
+- **Hot Reloading**: Instant preview of content changes
+- **Asset Management**: Automatic image optimization and responsive images
+
+### Multilingual Content Strategy
+- **File-based Organization**: `content/fa/` and `content/en/` directories
+- **Shared Assets**: Common images and media across languages
+- **SEO Optimization**: Automatic hreflang tags and language-specific sitemaps
+
+## Performance-First MVP Architecture
+
+### Zero-Configuration Performance
+- **Static Generation**: All pages pre-rendered at build time
+- **Image Optimization**: Built-in responsive images with WebP/AVIF
+- **Bundle Optimization**: Automatic code splitting and tree shaking
+- **Core Web Vitals**: Perfect scores without manual optimization
+
+### Selective Hydration Strategy
+```astro
+---
+// Only hydrate interactive components
+import ContactForm from '../islands/ContactForm.tsx';
+import LanguageSwitcher from '../islands/LanguageSwitcher.tsx';
+---
+
+<Layout>
+  <!-- Static content renders without JavaScript -->
+  <HeroSection />
+  <AboutSection />
+  
+  <!-- Only these components load JavaScript -->
+  <ContactForm client:load />
+  <LanguageSwitcher client:idle />
+</Layout>
+```
+
+### Performance Targets (Guaranteed with Astro)
+- **First Contentful Paint**: < 0.8s
+- **Largest Contentful Paint**: < 1.2s  
+- **Cumulative Layout Shift**: 0
+- **Time to Interactive**: < 1.5s
+- **Total Bundle Size**: < 50KB JavaScript
+
+## Rapid Development Features
+
+### File-Based Everything
+- **Pages**: `src/pages/` maps directly to URLs
+- **API Routes**: `src/pages/api/` for server endpoints
+- **Components**: Astro components with zero runtime overhead
+- **Content**: Markdown files become pages automatically
+
+### Developer Experience
+- **Hot Module Replacement**: Instant updates during development
+- **TypeScript Integration**: Full type safety without configuration
+- **VS Code Integration**: First-class editor support
+- **Error Overlay**: Detailed error reporting and debugging
+
+### Built-in Integrations
+```bash
+npx astro add tailwind          # Instant Tailwind setup
+npx astro add sitemap          # Automatic SEO sitemap
+npx astro add compress         # Asset compression
+npx astro add partytown        # Third-party script optimization
+```
+
+## MVP Success Criteria
+
+### Technical Excellence
+- [x] **Lighthouse Score**: 100/100/100/100 (Performance/Accessibility/Best Practices/SEO)
+- [ ] **Bundle Size**: < 50KB total JavaScript
+- [ ] **Load Time**: < 1s First Contentful Paint
+- [ ] **Accessibility**: WCAG 2.1 AA compliance
+- [ ] **SEO**: Perfect structured data and meta tags
+
+### Functional Requirements  
+- [ ] **Static Pages**: All content sections fully functional
+- [ ] **Bilingual Support**: Complete Farsi/English implementation
+- [ ] **Contact Forms**: Server-side processing with validation
+- [ ] **Mobile Experience**: Perfect responsive design with RTL
+- [ ] **Search Engine Ready**: Automatic sitemaps and proper indexing
+
+### Production Readiness
+- [ ] **VPS Deployment**: Optimized static build deployment
+- [ ] **CDN Integration**: Global content delivery optimization  
+- [ ] **SSL Security**: HTTPS with security headers
+- [ ] **Monitoring Ready**: Performance and error tracking setup
+- [ ] **Maintenance Workflow**: Content update and deployment process
+
+## Risk Mitigation with Astro
+
+### Technical Risk Elimination
+1. **Performance Issues**: Eliminated by static-first architecture
+2. **Bundle Size Problems**: Prevented by zero-JavaScript default
+3. **SEO Complications**: Solved by built-in optimization features
+4. **Accessibility Issues**: Prevented by semantic HTML generation
+
+### Development Risk Reduction
+1. **Complex Setup**: Minimized by Astro's conventions and integrations
+2. **RTL Support**: Simplified by CSS logical properties and Tailwind
+3. **Content Management**: Streamlined by Content Collections API
+4. **Deployment Complexity**: Reduced by static build output
+
+### Timeline Risk Management
+1. **Scope Creep**: Prevented by clear static-first boundaries
+2. **Technical Debt**: Minimized by framework conventions
+3. **Performance Optimization**: Built-in by default
+4. **Testing Complexity**: Reduced by static generation
+
+---
+
+## Astro 5.x Advantage Summary
+
+**Faster Development**: File-based routing, built-in optimizations, zero configuration
+**Better Performance**: Static-first architecture, selective hydration, automatic optimization  
+**Simpler Maintenance**: Content Collections, type safety, hot reloading
+**Production Ready**: Built-in SEO, security, and performance features
+
+*This Astro-focused MVP plan leverages the framework's strengths to deliver a production-ready bilingual corporate website faster than traditional approaches while maintaining perfect performance and SEO scores.*
