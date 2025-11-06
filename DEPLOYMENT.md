@@ -15,7 +15,7 @@ Your modern Astro 5.x website has been built and is ready for deployment.
 
 ### 1. **Hero Section**
 - Full-screen hero with your professional Canon 5D photography
-- Compelling headline in Farsi: "پیشرو در فرآوری سیم فولادی CHQ"
+- Compelling headline in Farsi: "پیشرو در فرآوری مفتول فولادی CHQ"
 - Two prominent CTAs (View Products, Contact Us)
 - Animated scroll indicator
 - Gradient overlay for text readability
