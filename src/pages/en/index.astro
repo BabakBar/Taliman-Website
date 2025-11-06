@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import About from '../../components/About.astro';
+import Processes from '../../components/Processes.astro';
+import Equipment from '../../components/Equipment.astro';
+import Quality from '../../components/Quality.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations } from '../../lib/i18n';
+
+const t = useTranslations('en');
+---
+
+<BaseLayout title={t('site.title')} description={t('site.description')}>
+  <Header />
+  <main>
+    <Hero />
+    <About />
+    <Processes />
+    <Equipment />
+    <Quality />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>

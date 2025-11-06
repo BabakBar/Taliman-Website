@@ -1,0 +1,105 @@
+---
+import { getLangFromUrl, useTranslations } from '../lib/i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const standards = [
+  'ISO 9001:2015',
+  'IATF 16949',
+  'DIN EN 10277',
+  'ASTM A29/A29M',
+];
+---
+
+<section class="section gradient-industrial text-white" id="quality">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="heading-2 mb-6 text-balance">{t('quality.title')}</h2>
+      <p class="text-lg text-white/90">
+        {t('quality.subtitle')}
+      </p>
+    </div>
+
+    <!-- Standards Grid -->
+    <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        standards.map((standard) => (
+          <div class="flex items-center justify-center rounded-xl border-2 border-white/20 bg-white/10 px-6 py-8 backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/20">
+            <span class="text-xl font-bold">{standard}</span>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Quality Features -->
+    <div class="mt-16 grid gap-8 md:grid-cols-3">
+      <div class="text-center">
+        <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white/10">
+          <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="heading-4 mb-2">
+          {lang === 'fa' ? 'کنترل ۱۰۰٪ محصولات' : '100% Product Testing'}
+        </h3>
+        <p class="text-white/80">
+          {
+            lang === 'fa'
+              ? 'آزمایش کامل تمامی محصولات قبل از ارسال'
+              : 'Complete testing of all products before delivery'
+          }
+        </p>
+      </div>
+
+      <div class="text-center">
+        <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white/10">
+          <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+            ></path>
+          </svg>
+        </div>
+        <h3 class="heading-4 mb-2">
+          {lang === 'fa' ? 'گواهینامه‌های بین‌المللی' : 'International Certifications'}
+        </h3>
+        <p class="text-white/80">
+          {
+            lang === 'fa'
+              ? 'دارای استانداردهای معتبر جهانی'
+              : 'Certified by international standards'
+          }
+        </p>
+      </div>
+
+      <div class="text-center">
+        <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white/10">
+          <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <h3 class="heading-4 mb-2">
+          {lang === 'fa' ? 'تجهیزات پیشرفته' : 'Advanced Equipment'}
+        </h3>
+        <p class="text-white/80">
+          {
+            lang === 'fa'
+              ? 'آزمایشگاه مجهز به دستگاه‌های آزمون مدرن'
+              : 'Laboratory equipped with modern testing devices'
+          }
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

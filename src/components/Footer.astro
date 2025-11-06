@@ -1,0 +1,76 @@
+---
+import { getLangFromUrl, useTranslations } from '../lib/i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-industrial-900 text-white">
+  <div class="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-8 md:grid-cols-3">
+      <!-- Company Info -->
+      <div>
+        <div class="mb-4 flex items-center gap-3">
+          <img src="/images/logo.png" alt="Taliman Logo" class="h-10 w-auto" />
+          <span class="text-lg font-bold">
+            {lang === 'fa' ? 'تالیمان ساخته‌های فلزی کارا' : 'Taliman Sakhtehaye Felezi Kara'}
+          </span>
+        </div>
+        <p class="text-sm text-industrial-300">
+          {t('site.description')}
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider">
+          {t('footer.services')}
+        </h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="/#processes" class="text-industrial-300 hover:text-white">
+              {t('nav.processes')}
+            </a>
+          </li>
+          <li>
+            <a href="/#equipment" class="text-industrial-300 hover:text-white">
+              {t('nav.equipment')}
+            </a>
+          </li>
+          <li>
+            <a href="/#quality" class="text-industrial-300 hover:text-white">
+              {t('nav.quality')}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider">
+          {t('footer.contact')}
+        </h3>
+        <ul class="space-y-2 text-sm text-industrial-300">
+          <li>
+            {lang === 'fa'
+              ? 'ایران، تهران'
+              : 'Tehran, Iran'}
+          </li>
+          <li>
+            <a href="mailto:info@taliman.com" class="hover:text-white">
+              info@taliman.com
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-8 border-t border-industrial-800 pt-8 text-center text-sm text-industrial-400">
+      <p>
+        © {currentYear} {t('site.title')}. {t('footer.rights')}.
+      </p>
+    </div>
+  </div>
+</footer>
