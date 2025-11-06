@@ -1,0 +1,61 @@
+---
+import { getLangFromUrl, useTranslations } from '../lib/i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const processes = [
+  {
+    title: t('processes.annealing.title'),
+    description: t('processes.annealing.description'),
+    image: '/images/hero/hero-3.jpg',
+  },
+  {
+    title: t('processes.drawing.title'),
+    description: t('processes.drawing.description'),
+    image: '/images/hero/hero-1.jpg',
+  },
+  {
+    title: t('processes.quality.title'),
+    description: t('processes.quality.description'),
+    image: '/images/hero/hero-2.jpg',
+  },
+];
+---
+
+<section class="section bg-industrial-50" id="processes">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="heading-2 mb-6 text-balance">{t('processes.title')}</h2>
+      <p class="text-lg text-industrial-600">
+        {t('processes.subtitle')}
+      </p>
+    </div>
+
+    <!-- Processes Grid -->
+    <div class="mt-16 grid gap-8 lg:grid-cols-3">
+      {
+        processes.map((process, index) => (
+          <div class="card group overflow-hidden p-0 hover:shadow-xl">
+            <div class="aspect-video overflow-hidden">
+              <img
+                src={process.image}
+                alt={process.title}
+                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+            </div>
+            <div class="p-6">
+              <div class="mb-2 flex items-center gap-2">
+                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-600">
+                  {index + 1}
+                </span>
+                <h3 class="heading-4">{process.title}</h3>
+              </div>
+              <p class="text-industrial-600">{process.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -5,9 +5,29 @@
   "description": "Corporate website for Taliman Sakhtehaye Felezi Kara - CHQ wire processing specialists",
   "author": "Taliman Development Team",
   "license": "UNLICENSED",
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {},
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.2",
+    "astro": "^5.0.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
+    "prettier": "^3.4.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.9"
+  },
   "engines": {
     "node": ">=18.17.0",
     "bun": ">=1.0.0"

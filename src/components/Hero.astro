@@ -1,0 +1,49 @@
+---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../lib/i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section
+  class="relative min-h-screen flex items-center justify-center overflow-hidden"
+  id="home"
+>
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img
+      src="/images/hero/hero-2.jpg"
+      alt="Taliman Manufacturing Facility"
+      class="h-full w-full object-cover brightness-50"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-industrial-900/50 to-industrial-900/80">
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="container relative z-10 mx-auto px-4 py-32 text-center sm:px-6 lg:px-8">
+    <div class="animate-in mx-auto max-w-4xl">
+      <h1 class="heading-1 mb-6 text-white text-balance">
+        {t('hero.title')}
+      </h1>
+      <p class="mx-auto mb-10 max-w-2xl text-lg text-white/90 md:text-xl">
+        {t('hero.subtitle')}
+      </p>
+      <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
+        <a href={getLocalizedPath('/#processes', lang)} class="btn-white">
+          {t('hero.cta.primary')}
+        </a>
+        <a href={getLocalizedPath('/#contact', lang)} class="btn-secondary border-white text-white hover:bg-white hover:text-primary-600">
+          {t('hero.cta.secondary')}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
+    <div class="flex h-12 w-8 items-start justify-center rounded-full border-2 border-white/50 p-2">
+      <div class="h-2 w-1 animate-bounce rounded-full bg-white"></div>
+    </div>
+  </div>
+</section>
