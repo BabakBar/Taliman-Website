@@ -1,375 +1,217 @@
-# Product Requirements Document (PRD)
+# Taliman Website — Brand Implementation PRD (v2.0)
 
-# Taliman Sakhtehaye Felezi Kara Website
+_Last updated: November 30, 2025_
 
-## 1. Executive Summary
+## 0. Document Control
 
-### Project Overview
-
-Develop a production-ready, bilingual corporate website for Taliman Sakhtehaye Felezi Kara, a specialized metal processing company focused on CHQ (Cold Heading Quality) wire rod processing for cold forging and automotive fasteners. Built with Astro 5.x for superior performance and SEO optimization targeting the Persian B2B market.
-
-### Business Objectives
-
-- Establish professional online presence for B2B customers with superior SEO performance
-- Showcase specialized equipment and processing capabilities through optimized static content
-- Generate qualified leads from automotive and fastener industries with faster page loads
-- Support business expansion in domestic and international markets
-- Demonstrate quality standards and certifications with enhanced Core Web Vitals
-- Achieve competitive advantage through industry-leading website performance
-
-## 2. Product Scope
-
-### Target Audience
-
-**Primary Users:**
-- Automotive manufacturers and suppliers (international B2B focus)
-- Fastener manufacturers seeking CHQ wire processing
-- Industrial procurement managers requiring fast technical specification access
-- Quality assurance professionals needing certification verification
-
-**Secondary Users:**
-- Industry partners and suppliers
-- Potential investors evaluating technical capabilities
-- Job seekers and industry professionals
-- Search engines (prioritized for Persian market SEO)
-
-### Core Value Proposition
-
-"Leading provider of precision CHQ wire rod processing with state-of-the-art Bell-type Annealing & Spheroidizing furnaces and drawing lines, delivering lightning-fast technical specifications and uncompromising quality standards through our industry-leading digital presence."
-
-## 3. Functional Requirements
-
-### 3.1 Core Features
-
-#### Navigation & Structure
-
-- **Built-in i18n Routing**: Native Astro internationalization for English and Farsi
-- **Static-First Architecture**: Pre-rendered pages for maximum performance
-- **Mobile-First Responsive Design**: Optimized for all device sizes with RTL support
-- **Accessibility Compliance**: WCAG 2.1 AA standards with zero-runtime JavaScript
-- **File-Based Routing**: Intuitive URL structure for SEO optimization
-
-#### Content Architecture
-
-1. **Hero Section**
-   - Company name and tagline
-   - Key value propositions
-   - Call-to-action buttons
-   - Optimized background imagery with built-in image optimization
-
-2. **About Section**
-   - Company history and mission (Content Collections)
-   - Leadership team
-   - Core values and philosophy
-   - Industry expertise and experience
-
-3. **Processes Section**
-   - CHQ wire rod processing overview (Content Layer API)
-   - Cold forging applications
-   - Technical specifications with structured data
-   - Process flow diagrams
-
-4. **Equipment Section**
-   - Bell-type Annealing & Spheroidizing furnaces (Product Catalog)
-   - Precision drawing lines
-   - Quality control equipment
-   - Technical capabilities and capacities
-
-5. **Quality Section**
-   - Industry certifications (Content Collections)
-   - Quality standards compliance
-   - Testing procedures
-   - Quality assurance processes
-
-6. **Contact Section**
-   - Contact form with Server Island integration
-   - Company address and location
-   - Phone, email, and social media links
-   - Interactive map integration
-
-#### Interactive Elements
-
-- **Language Switcher**: Native Astro i18n routing
-- **Contact Form**: Server Island for dynamic form handling
-- **Image Gallery**: Equipment and facility showcase with View Transitions
-- **Smooth Animations**: CSS-based animations with optional View Transitions API
-- **Zero-JavaScript by Default**: Enhanced performance with selective hydration
-
-### 3.2 Technical Requirements
-
-#### Performance Standards (Enhanced for Astro)
-
-- **Page Load Speed**: < 1.5 seconds on 3G networks
-- **Core Web Vitals**: LCP < 1.5s, FID < 50ms, CLS < 0.05
-- **Lighthouse Score**: 100/100 across all categories
-- **SEO Score**: 100/100 on Google PageSpeed Insights
-- **First Contentful Paint**: < 1 second
-
-#### Browser Support
-
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-- Mobile browsers (iOS Safari, Chrome Mobile)
-- Progressive enhancement for older browsers
-
-#### Technology Stack (Astro 5.x Foundation)
-
-- **Framework**: Astro 5.x with static-first architecture
-- **Build System**: Vite (built-in with Astro)
-- **Package Manager**: Bun for enhanced development experience
-- **Language**: TypeScript-first approach
-- **Styling**: Tailwind CSS with RTL support and CSS logical properties
-- **Icons**: Lucide React (selective hydration)
-- **Internationalization**: Astro built-in i18n routing
-- **Forms**: Server Islands with progressive enhancement
-- **Content Management**: Content Layer API and Content Collections
-- **Image Optimization**: Built-in Astro image optimization
-- **View Transitions**: Native Astro View Transitions API
-
-## 4. Non-Functional Requirements
-
-### 4.1 Design Requirements
-
-#### Visual Design
-
-- **Brand Colors**: Professional industrial palette (blues, grays, metallics)
-- **Typography**: Clean, readable fonts with comprehensive Farsi character support
-- **Layout**: CSS Grid-based responsive design with logical properties
-- **Imagery**: Optimized WebP/AVIF with automatic format selection
-- **UI Components**: Consistent design system with zero-runtime overhead
-
-#### User Experience
-
-- **Navigation**: Smooth transitions with View Transitions API
-- **Language Switching**: Instant language change through static routing
-- **Form UX**: Progressive enhancement with Server Island fallbacks
-- **Loading Experience**: Instant page loads with optimized static delivery
-- **Error Handling**: Static error pages with graceful degradation
-
-### 4.2 Content Requirements
-
-#### Multilingual Content Strategy
-
-- **English Content**: Technical B2B optimization for international markets
-- **Farsi Content**: Native RTL implementation with proper SEO for Persian market
-- **Content Collections**: Structured content management for technical specifications
-- **SEO Optimization**: Enhanced meta tags and structured data for manufacturing industry
-- **Content Layer Benefits**: Streamlined product catalog management
-
-#### Media Assets Strategy
-
-- **Photography**: Automatic format optimization (WebP/AVIF)
-- **Equipment Images**: Progressive loading with placeholder generation
-- **Process Diagrams**: SVG optimization with inline delivery
-- **Company Photos**: Responsive image delivery with size optimization
-- **Asset Pipeline**: Built-in Astro image processing and optimization
-
-### 4.3 Security & Privacy
-
-#### Data Protection
-
-- **Form Data**: Server Island secure processing
-- **Static Security**: Reduced attack surface through static delivery
-- **Privacy Compliance**: GDPR-ready with minimal data collection
-- **No Client-Side Storage**: Enhanced privacy through server-side processing
-- **Rate Limiting**: Built-in protection for contact forms
-
-## 5. User Stories
-
-### Enhanced User Flows for Astro Architecture
-
-#### Performance-Conscious Procurement Manager
-
-```
-As an automotive procurement manager with limited time,
-I want to access Taliman's technical specifications instantly,
-So that I can evaluate suppliers efficiently without waiting for page loads.
-
-Acceptance Criteria:
-- Equipment specifications load in under 1 second
-- Technical data is immediately available without JavaScript
-- Mobile performance matches desktop experience
-- Offline browsing capabilities for cached content
-```
-
-#### International Quality Professional
-
-```
-As an international quality assurance professional,
-I want to review certifications and processes in my preferred language,
-So that I can assess compliance accurately and quickly.
-
-Acceptance Criteria:
-- Language switching preserves current page context
-- Technical translations are accurate and consistent
-- Certification documents load instantly
-- Search engine can properly index content in both languages
-```
-
-#### Mobile-First International Partner
-
-```
-As an international business partner accessing from mobile devices,
-I want the same fast, professional experience regardless of my connection,
-So that I can evaluate Taliman's capabilities on-the-go.
-
-Acceptance Criteria:
-- Mobile performance score of 100/100
-- Identical functionality across all devices
-- Offline access to essential information
-- Progressive enhancement for advanced features
-```
-
-## 6. Success Metrics
-
-### Business Metrics (Enhanced)
-
-- **Lead Generation**: 20+ qualified inquiries per month (improved conversion)
-- **Engagement**: 3+ minutes average session duration
-- **Search Visibility**: 75% increase in Persian market organic search
-- **International Reach**: 40% increase in international traffic
-- **Mobile Conversion**: 25% higher mobile form completion rate
-
-### Technical Metrics (Astro-Optimized)
-
-- **Performance**: 100/100 Lighthouse scores across all categories
-- **Core Web Vitals**: Green zone with industry-leading metrics
-- **SEO**: Top position for Persian CHQ wire processing keywords
-- **Uptime**: 99.99% availability with CDN distribution
-- **Bundle Size**: < 50KB initial JavaScript (Server Islands only)
-
-### User Experience Metrics
-
-- **Bounce Rate**: < 25% (improved from static-first approach)
-- **Mobile Performance**: 95%+ mobile usability score
-- **Language Distribution**: Track Persian vs English market penetration
-- **Form Conversion**: > 25% contact form completion rate
-- **Page Speed Satisfaction**: < 1.5s average load time
-
-## 7. Technical Architecture Benefits
-
-### Astro 5.x Advantages for Manufacturing Industry
-
-#### Content Layer API Benefits
-- **Product Catalogs**: Structured equipment and specification management
-- **Technical Documentation**: Streamlined process documentation
-- **Certification Management**: Organized quality standard presentations
-- **Multi-language Content**: Efficient translation management
-
-#### Server Islands Strategy
-- **Contact Forms**: Dynamic functionality without full-page hydration
-- **Interactive Elements**: Selective enhancement for specific components
-- **Performance**: Zero-JavaScript default with targeted interactivity
-- **SEO**: Full content accessibility to search engines
-
-#### Static-First Manufacturing Benefits
-- **B2B Performance**: Instant access to technical specifications
-- **International Reach**: CDN-optimized global delivery
-- **Reliability**: No server dependencies for content delivery
-- **Cost Efficiency**: Reduced hosting and maintenance overhead
-
-## 8. Project Timeline & Milestones
-
-### Phase 1: Astro Foundation (Week 1)
-
-- [ ] Astro 5.x project initialization with Bun
-- [ ] Content Collections structure for technical data
-- [ ] i18n routing configuration for Persian/English
-- [ ] Tailwind CSS with RTL support setup
-- [ ] Content Layer API implementation
-
-### Phase 2: Static Content Development (Week 2)
-
-- [ ] Hero and About sections with Content Collections
-- [ ] Processes section with technical specifications
-- [ ] Equipment catalog with Content Layer API
-- [ ] Quality certifications with structured data
-- [ ] Image optimization pipeline implementation
-
-### Phase 3: Interactive Enhancement (Week 3)
-
-- [ ] Contact form Server Island implementation
-- [ ] View Transitions API integration
-- [ ] Performance optimization and Core Web Vitals
-- [ ] SEO enhancement with structured data
-- [ ] Cross-browser testing and accessibility
-
-### Phase 4: Launch Optimization (Week 4)
-
-- [ ] Final performance tuning and Lighthouse optimization
-- [ ] Persian market SEO implementation
-- [ ] CDN setup and deployment optimization
-- [ ] Analytics integration and monitoring
-- [ ] Documentation and maintenance procedures
-
-## 9. Risk Assessment
-
-### Technical Risks (Astro-Specific)
-
-- **Server Islands Complexity**: Dynamic form integration challenges
-  - *Mitigation*: Progressive enhancement fallbacks, thorough testing
-- **i18n Implementation**: RTL layout with content routing
-  - *Mitigation*: CSS logical properties, early RTL testing
-- **Content Layer Learning Curve**: New API adoption
-  - *Mitigation*: Comprehensive documentation review, prototype development
-
-### Performance Risks
-
-- **Image Asset Size**: Industrial photography optimization
-  - *Mitigation*: Astro image optimization, WebP/AVIF conversion
-- **Third-party Dependencies**: External service integration
-  - *Mitigation*: Minimal external dependencies, local asset hosting
-
-### SEO and Market Risks
-
-- **Persian Market Competition**: Technical keyword ranking
-  - *Mitigation*: Comprehensive Persian SEO strategy, structured data
-- **International B2B Expectations**: Performance standards
-  - *Mitigation*: Industry-leading performance targets, continuous monitoring
-
-## 10. Assumptions & Dependencies
-
-### Technical Assumptions
-
-- Astro 5.x provides stable Content Layer API
-- Bun package manager offers reliable dependency management
-- Server Islands support required form functionality
-- Modern browser support for View Transitions API
-- CDN supports Astro static output optimization
-
-### Content Dependencies
-
-- Professional industrial photography for image optimization
-- Technical specifications for Content Collections structure
-- Accurate Persian translations for i18n implementation
-- Quality certifications for structured data markup
-- Company information for contact form Server Island
-
-## 11. Future Considerations
-
-### Phase 2 Enhancements (Astro Ecosystem)
-
-- **CMS Integration**: Headless CMS with Content Layer API
-- **Customer Portal**: Authenticated sections with Server Islands
-- **Advanced Analytics**: Performance monitoring and conversion tracking
-- **Multi-region Optimization**: Geographic content delivery optimization
-
-### Scalability Planning
-
-- **Additional Languages**: Arabic, German market expansion
-- **Content Personalization**: Industry-specific content delivery
-- **Advanced Search**: Full-text search with static generation
-- **API Integration**: ERP system connectivity through Server Islands
-
-### Competitive Advantages
-
-- **Industry-Leading Performance**: Sub-second load times for B2B advantage
-- **Persian Market Dominance**: Superior SEO for domestic market
-- **International Accessibility**: Optimized global content delivery
-- **Maintenance Efficiency**: Reduced operational overhead through static architecture
+| Field | Detail |
+| --- | --- |
+| Author | Codex (based on Branding v2.0) |
+| Stakeholders | CEO, Marketing Lead, Product, Engineering |
+| Status | Draft for review |
+| Reference Docs | `docs/Branding/branding.md`, `docs/CONTENT_STRATEGY.md`, repo source (`src/**`) |
 
 ---
 
-*This PRD establishes Astro 5.x as the foundation for creating an industry-leading corporate website that positions Taliman as the premier provider of CHQ wire processing services through superior technical performance and Persian market optimization.*
+## 1. Executive Summary
+
+Taliman is refreshing its public-facing bilingual website to embody the “Technical Heritage meets Digital Innovation” platform. The current Astro 5.x implementation already includes RTL support, translations, and baseline sections, but it still uses a deprecated blue palette, static imagery, and lacks the heritage storytelling, metallic accents, and motion discipline mandated in `Branding v2.0`. This PRD defines the functional scope, technical requirements, content needs, and phased delivery plan needed to migrate the live experience to the new brand direction without jeopardizing uptime or performance targets.
+
+---
+
+## 2. Objectives & Success Metrics
+
+| Objective | KPI / Acceptance | Measurement |
+| --- | --- | --- |
+| Express new brand platform | 100% of site surfaces use neutral/accent palette, metallic highlights, Vazirmatn/Inter typography, and heritage motifs | Visual QA checklist per release |
+| Preserve/Improve performance | FCP < 1.0s, LCP < 1.8s, CLS < 0.05 on 75th percentile emulated 4G; Lighthouse ≥ 95 on all categories | Automated Lighthouse + WebPageTest runs |
+| Strengthen B2B lead gen | +25% form submissions vs current baseline after launch | Analytics + CRM tracking |
+| Guarantee accessibility | WCAG 2.1 AA audit pass and keyboard/RTL QA sign-off | Axe + manual QA |
+| Improve maintainability | All sections powered by structured content or translation files (no inline hard-coded copy) | Code review checklist |
+
+---
+
+## 3. Brand & Experience Principles
+
+1. **Technical Warmth** — Use the neutral/cream foundation for 80% of UI, purple CTAs sparingly (~15%), metallic accents as highlights (~5%). Never introduce pure white (#FFFFFF) backgrounds.
+2. **Heritage Geometry** — Reference Samarkand-inspired circular motifs through graphic dividers, subtle SVG textures, and photography crops.
+3. **Video-First Storytelling** — Desktop hero uses autoplaying, muted video with gradient overlay; mobile swaps to optimized stills.
+4. **Purposeful Motion** — Animations occur only when aiding comprehension, capped at 150–300 ms with brand easing tokens and `prefers-reduced-motion` support.
+5. **Precision & Approachability** — Copy balances hardcore technical specs with confident but human tone; layouts remain breathable and data-driven.
+6. **Bilingual Respect** — Persian (RTL) is the default experience; English (LTR) maintains parity, with logical properties ensuring mirrored layouts.
+
+---
+
+## 4. Audience & Use Cases
+
+### Primary Personas
+- **Automotive Procurement Manager** — Needs instant access to annealing capacity, tolerances, and certifications to shortlist suppliers.
+- **Quality Assurance Engineer** — Verifies compliance (ISO 9001, IATF 16949, DIN EN 10277, ASTM A29/A29M) and lab processes before auditing.
+- **Fastener Manufacturer CTO** — Evaluates equipment sophistication (bell annealing, drawing lines) and sees process video proof.
+
+### Secondary Personas
+- Potential hires, distributors, certification auditors, press.
+
+### Key Use Cases
+1. **Evaluate Capabilities** — Browse hero, About, Processes, Equipment sections to assess fit within 2 minutes.
+2. **Validate Quality & Compliance** — View Quality section, download certificates, understand testing regimen.
+3. **Initiate Contact** — Submit bilingual contact form with clear service selection and quick response expectation (<48h SLA).
+4. **Share Story Internally** — Export/print spec sections or share bilingual links with leadership.
+
+Each use case must function equally in fa/en locales and on mobile/desktop.
+
+---
+
+## 5. Functional Requirements
+
+### 5.1 Global Shell
+- **Header**: Sticky translucent cream background with logomark/logotype lockups per brand; bilingual language switcher; nav links referencing localized anchors.
+- **Footer**: Charcoal background, pearl text, metallic accent dividers; includes contact info, certifications summary, social links, legal copy.
+- **Skip Link & Accessibility**: `Skip to main content` link visible on focus.
+
+### 5.2 Hero + Above-the-Fold
+- Autoplaying looped MP4/WebM (10–15 s, ≤5 MB) with gradient overlay token `--gradient-hero-overlay` and fallback poster.
+- Copy: H1 referencing “Technical Heritage meets Digital Innovation” plus 2 CTAs (`Primary` deep purple gradient, `Secondary` outlined neutral).
+- Scroll indicator with micro animation.
+
+### 5.3 Narrative Sections
+1. **About Taliman**: Heritage story, core values, stat blocks (years of experience, capacity). Visual: Samarkand pattern overlay.
+2. **Processes**: Three-step cards (Annealing & Spheroidizing, Wire Drawing, Quality Control) sourced from structured content; includes metrics (diameter range, tolerances, throughput).
+3. **Equipment**: Highlight bell furnaces, drawing lines, lab equipment; include specs tables and media gallery with zoom interactions.
+4. **Quality & Standards**: Certification badges, QA workflow, callouts for 100% product testing, lab capabilities.
+5. **Photography & Video Highlight**: Carousel or mosaic referencing asset guidelines (hero, process, equipment categories).
+6. **Sustainability / Partnerships (optional but recommended)**: Showcase supply chain reliability, strategic partners.
+
+### 5.4 Interaction & Motion
+- Scroll-triggered fade-up/stagger classes defined centrally; disabled when `prefers-reduced-motion`.
+- Card hover lift, image zoom, CTA press states consistent with durations from brand doc.
+
+### 5.5 Localization & Content Management
+- Persian default route `/`; English under `/en`.
+- All copy stored in translation JSON or Astro Content Collections (no inline strings).
+- Content Collections for `processes`, `equipment`, `certifications`, `testimonials` with bilingual markdown/JSON frontmatter.
+
+### 5.6 Forms & Data Capture
+- Contact form fields: Name, Company, Email, Phone, Message, Service Interest dropdown (pre-filled), optional file upload placeholder.
+- Validation: Required fields per locale; inline error messaging with semantic feedback.
+- Submission: Server-side endpoint (Astro API route or serverless function) sending email + CRM hook; success toast + fallback message.
+- Privacy: Opt-in checkbox acknowledging data usage; link to privacy policy.
+
+### 5.7 Analytics & Instrumentation
+- Lightweight analytics (Plausible or similar) respecting privacy; track CTA clicks, language toggles, form conversions.
+
+---
+
+## 6. Technical Requirements
+
+### 6.1 Stack & Tooling
+- Astro 5.x SSG, TypeScript-first.
+- Tailwind CSS configured with brand palette (`charcoal`, `near-black`, `steel`, `cream`, `deep purple`, `bronze`, etc.) and font families (`Vazirmatn`, `Inter`).
+- Component Islands only where interaction required (e.g., form state, carousels).
+
+### 6.2 Design Tokens & Styles
+- Replace legacy `primary` blues with warm neutrals and accent tokens.
+- Define CSS custom properties for colors, spacing (`--section-padding`, `--container-max`), motion durations, and easings.
+- Enforce gradient tokens (`--gradient-hero-overlay`, `--gradient-section`, `--gradient-metallic`).
+
+### 6.3 Performance
+- Video optimized (H.264 MP4 + WebM), lazy-loaded with poster.
+- Images processed via Astro `<Image>` with AVIF/WebP outputs, max hero image 150 KB.
+- Global CSS < 50 KB; tree-shake utilities; prefetch critical fonts.
+
+### 6.4 Accessibility
+- WCAG 2.1 AA compliance, 14px min body, 4.5:1 contrast, visible focus states.
+- ARIA labels for nav, form controls, carousels.
+- Logical properties for RTL; ensure mirrored paddings via `padding-inline` etc.
+
+### 6.5 SEO & Metadata
+- Locale-specific `<html lang>` and `hreflang` link tags.
+- Open Graph/Twitter cards referencing localized titles/descriptions.
+- Structured data: `Organization` schema with address, certifications list; `Product` or `Service` schema for CHQ processing.
+- Sitemap + robots updates.
+
+### 6.6 Security & Privacy
+- Rate limiting/captcha optional (honeypot + server validation baseline).
+- No client-side secret storage; environment variables for mail/CRM keys.
+
+---
+
+## 7. Content & Asset Requirements
+
+| Asset Type | Requirement | Owner |
+| --- | --- | --- |
+| Video | 1080p, 10–15 s loop, <5 MB, no audio, shows machinery motion | Marketing/Creative |
+| Photography | Categorized (hero, process, equipment, facility, team) with warm grading per doc; deliver 1×/2× crops | Creative |
+| Copy | Bilingual narratives referencing heritage, metrics, CTA microcopy | Marketing + Translator |
+| Specs Data | Capacities, tolerances, certifications, throughput numbers validated by Engineering | Ops |
+| Icons/Patterns | SVG assets referencing Samarkand motifs; exported at 1× (24px) + decorative backgrounds | Design |
+
+Content ingestion must happen through Content Collections to avoid code changes per update.
+
+---
+
+## 8. Phase Plan & Deliverables
+
+### Phase 0 — Tokenization & Infrastructure (Week 1)
+- Replace Tailwind theme + `global.css` with new palette, typography scale, gradients, motion tokens.
+- Update README/docs to reflect Astro stack + brand alignment.
+- Deliverables: Updated config files, style documentation snippet, automated lint ensuring no legacy `primary-*` classes remain.
+- Exit Criteria: Visual QA confirms global backgrounds use Cream/Cloud/Pearl; fonts load correctly.
+
+### Phase 1 — Global Shell & Hero (Week 2)
+- Rebuild header/footer, integrate new logo usage rules, add skip link.
+- Implement video hero with mobile fallback, new CTAs, scroll indicator, metadata updates.
+- Deliverables: `Header.astro`, `Hero.astro`, `Footer.astro`, video assets + posters.
+- Exit Criteria: Lighthouse performance unchanged; hero video complies with size/timing guidelines; nav accessible via keyboard.
+
+### Phase 2 — Narrative Sections & Content Collections (Weeks 3–4)
+- Convert About/Processes/Equipment/Quality sections to structured content-driven components.
+- Add Photography/Video highlight and optional Sustainability/Partner section per content strategy.
+- Expand translations or messages store; migrate copy out of components.
+- Deliverables: Content collection schemas, localized markdown/JSON files, updated section components.
+- Exit Criteria: No inline copy remains; Storybook/Playground (if available) shows all locales.
+
+### Phase 3 — Interactions, Forms, & Motion (Week 5)
+- Add scroll-triggered animations, card hover states, reduced-motion support.
+- Rebuild contact form with validation, submission endpoint, success/error states, optional analytics events.
+- Deliverables: Motion utility module, API route/function, UI feedback states, documentation on form data flow.
+- Exit Criteria: Form submission logs visible; manual QA verifies animations respect `prefers-reduced-motion`.
+
+### Phase 4 — Performance, Accessibility, QA, Launch (Week 6)
+- Media optimization (Astro Image, responsive sources), bundle analysis, final Lighthouse/WebPageTest passes.
+- Accessibility audit (axe, manual), RTL regression testing, SEO artifacts (structured data, sitemap).
+- Deliverables: Perf report, accessibility checklist, SEO files, release notes.
+- Exit Criteria: KPIs met; stakeholder sign-off for production deploy.
+
+---
+
+## 9. Risks & Mitigations
+
+| Risk | Impact | Mitigation |
+| --- | --- | --- |
+| Legacy blue components remain after token swap | Brand inconsistency | Automated search (`rg primary-`), design review checklist |
+| Video assets exceed size budget | LCP regression | Enforce compression gate; supply multiple encodes |
+| Content backlog delays Phase 2 | Launch slip | Parallel copy sprint; placeholder states with skeleton loaders |
+| RTL regressions due to new layouts | Accessibility issues for primary users | RTL snapshot testing, QA checklist |
+| Form endpoint failures | Lead loss | Add retries, fallback mailto link, monitor logs |
+
+---
+
+## 10. Dependencies & Approvals
+
+- **Design**: Final logo exports, metallic pattern assets, video hero footage.
+- **Content**: Updated bilingual copy, certification PDFs, stat validation.
+- **Engineering**: API credentials for contact form email/CRM integration.
+- **Approval Gates**: End of each phase requires sign-off from Design (visuals), Product (scope), Engineering Lead (tech), Marketing (copy).
+
+---
+
+## 11. Handoff Checklist
+
+- [ ] Tailwind tokens updated and documented.
+- [ ] Video + photography assets delivered in required formats.
+- [ ] Content Collections populated for both locales.
+- [ ] Contact form endpoint credentials provisioned.
+- [ ] QA scripts prepared for accessibility, performance, RTL.
+
+_End of PRD._
