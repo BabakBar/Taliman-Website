@@ -1,6 +1,9 @@
 /* Inter Font for English */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/* Import Design Tokens */
+@import './tokens.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,7 +38,7 @@
 
 @layer base {
   * {
-    @apply border-industrial-200;
+    @apply border-fog;
   }
 
   html {
@@ -43,7 +46,7 @@
   }
 
   body {
-    @apply bg-white text-industrial-900 antialiased;
+    @apply bg-cream text-near-black antialiased;
   }
 
   /* RTL Support */
@@ -57,7 +60,7 @@
 
   /* Focus styles for accessibility */
   *:focus-visible {
-    @apply outline-2 outline-offset-2 outline-primary-600 ring-0;
+    @apply outline-2 outline-offset-2 outline-accent ring-0;
   }
 
   /* Smooth transitions */
@@ -100,34 +103,34 @@
   }
 
   .btn-primary {
-    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus-visible:outline-primary-600;
+    @apply btn bg-accent text-white hover:bg-accent-hover focus-visible:outline-accent;
   }
 
   .btn-secondary {
-    @apply btn border-2 border-primary-600 bg-transparent text-primary-600 hover:bg-primary-50 focus-visible:outline-primary-600;
+    @apply btn border-2 border-near-black bg-transparent text-near-black hover:bg-cloud focus-visible:outline-accent;
   }
 
-  .btn-white {
-    @apply btn bg-white text-primary-600 hover:bg-industrial-50 focus-visible:outline-white;
+  .btn-ghost {
+    @apply btn bg-transparent text-near-black hover:bg-cloud focus-visible:outline-accent;
   }
 
   /* Card styles */
   .card {
-    @apply rounded-xl border border-industrial-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md;
+    @apply rounded-xl border border-fog bg-pearl p-6 shadow-sm transition-shadow hover:shadow-md;
   }
 
   /* Link styles */
   .link {
-    @apply text-primary-600 underline-offset-4 hover:underline;
+    @apply text-accent underline-offset-4 hover:underline;
   }
 
   /* Gradient backgrounds */
-  .gradient-primary {
-    @apply bg-gradient-to-br from-primary-600 to-primary-800;
+  .gradient-accent {
+    @apply bg-gradient-to-br from-accent to-accent-hover;
   }
 
-  .gradient-industrial {
-    @apply bg-gradient-to-br from-industrial-800 to-industrial-950;
+  .gradient-dark {
+    @apply bg-gradient-to-br from-charcoal to-near-black;
   }
 }
 
@@ -137,10 +140,7 @@
     text-wrap: balance;
   }
 
-  /* Glass effect */
-  .glass {
-    @apply bg-white/80 backdrop-blur-md;
-  }
+  /* Glass effect - using tokens.css definition */
 
   /* Animation utilities */
   .animate-in {
