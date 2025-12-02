@@ -6,7 +6,7 @@ const t = useTranslations(lang);
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-industrial-900 text-white">
+<footer class="bg-charcoal text-pearl">
   <div class="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
     <div class="grid gap-8 md:grid-cols-3">
       <!-- Company Info -->
@@ -17,7 +17,7 @@ const currentYear = new Date().getFullYear();
             {lang === 'fa' ? 'تلیمان ساخته‌های فلزی کارا' : 'Taliman Sakhtehaye Felezi Kara'}
           </span>
         </div>
-        <p class="text-sm text-industrial-300">
+        <p class="text-sm text-mist">
           {t('site.description')}
         </p>
       </div>
@@ -29,17 +29,17 @@ const currentYear = new Date().getFullYear();
         </h3>
         <ul class="space-y-2 text-sm">
           <li>
-            <a href="/#processes" class="text-industrial-300 hover:text-white">
+            <a href="/#processes" class="text-mist hover:text-pearl">
               {t('nav.processes')}
             </a>
           </li>
           <li>
-            <a href="/#equipment" class="text-industrial-300 hover:text-white">
+            <a href="/#equipment" class="text-mist hover:text-pearl">
               {t('nav.equipment')}
             </a>
           </li>
           <li>
-            <a href="/#quality" class="text-industrial-300 hover:text-white">
+            <a href="/#quality" class="text-mist hover:text-pearl">
               {t('nav.quality')}
             </a>
           </li>
@@ -51,19 +51,19 @@ const currentYear = new Date().getFullYear();
         <h3 class="mb-4 text-sm font-semibold uppercase tracking-wider">
           {t('footer.contact')}
         </h3>
-        <ul class="space-y-2 text-sm text-industrial-300">
+        <ul class="space-y-2 text-sm text-mist">
           <li>
             {lang === 'fa' ? 'ایران، تهران' : 'Tehran, Iran'}
           </li>
           <li>
-            <a href="mailto:info@taliman.com" class="hover:text-white"> info@taliman.com </a>
+            <a href="mailto:info@taliman.com" class="hover:text-pearl"> info@taliman.com </a>
           </li>
         </ul>
       </div>
     </div>
 
     <!-- Copyright -->
-    <div class="mt-8 border-t border-industrial-800 pt-8 text-center text-sm text-industrial-400">
+    <div class="mt-8 border-t border-near-black pt-8 text-center text-sm text-mist">
       <p>
         © {currentYear}
         {t('site.title')}. {t('footer.rights')}.

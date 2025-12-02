@@ -16,11 +16,11 @@ const equipment = [
 ];
 ---
 
-<section class="section bg-white" id="equipment">
+<section class="section bg-cream" id="equipment">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-3xl text-center">
       <h2 class="heading-2 mb-6 text-balance">{t('equipment.title')}</h2>
-      <p class="text-lg text-industrial-600">
+      <p class="text-lg text-steel">
         {t('equipment.subtitle')}
       </p>
     </div>
@@ -29,8 +29,8 @@ const equipment = [
     <div class="mt-16 grid gap-8 lg:grid-cols-2">
       {
         equipment.map((item) => (
-          <div class="card group border-2 hover:border-primary-300">
-            <div class="bg-gradient-primary mb-4 flex h-16 w-16 items-center justify-center rounded-xl text-white">
+          <div class="card group border-2 hover:border-accent">
+            <div class="bg-gradient-accent mb-4 flex h-16 w-16 items-center justify-center rounded-xl text-white">
               <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
@@ -41,7 +41,7 @@ const equipment = [
               </svg>
             </div>
             <h3 class="heading-4 mb-3">{item.title}</h3>
-            <p class="text-industrial-600">{item.description}</p>
+            <p class="text-steel">{item.description}</p>
           </div>
         ))
       }

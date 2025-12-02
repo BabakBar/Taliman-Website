@@ -265,7 +265,7 @@ Or use Formspree/Netlify Forms as zero-config backend.
 
 | Phase | Status | ETA |
 |-------|--------|-----|
-| Phase 0: Tokens | 🔲 Not started | Day 2 |
+| Phase 0: Tokens | ✅ Complete | Day 2 |
 | Phase 1: Shell | 🔲 Not started | Day 4 |
 | Phase 2: Content | 🔲 Not started | Day 8 |
 | Phase 3: Polish | 🔲 Not started | Day 12 |

@@ -11,10 +11,9 @@ const t = useTranslations(lang);
     <img
       src="/images/hero/hero-2.jpg"
       alt="Taliman Manufacturing Facility"
-      class="h-full w-full object-cover brightness-50"
+      class="h-full w-full object-cover"
     />
-    <div class="absolute inset-0 bg-gradient-to-b from-industrial-900/50 to-industrial-900/80">
-    </div>
+    <div class="bg-gradient-hero-overlay absolute inset-0"></div>
   </div>
 
   <!-- Content -->
@@ -27,12 +26,12 @@ const t = useTranslations(lang);
         {t('hero.subtitle')}
       </p>
       <div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
-        <a href={getLocalizedPath('/#processes', lang)} class="btn-white">
+        <a href={getLocalizedPath('/#processes', lang)} class="btn-primary">
           {t('hero.cta.primary')}
         </a>
         <a
           href={getLocalizedPath('/#contact', lang)}
-          class="btn-secondary border-white text-white hover:bg-white hover:text-primary-600"
+          class="btn-secondary border-white text-white hover:bg-white/10"
         >
           {t('hero.cta.secondary')}
         </a>

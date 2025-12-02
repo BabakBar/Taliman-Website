@@ -23,11 +23,11 @@ const processes = [
 ];
 ---
 
-<section class="section bg-industrial-50" id="processes">
+<section class="section bg-cloud" id="processes">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-3xl text-center">
       <h2 class="heading-2 mb-6 text-balance">{t('processes.title')}</h2>
-      <p class="text-lg text-industrial-600">
+      <p class="text-lg text-steel">
         {t('processes.subtitle')}
       </p>
     </div>
@@ -46,12 +46,12 @@ const processes = [
             </div>
             <div class="p-6">
               <div class="mb-2 flex items-center gap-2">
-                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-primary-100 text-sm font-bold text-primary-600">
+                <span class="flex h-8 w-8 items-center justify-center rounded-full bg-accent-subtle text-sm font-bold text-accent">
                   {index + 1}
                 </span>
                 <h3 class="heading-4">{process.title}</h3>
               </div>
-              <p class="text-industrial-600">{process.description}</p>
+              <p class="text-steel">{process.description}</p>
             </div>
           </div>
         ))

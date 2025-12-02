@@ -28,11 +28,11 @@ const features = [
 ];
 ---
 
-<section class="section bg-white" id="about">
+<section class="section bg-cream" id="about">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-3xl text-center">
       <h2 class="heading-2 mb-6 text-balance">{t('about.title')}</h2>
-      <p class="text-lg text-industrial-600">
+      <p class="text-lg text-steel">
         {t('about.subtitle')}
       </p>
     </div>
@@ -41,8 +41,8 @@ const features = [
     <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
       {
         features.map((feature) => (
-          <div class="card group text-center hover:border-primary-200">
-            <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-primary-600 transition-transform group-hover:scale-110">
+          <div class="card group text-center">
+            <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent-subtle text-accent transition-transform group-hover:scale-110">
               <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   stroke-linecap="round"
@@ -61,7 +61,7 @@ const features = [
               </svg>
             </div>
             <h3 class="heading-4 mb-2">{feature.title}</h3>
-            <p class="text-sm text-industrial-600">{feature.description}</p>
+            <p class="text-sm text-steel">{feature.description}</p>
           </div>
         ))
       }

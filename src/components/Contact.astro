@@ -5,11 +5,11 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section class="section bg-white" id="contact">
+<section class="section bg-cream" id="contact">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-3xl text-center">
       <h2 class="heading-2 mb-6 text-balance">{t('contact.title')}</h2>
-      <p class="text-lg text-industrial-600">
+      <p class="text-lg text-steel">
         {t('contact.subtitle')}
       </p>
     </div>
@@ -19,7 +19,7 @@ const t = useTranslations(lang);
       <div class="card">
         <form class="space-y-6">
           <div>
-            <label for="name" class="mb-2 block text-sm font-medium text-industrial-900">
+            <label for="name" class="mb-2 block text-sm font-medium text-near-black">
               {t('contact.form.name')}
             </label>
             <input
@@ -27,12 +27,12 @@ const t = useTranslations(lang);
               id="name"
               name="name"
               required
-              class="w-full rounded-lg border border-industrial-300 px-4 py-3 text-industrial-900 placeholder-industrial-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+              class="w-full rounded-lg border border-mist px-4 py-3 text-near-black placeholder-mist focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
             />
           </div>
 
           <div>
-            <label for="email" class="mb-2 block text-sm font-medium text-industrial-900">
+            <label for="email" class="mb-2 block text-sm font-medium text-near-black">
               {t('contact.form.email')}
             </label>
             <input
@@ -40,24 +40,24 @@ const t = useTranslations(lang);
               id="email"
               name="email"
               required
-              class="w-full rounded-lg border border-industrial-300 px-4 py-3 text-industrial-900 placeholder-industrial-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+              class="w-full rounded-lg border border-mist px-4 py-3 text-near-black placeholder-mist focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
             />
           </div>
 
           <div>
-            <label for="phone" class="mb-2 block text-sm font-medium text-industrial-900">
+            <label for="phone" class="mb-2 block text-sm font-medium text-near-black">
               {t('contact.form.phone')}
             </label>
             <input
               type="tel"
               id="phone"
               name="phone"
-              class="w-full rounded-lg border border-industrial-300 px-4 py-3 text-industrial-900 placeholder-industrial-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+              class="w-full rounded-lg border border-mist px-4 py-3 text-near-black placeholder-mist focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
             />
           </div>
 
           <div>
-            <label for="message" class="mb-2 block text-sm font-medium text-industrial-900">
+            <label for="message" class="mb-2 block text-sm font-medium text-near-black">
               {t('contact.form.message')}
             </label>
             <textarea
@@ -65,7 +65,7 @@ const t = useTranslations(lang);
               name="message"
               rows="4"
               required
-              class="w-full rounded-lg border border-industrial-300 px-4 py-3 text-industrial-900 placeholder-industrial-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+              class="w-full rounded-lg border border-mist px-4 py-3 text-near-black placeholder-mist focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
             ></textarea>
           </div>
 
@@ -80,7 +80,7 @@ const t = useTranslations(lang);
         <!-- Address -->
         <div class="card">
           <div
-            class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 text-primary-600"
+            class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-subtle text-accent"
           >
             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -97,7 +97,7 @@ const t = useTranslations(lang);
             </svg>
           </div>
           <h3 class="heading-4 mb-2">{t('contact.info.address')}</h3>
-          <p class="text-industrial-600">
+          <p class="text-steel">
             {lang === 'fa' ? 'ایران، تهران، منطقه صنعتی' : 'Industrial Zone, Tehran, Iran'}
           </p>
         </div>
@@ -105,7 +105,7 @@ const t = useTranslations(lang);
         <!-- Phone -->
         <div class="card">
           <div
-            class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 text-primary-600"
+            class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-subtle text-accent"
           >
             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -117,7 +117,7 @@ const t = useTranslations(lang);
             </svg>
           </div>
           <h3 class="heading-4 mb-2">{t('contact.info.phone')}</h3>
-          <a href="tel:+982112345678" class="text-industrial-600 hover:text-primary-600">
+          <a href="tel:+982112345678" class="text-steel hover:text-accent">
             +98 21 1234 5678
           </a>
         </div>
@@ -125,7 +125,7 @@ const t = useTranslations(lang);
         <!-- Email -->
         <div class="card">
           <div
-            class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-100 text-primary-600"
+            class="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-subtle text-accent"
           >
             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -137,7 +137,7 @@ const t = useTranslations(lang);
             </svg>
           </div>
           <h3 class="heading-4 mb-2">{t('contact.info.email')}</h3>
-          <a href="mailto:info@taliman.com" class="text-industrial-600 hover:text-primary-600">
+          <a href="mailto:info@taliman.com" class="text-steel hover:text-accent">
             info@taliman.com
           </a>
         </div>

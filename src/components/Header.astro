@@ -18,13 +18,13 @@ const otherLang = lang === 'fa' ? 'en' : 'fa';
 const otherLangPath = lang === 'fa' ? '/en' : '/';
 ---
 
-<header class="glass sticky top-0 z-50 border-b border-industrial-200/50">
+<header class="glass sticky top-0 z-50 border-b border-fog/50">
   <nav class="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
     <div class="flex h-16 items-center justify-between md:h-20">
       <!-- Logo -->
       <a href={getLocalizedPath('/', lang)} class="flex items-center gap-3">
         <img src="/images/logo.png" alt="Taliman Logo" class="h-10 w-auto md:h-12" />
-        <span class="hidden text-lg font-bold text-industrial-900 lg:block">
+        <span class="hidden text-lg font-bold text-near-black lg:block">
           {lang === 'fa' ? 'تلیمان' : 'Taliman'}
         </span>
       </a>
@@ -35,7 +35,7 @@ const otherLangPath = lang === 'fa' ? '/en' : '/';
           navItems.map(({ key, href }) => (
             <a
               href={getLocalizedPath(href, lang)}
-              class="text-sm font-medium text-industrial-700 transition-colors hover:text-primary-600"
+              class="text-sm font-medium text-steel transition-colors hover:text-accent"
             >
               {t(key)}
             </a>
@@ -46,7 +46,7 @@ const otherLangPath = lang === 'fa' ? '/en' : '/';
       <!-- Language Switcher -->
       <a
         href={otherLangPath}
-        class="rounded-lg border-2 border-primary-600 px-4 py-2 text-sm font-medium text-primary-600 transition-colors hover:bg-primary-50"
+        class="rounded-lg border-2 border-accent px-4 py-2 text-sm font-medium text-accent transition-colors hover:bg-accent-subtle"
       >
         {otherLang === 'fa' ? 'فارسی' : 'English'}
       </a>
@@ -56,7 +56,7 @@ const otherLangPath = lang === 'fa' ? '/en' : '/';
     <div class="md:hidden">
       <details class="group">
         <summary
-          class="flex cursor-pointer items-center justify-center gap-2 py-2 text-sm font-medium text-industrial-700 marker:content-none"
+          class="flex cursor-pointer items-center justify-center gap-2 py-2 text-sm font-medium text-steel marker:content-none"
         >
           <span>{t('nav.home')}</span>
           <svg
@@ -69,12 +69,12 @@ const otherLangPath = lang === 'fa' ? '/en' : '/';
             ></path>
           </svg>
         </summary>
-        <div class="border-t border-industrial-200 bg-white py-4">
+        <div class="border-t border-fog bg-cream py-4">
           {
             navItems.map(({ key, href }) => (
               <a
                 href={getLocalizedPath(href, lang)}
-                class="block px-4 py-3 text-sm font-medium text-industrial-700 transition-colors hover:bg-industrial-50 hover:text-primary-600"
+                class="block px-4 py-3 text-sm font-medium text-steel transition-colors hover:bg-cloud hover:text-accent"
               >
                 {t(key)}
               </a>
