@@ -35,9 +35,10 @@ const otherLangPath = lang === 'fa' ? '/en' : '/';
           navItems.map(({ key, href }) => (
             <a
               href={getLocalizedPath(href, lang)}
-              class="text-sm font-medium text-steel transition-colors hover:text-accent"
+              class="group relative text-sm font-medium text-steel transition-colors hover:text-accent"
             >
               {t(key)}
+              <span class="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-metallic transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))
         }

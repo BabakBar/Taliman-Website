@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { getLangFromUrl } from '../lib/i18n';
+import SkipLink from '../components/SkipLink.astro';
 
 interface Props {
   title: string;
@@ -28,9 +29,13 @@ const dir = lang === 'fa' ? 'rtl' : 'ltr';
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/images/logo.png" />
 
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#F8F6F3" />
+
     <title>{title}</title>
   </head>
   <body>
+    <SkipLink />
     <slot />
   </body>
 </html>

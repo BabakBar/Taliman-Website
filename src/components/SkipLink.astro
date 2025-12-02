@@ -1,0 +1,27 @@
+---
+import { getLangFromUrl, useTranslations } from '../lib/i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<a
+  href="#main"
+  class="skip-link sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-accent focus:px-6 focus:py-3 focus:text-white focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+>
+  {lang === 'fa' ? 'رفتن به محتوای اصلی' : 'Skip to main content'}
+</a>
+
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+</style>
