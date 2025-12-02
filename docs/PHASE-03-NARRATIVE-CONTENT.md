@@ -30,17 +30,25 @@
        schema: z.object({
          title: z.object({ fa: z.string(), en: z.string() }),
          subtitle: z.object({ fa: z.string(), en: z.string() }),
-         stats: z.array(z.object({
-           label: z.object({ fa: z.string(), en: z.string() }),
-           value: z.string(),
-           unit: z.string().optional(),
-         })).optional(),
-         media: z.array(z.object({
-           type: z.enum(['image','video']),
-           src: z.string(),
-           alt: z.object({ fa: z.string(), en: z.string() }),
-         })).optional(),
-         pattern: z.enum(['samarkand-ring','metallic-arc']).optional(),
+         stats: z
+           .array(
+             z.object({
+               label: z.object({ fa: z.string(), en: z.string() }),
+               value: z.string(),
+               unit: z.string().optional(),
+             })
+           )
+           .optional(),
+         media: z
+           .array(
+             z.object({
+               type: z.enum(['image', 'video']),
+               src: z.string(),
+               alt: z.object({ fa: z.string(), en: z.string() }),
+             })
+           )
+           .optional(),
+         pattern: z.enum(['samarkand-ring', 'metallic-arc']).optional(),
        }),
      });
      ```
@@ -96,9 +104,9 @@
 
 ## Roles & Owners
 
-| Role | Responsibility |
-| --- | --- |
-| Content Engineering | Define schemas, utilities, parity validation |
-| Copy/Localization | Populate bilingual markdown/JSON files, enforce tone |
-| Design | Deliver Samarkand pattern SVGs, approve mosaics |
-| QA | Verify localization, responsive behavior, data integrity |
+| Role                | Responsibility                                           |
+| ------------------- | -------------------------------------------------------- |
+| Content Engineering | Define schemas, utilities, parity validation             |
+| Copy/Localization   | Populate bilingual markdown/JSON files, enforce tone     |
+| Design              | Deliver Samarkand pattern SVGs, approve mosaics          |
+| QA                  | Verify localization, responsive behavior, data integrity |

@@ -1,10 +1,11 @@
 # Taliman Brand & Design System
+
 ## تلیمان — دستورالعمل جامع طراحی وب
 
 ---
 
 > **Version 2.0** — Enhanced for Modern Implementation  
-> **Philosophy:** *Technical Heritage meets Digital Innovation*  
+> **Philosophy:** _Technical Heritage meets Digital Innovation_  
 > **Last Updated:** November 2025
 
 ---
@@ -28,12 +29,12 @@
 
 ### Company Identity
 
-| Attribute | Details |
-|-----------|---------|
-| **Brand Name** | Taliman (تلیمان) |
-| **Full Name** | Taliman — Sakhtehaye Felezi Kara (ساخته‌های فلزی کارا) |
-| **Translation** | Taliman — Efficient Metal Structures |
-| **Industry** | CHQ Wire Processing & Metal Annealing |
+| Attribute           | Details                                                          |
+| ------------------- | ---------------------------------------------------------------- |
+| **Brand Name**      | Taliman (تلیمان)                                                 |
+| **Full Name**       | Taliman — Sakhtehaye Felezi Kara (ساخته‌های فلزی کارا)           |
+| **Translation**     | Taliman — Efficient Metal Structures                             |
+| **Industry**        | CHQ Wire Processing & Metal Annealing                            |
 | **Market Position** | Premium B2B industrial supplier for automotive fastener industry |
 
 ### Brand Story & Heritage
@@ -47,22 +48,24 @@ The Taliman visual identity draws inspiration from **10th-century Samarkand pott
 
 ### Brand Personality
 
-| Trait | Expression |
-|-------|------------|
-| **Technical Authority** | Precision in every detail, data-driven communication |
-| **Cultural Heritage** | Subtle geometric patterns, warm color accents |
-| **Modern Innovation** | Clean interfaces, smooth interactions, video-first |
+| Trait                      | Expression                                            |
+| -------------------------- | ----------------------------------------------------- |
+| **Technical Authority**    | Precision in every detail, data-driven communication  |
+| **Cultural Heritage**      | Subtle geometric patterns, warm color accents         |
+| **Modern Innovation**      | Clean interfaces, smooth interactions, video-first    |
 | **Approachable Expertise** | Professional but not cold; confident but not boastful |
 
 ### Target Audience
 
 **Primary:**
+
 - Industrial procurement managers
 - Automotive OEM engineers
 - Fastener manufacturers
 - Technical specification reviewers
 
 **Secondary:**
+
 - Potential employees (talent acquisition)
 - Industry partners and distributors
 - Quality certification auditors
@@ -75,12 +78,12 @@ The Taliman visual identity draws inspiration from **10th-century Samarkand pott
 
 The Taliman logo consists of four core elements that can be combined in various configurations:
 
-| Element | Description |
-|---------|-------------|
+| Element               | Description                                                 |
+| --------------------- | ----------------------------------------------------------- |
 | **Logomark (Symbol)** | Four interlocked circular motifs with internal petal shapes |
-| **Persian Logotype** | تلیمان — geometric Persian typography |
-| **English Logotype** | Taliman — geometric Latin typography |
-| **Tagline** | ساخته‌های فلزی کارا / Sakhtehaye Felezi Kara |
+| **Persian Logotype**  | تلیمان — geometric Persian typography                       |
+| **English Logotype**  | Taliman — geometric Latin typography                        |
+| **Tagline**           | ساخته‌های فلزی کارا / Sakhtehaye Felezi Kara                |
 
 ### Logo Configurations
 
@@ -111,12 +114,14 @@ The Taliman logo consists of four core elements that can be combined in various 
 ### Logo Usage Rules
 
 **✓ Approved:**
+
 - Dark logo on light backgrounds
-- Light logo on dark backgrounds  
+- Light logo on dark backgrounds
 - White logo on brand purple (accent use only)
 - Consistent scaling (never distort)
 
 **✗ Prohibited:**
+
 - Rotation of any degree
 - Stretching or skewing
 - Adding effects (shadows, glows, 3D)
@@ -138,17 +143,17 @@ The Taliman color system is built on **"Technical Warmth"** — combining indust
 
 These colors form the backbone of the design — used for backgrounds, text, and structural elements.
 
-| Name | HEX | RGB | Usage | CSS Variable |
-|------|-----|-----|-------|--------------|
-| **Charcoal** | `#1A1A1A` | 26, 26, 26 | Footer, dark sections | `--color-charcoal` |
-| **Near Black** | `#2D2D2D` | 45, 45, 45 | Primary headings, logo on light | `--color-near-black` |
-| **Industrial** | `#4A4A4A` | 74, 74, 74 | Secondary headings | `--color-industrial` |
-| **Steel** | `#636466` | 99, 100, 102 | Body text | `--color-steel` |
-| **Mist** | `#A7A9AC` | 167, 169, 172 | Muted text, borders | `--color-mist` |
-| **Fog** | `#E5E5E5` | 229, 229, 229 | Subtle borders, dividers | `--color-fog` |
-| **Cloud** | `#F2F0ED` | 242, 240, 237 | Alternating section backgrounds | `--color-cloud` |
-| **Cream** | `#F8F6F3` | 248, 246, 243 | Primary background | `--color-cream` |
-| **Pearl** | `#FAFAF8` | 250, 250, 248 | Card backgrounds | `--color-pearl` |
+| Name           | HEX       | RGB           | Usage                           | CSS Variable         |
+| -------------- | --------- | ------------- | ------------------------------- | -------------------- |
+| **Charcoal**   | `#1A1A1A` | 26, 26, 26    | Footer, dark sections           | `--color-charcoal`   |
+| **Near Black** | `#2D2D2D` | 45, 45, 45    | Primary headings, logo on light | `--color-near-black` |
+| **Industrial** | `#4A4A4A` | 74, 74, 74    | Secondary headings              | `--color-industrial` |
+| **Steel**      | `#636466` | 99, 100, 102  | Body text                       | `--color-steel`      |
+| **Mist**       | `#A7A9AC` | 167, 169, 172 | Muted text, borders             | `--color-mist`       |
+| **Fog**        | `#E5E5E5` | 229, 229, 229 | Subtle borders, dividers        | `--color-fog`        |
+| **Cloud**      | `#F2F0ED` | 242, 240, 237 | Alternating section backgrounds | `--color-cloud`      |
+| **Cream**      | `#F8F6F3` | 248, 246, 243 | Primary background              | `--color-cream`      |
+| **Pearl**      | `#FAFAF8` | 250, 250, 248 | Card backgrounds                | `--color-pearl`      |
 
 > ⚠️ **CEO Directive:** Never use pure white (#FFFFFF). Always use warm off-whites (Cream, Pearl, Cloud).
 
@@ -156,11 +161,11 @@ These colors form the backbone of the design — used for backgrounds, text, and
 
 Used sparingly for CTAs, links, focus states, and key interactive elements.
 
-| Name | HEX | RGB | Usage | CSS Variable |
-|------|-----|-----|-------|--------------|
-| **Deep Purple** | `#6C3461` | 108, 52, 97 | Primary CTAs, links | `--color-accent` |
-| **Purple** | `#824175` | 130, 65, 117 | Hover states | `--color-accent-hover` |
-| **Soft Purple** | `#6C346115` | — | Subtle backgrounds (8% opacity) | `--color-accent-subtle` |
+| Name            | HEX         | RGB          | Usage                           | CSS Variable            |
+| --------------- | ----------- | ------------ | ------------------------------- | ----------------------- |
+| **Deep Purple** | `#6C3461`   | 108, 52, 97  | Primary CTAs, links             | `--color-accent`        |
+| **Purple**      | `#824175`   | 130, 65, 117 | Hover states                    | `--color-accent-hover`  |
+| **Soft Purple** | `#6C346115` | —            | Subtle backgrounds (8% opacity) | `--color-accent-subtle` |
 
 > ⚠️ **CEO Directive:** Minimize purple usage. Reserve for CTAs, active states, and key interactive moments only.
 
@@ -168,20 +173,20 @@ Used sparingly for CTAs, links, focus states, and key interactive elements.
 
 Heritage-inspired warm tones that connect to the metal processing industry.
 
-| Name | HEX | RGB | Usage | CSS Variable |
-|------|-----|-----|-------|--------------|
-| **Bronze** | `#D4A574` | 212, 165, 116 | Premium highlights, awards | `--color-bronze` |
-| **Copper** | `#B87333` | 184, 115, 51 | Hover accents on dark | `--color-copper` |
-| **Oxidized** | `#8B4513` | 139, 69, 19 | Deep accent (rare) | `--color-oxidized` |
+| Name         | HEX       | RGB           | Usage                      | CSS Variable       |
+| ------------ | --------- | ------------- | -------------------------- | ------------------ |
+| **Bronze**   | `#D4A574` | 212, 165, 116 | Premium highlights, awards | `--color-bronze`   |
+| **Copper**   | `#B87333` | 184, 115, 51  | Hover accents on dark      | `--color-copper`   |
+| **Oxidized** | `#8B4513` | 139, 69, 19   | Deep accent (rare)         | `--color-oxidized` |
 
 ### Semantic Colors
 
-| Purpose | Light Mode | Dark Mode | Usage |
-|---------|------------|-----------|-------|
-| **Success** | `#166534` | `#22C55E` | Form validation, positive actions |
-| **Warning** | `#A16207` | `#EAB308` | Caution states |
-| **Error** | `#991B1B` | `#EF4444` | Form errors, destructive actions |
-| **Info** | `#1E40AF` | `#3B82F6` | Informational messages |
+| Purpose     | Light Mode | Dark Mode | Usage                             |
+| ----------- | ---------- | --------- | --------------------------------- |
+| **Success** | `#166534`  | `#22C55E` | Form validation, positive actions |
+| **Warning** | `#A16207`  | `#EAB308` | Caution states                    |
+| **Error**   | `#991B1B`  | `#EF4444` | Form errors, destructive actions  |
+| **Info**    | `#1E40AF`  | `#3B82F6` | Informational messages            |
 
 ### Gradient Definitions
 
@@ -194,52 +199,40 @@ Heritage-inspired warm tones that connect to the metal processing industry.
 );
 
 /* Section Fade — Subtle section transitions */
---gradient-section: linear-gradient(
-  180deg,
-  var(--color-cream) 0%,
-  var(--color-cloud) 100%
-);
+--gradient-section: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cloud) 100%);
 
 /* Premium Accent — Metallic highlight (use sparingly) */
---gradient-metallic: linear-gradient(
-  135deg,
-  var(--color-bronze) 0%,
-  var(--color-copper) 100%
-);
+--gradient-metallic: linear-gradient(135deg, var(--color-bronze) 0%, var(--color-copper) 100%);
 
 /* CTA Button Gradient */
---gradient-cta: linear-gradient(
-  135deg,
-  var(--color-accent) 0%,
-  var(--color-accent-hover) 100%
-);
+--gradient-cta: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
 ```
 
 ### Color Application Matrix
 
-| Element | Background | Text | Border | Hover |
-|---------|------------|------|--------|-------|
-| **Page** | Cream | — | — | — |
-| **Section Alt** | Cloud | — | — | — |
-| **Card** | Pearl | Steel | Fog | Shadow increase |
-| **Header** | Cream/80% | Near Black | Fog | — |
-| **Footer** | Charcoal | Pearl | Steel/20% | — |
-| **Primary Button** | Deep Purple | White | — | Purple |
-| **Secondary Button** | Transparent | Near Black | Near Black | Cloud bg |
-| **Link** | — | Deep Purple | — | Purple (underline) |
-| **Input** | Pearl | Near Black | Mist | Fog border |
-| **Input Focus** | — | — | Deep Purple | — |
+| Element              | Background  | Text        | Border      | Hover              |
+| -------------------- | ----------- | ----------- | ----------- | ------------------ |
+| **Page**             | Cream       | —           | —           | —                  |
+| **Section Alt**      | Cloud       | —           | —           | —                  |
+| **Card**             | Pearl       | Steel       | Fog         | Shadow increase    |
+| **Header**           | Cream/80%   | Near Black  | Fog         | —                  |
+| **Footer**           | Charcoal    | Pearl       | Steel/20%   | —                  |
+| **Primary Button**   | Deep Purple | White       | —           | Purple             |
+| **Secondary Button** | Transparent | Near Black  | Near Black  | Cloud bg           |
+| **Link**             | —           | Deep Purple | —           | Purple (underline) |
+| **Input**            | Pearl       | Near Black  | Mist        | Fog border         |
+| **Input Focus**      | —           | —           | Deep Purple | —                  |
 
 ### Contrast Verification (WCAG 2.1 AA)
 
-| Combination | Ratio | Status |
-|-------------|-------|--------|
-| Near Black on Cream | 14.5:1 | ✅ AAA |
-| Steel on Cream | 5.2:1 | ✅ AA |
-| Deep Purple on Cream | 6.8:1 | ✅ AA |
-| Pearl on Charcoal | 13.8:1 | ✅ AAA |
-| Mist on Charcoal | 7.1:1 | ✅ AA |
-| White on Deep Purple | 7.2:1 | ✅ AA |
+| Combination          | Ratio  | Status |
+| -------------------- | ------ | ------ |
+| Near Black on Cream  | 14.5:1 | ✅ AAA |
+| Steel on Cream       | 5.2:1  | ✅ AA  |
+| Deep Purple on Cream | 6.8:1  | ✅ AA  |
+| Pearl on Charcoal    | 13.8:1 | ✅ AAA |
+| Mist on Charcoal     | 7.1:1  | ✅ AA  |
+| White on Deep Purple | 7.2:1  | ✅ AA  |
 
 ---
 
@@ -255,16 +248,17 @@ Typography should feel **precise yet warm** — technical enough for B2B credibi
 
 **Vazirmatn** is the modern standard for Persian web typography. Created by Saber Rastikerdar, it's actively maintained, available on Google Fonts, and designed specifically for digital readability.
 
-| Property | Value |
-|----------|-------|
-| **Font Name** | Vazirmatn |
-| **Type** | Variable font (100-900 weights) |
-| **License** | SIL Open Font License |
-| **CDN** | Google Fonts, jsDelivr |
-| **File Size** | ~35KB (woff2, variable) |
-| **Scripts** | Persian, Arabic, Latin |
+| Property      | Value                           |
+| ------------- | ------------------------------- |
+| **Font Name** | Vazirmatn                       |
+| **Type**      | Variable font (100-900 weights) |
+| **License**   | SIL Open Font License           |
+| **CDN**       | Google Fonts, jsDelivr          |
+| **File Size** | ~35KB (woff2, variable)         |
+| **Scripts**   | Persian, Arabic, Latin          |
 
 **Why Vazirmatn over alternatives:**
+
 - ✅ Open source (no licensing issues)
 - ✅ Variable font (single file, all weights)
 - ✅ Actively maintained (2015-present)
@@ -276,17 +270,18 @@ Typography should feel **precise yet warm** — technical enough for B2B credibi
 
 **Inter** is a modern, highly-readable sans-serif optimized for screens, with excellent OpenType features.
 
-| Property | Value |
-|----------|-------|
-| **Font Name** | Inter |
-| **Type** | Variable font (100-900 weights) |
-| **License** | SIL Open Font License |
-| **CDN** | Google Fonts |
-| **File Size** | ~100KB (woff2, variable) |
+| Property      | Value                           |
+| ------------- | ------------------------------- |
+| **Font Name** | Inter                           |
+| **Type**      | Variable font (100-900 weights) |
+| **License**   | SIL Open Font License           |
+| **CDN**       | Google Fonts                    |
+| **File Size** | ~100KB (woff2, variable)        |
 
 #### Alternative Fonts (if licensing allows)
 
 If budget permits commercial fonts:
+
 - **IRANYekan** — Premium Persian font, very popular in Iran
 - **IranSans** — Highly readable, widely adopted
 
@@ -297,39 +292,39 @@ Based on a **1.250 ratio (Major Third)** for harmonic progression:
 ```css
 :root {
   /* Base: 16px = 1rem */
-  --text-xs:    0.75rem;   /* 12px */
-  --text-sm:    0.875rem;  /* 14px */
-  --text-base:  1rem;      /* 16px */
-  --text-lg:    1.125rem;  /* 18px */
-  --text-xl:    1.25rem;   /* 20px */
-  --text-2xl:   1.5rem;    /* 24px */
-  --text-3xl:   1.875rem;  /* 30px */
-  --text-4xl:   2.25rem;   /* 36px */
-  --text-5xl:   3rem;      /* 48px */
-  --text-6xl:   3.75rem;   /* 60px */
-  --text-7xl:   4.5rem;    /* 72px */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+  --text-5xl: 3rem; /* 48px */
+  --text-6xl: 3.75rem; /* 60px */
+  --text-7xl: 4.5rem; /* 72px */
 }
 ```
 
 ### Heading Styles
 
-| Level | Desktop | Mobile | Weight | Line Height | Color |
-|-------|---------|--------|--------|-------------|-------|
-| **H1** | 48-60px | 36-42px | 700 | 1.1 | Near Black |
-| **H2** | 36-42px | 28-32px | 700 | 1.2 | Near Black |
-| **H3** | 28-32px | 24-28px | 600 | 1.25 | Near Black |
-| **H4** | 20-24px | 18-20px | 600 | 1.3 | Industrial |
-| **H5** | 18-20px | 16-18px | 600 | 1.4 | Steel |
-| **H6** | 16-18px | 14-16px | 600 | 1.4 | Steel |
+| Level  | Desktop | Mobile  | Weight | Line Height | Color      |
+| ------ | ------- | ------- | ------ | ----------- | ---------- |
+| **H1** | 48-60px | 36-42px | 700    | 1.1         | Near Black |
+| **H2** | 36-42px | 28-32px | 700    | 1.2         | Near Black |
+| **H3** | 28-32px | 24-28px | 600    | 1.25        | Near Black |
+| **H4** | 20-24px | 18-20px | 600    | 1.3         | Industrial |
+| **H5** | 18-20px | 16-18px | 600    | 1.4         | Steel      |
+| **H6** | 16-18px | 14-16px | 600    | 1.4         | Steel      |
 
 ### Body Text Styles
 
-| Style | Size | Weight | Line Height | Usage |
-|-------|------|--------|-------------|-------|
-| **Body Large** | 18px | 400 | 1.7 | Hero subtitles, feature descriptions |
-| **Body** | 16px | 400 | 1.65 | Primary body text |
-| **Body Small** | 14px | 400 | 1.6 | Secondary content, metadata |
-| **Caption** | 12px | 400 | 1.5 | Labels, footnotes |
+| Style          | Size | Weight | Line Height | Usage                                |
+| -------------- | ---- | ------ | ----------- | ------------------------------------ |
+| **Body Large** | 18px | 400    | 1.7         | Hero subtitles, feature descriptions |
+| **Body**       | 16px | 400    | 1.65        | Primary body text                    |
+| **Body Small** | 14px | 400    | 1.6         | Secondary content, metadata          |
+| **Caption**    | 12px | 400    | 1.5         | Labels, footnotes                    |
 
 ### Font Loading Strategy
 
@@ -337,7 +332,8 @@ Based on a **1.250 ratio (Major Third)** for harmonic progression:
 /* Critical: Load immediately for above-the-fold */
 @font-face {
   font-family: 'Vazirmatn';
-  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Regular.woff2') format('woff2');
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Regular.woff2')
+    format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -345,7 +341,8 @@ Based on a **1.250 ratio (Major Third)** for harmonic progression:
 
 @font-face {
   font-family: 'Vazirmatn';
-  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Bold.woff2') format('woff2');
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Bold.woff2')
+    format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -359,22 +356,22 @@ Based on a **1.250 ratio (Major Third)** for harmonic progression:
 
 ```css
 /* Persian (RTL) */
-[dir="rtl"] {
+[dir='rtl'] {
   font-family: 'Vazirmatn', 'Tahoma', sans-serif;
   text-align: right;
   letter-spacing: 0; /* Persian doesn't benefit from letter-spacing */
 }
 
 /* English (LTR) */
-[dir="ltr"] {
+[dir='ltr'] {
   font-family: 'Inter', system-ui, sans-serif;
   text-align: left;
   letter-spacing: -0.01em; /* Slight tightening for Inter */
 }
 
 /* Numbers in Persian context */
-[lang="fa"] {
-  font-feature-settings: "ss02"; /* Persian numerals if supported */
+[lang='fa'] {
+  font-feature-settings: 'ss02'; /* Persian numerals if supported */
 }
 ```
 
@@ -388,45 +385,38 @@ The CEO has provided professional imagery. Here's how to use it effectively:
 
 #### Visual Principles
 
-| Principle | Application |
-|-----------|-------------|
-| **Authenticity** | Use real facility photos, not stock imagery |
-| **Warmth** | Apply subtle warm color grading (avoid cold blue) |
-| **Precision** | Showcase technical details, clean machinery |
-| **Human Element** | Include workers when appropriate (builds trust) |
-| **Scale** | Show scale of operations (wide facility shots) |
+| Principle         | Application                                       |
+| ----------------- | ------------------------------------------------- |
+| **Authenticity**  | Use real facility photos, not stock imagery       |
+| **Warmth**        | Apply subtle warm color grading (avoid cold blue) |
+| **Precision**     | Showcase technical details, clean machinery       |
+| **Human Element** | Include workers when appropriate (builds trust)   |
+| **Scale**         | Show scale of operations (wide facility shots)    |
 
 #### Image Treatment
 
 ```css
 /* Standard image treatment */
 .image-treatment {
-  filter: 
-    brightness(0.95)
-    contrast(1.05)
-    saturate(0.95);
+  filter: brightness(0.95) contrast(1.05) saturate(0.95);
 }
 
 /* Hero image darkening for text overlay */
 .hero-image-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(26, 26, 26, 0.3) 0%,
-    rgba(26, 26, 26, 0.6) 100%
-  );
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.3) 0%, rgba(26, 26, 26, 0.6) 100%);
 }
 ```
 
 #### Image Categories
 
-| Category | Purpose | Recommended Dimensions |
-|----------|---------|------------------------|
-| **Hero** | Full-width backgrounds | 1920×1080 (16:9) |
-| **Process** | Manufacturing steps | 800×600 (4:3) |
-| **Equipment** | Machinery showcase | 1200×800 (3:2) |
-| **Facility** | Wide facility shots | 1600×900 (16:9) |
-| **Team** | Human element | 600×600 (1:1) |
-| **Detail** | Close-up textures | 600×400 (3:2) |
+| Category      | Purpose                | Recommended Dimensions |
+| ------------- | ---------------------- | ---------------------- |
+| **Hero**      | Full-width backgrounds | 1920×1080 (16:9)       |
+| **Process**   | Manufacturing steps    | 800×600 (4:3)          |
+| **Equipment** | Machinery showcase     | 1200×800 (3:2)         |
+| **Facility**  | Wide facility shots    | 1600×900 (16:9)        |
+| **Team**      | Human element          | 600×600 (1:1)          |
+| **Detail**    | Close-up textures      | 600×400 (3:2)          |
 
 ### Video Hero Section
 
@@ -434,24 +424,26 @@ The CEO has provided professional video content. Here's the implementation guide
 
 #### Technical Specifications
 
-| Property | Recommended | Maximum |
-|----------|-------------|---------|
-| **Duration** | 10-15 seconds | 30 seconds |
-| **Resolution** | 1080p (1920×1080) | 1080p |
-| **Frame Rate** | 24-30 fps | 30 fps |
-| **File Size** | 2-5 MB | 10 MB |
-| **Format** | MP4 (H.264) | WebM backup |
-| **Audio** | None (muted) | — |
+| Property       | Recommended       | Maximum     |
+| -------------- | ----------------- | ----------- |
+| **Duration**   | 10-15 seconds     | 30 seconds  |
+| **Resolution** | 1080p (1920×1080) | 1080p       |
+| **Frame Rate** | 24-30 fps         | 30 fps      |
+| **File Size**  | 2-5 MB            | 10 MB       |
+| **Format**     | MP4 (H.264)       | WebM backup |
+| **Audio**      | None (muted)      | —           |
 
 #### Video Content Guidelines
 
 **✓ Ideal Content:**
+
 - Slow pans of machinery in operation
 - Timelapse of facility during production
 - Close-ups of wire processing with subtle motion
 - Atmospheric shots with gentle camera movement
 
 **✗ Avoid:**
+
 - Fast-moving content or rapid cuts
 - Jarring transitions
 - Footage requiring audio context
@@ -473,12 +465,12 @@ The CEO has provided professional video content. Here's the implementation guide
     <source src="/video/hero.mp4" type="video/mp4" />
     <source src="/video/hero.webm" type="video/webm" />
   </video>
-  
+
   <!-- Gradient Overlay -->
-  <div class="absolute inset-0 bg-gradient-hero-overlay"></div>
-  
+  <div class="bg-gradient-hero-overlay absolute inset-0"></div>
+
   <!-- Content -->
-  <div class="relative z-10 container">
+  <div class="container relative z-10">
     <!-- Hero content here -->
   </div>
 </section>
@@ -487,6 +479,7 @@ The CEO has provided professional video content. Here's the implementation guide
 #### Mobile Optimization
 
 On mobile devices (<768px), replace video with a static image to:
+
 - Reduce data usage
 - Improve battery life
 - Ensure consistent experience
@@ -512,23 +505,23 @@ On mobile devices (<768px), replace video with a static image to:
 
 Motion in the Taliman design system should feel **precise and purposeful** — like the controlled processes in metal manufacturing.
 
-| Principle | Implementation |
-|-----------|----------------|
+| Principle      | Implementation                           |
+| -------------- | ---------------------------------------- |
 | **Purposeful** | Every animation serves a functional goal |
-| **Subtle** | Never overwhelming or distracting |
-| **Fast** | Quick micro-interactions (150-300ms) |
-| **Smooth** | Ease-out curves for natural deceleration |
-| **Consistent** | Same timing across similar elements |
+| **Subtle**     | Never overwhelming or distracting        |
+| **Fast**       | Quick micro-interactions (150-300ms)     |
+| **Smooth**     | Ease-out curves for natural deceleration |
+| **Consistent** | Same timing across similar elements      |
 
 ### Timing Scale
 
 ```css
 :root {
-  --duration-instant:  75ms;   /* Hover color changes */
-  --duration-fast:     150ms;  /* Button states, focus */
-  --duration-normal:   200ms;  /* Standard transitions */
-  --duration-slow:     300ms;  /* Modal opens, reveals */
-  --duration-slower:   500ms;  /* Page section transitions */
+  --duration-instant: 75ms; /* Hover color changes */
+  --duration-fast: 150ms; /* Button states, focus */
+  --duration-normal: 200ms; /* Standard transitions */
+  --duration-slow: 300ms; /* Modal opens, reveals */
+  --duration-slower: 500ms; /* Page section transitions */
 }
 ```
 
@@ -536,11 +529,11 @@ Motion in the Taliman design system should feel **precise and purposeful** — l
 
 ```css
 :root {
-  --ease-default:    cubic-bezier(0.4, 0, 0.2, 1);  /* General purpose */
-  --ease-in:         cubic-bezier(0.4, 0, 1, 1);    /* Exits */
-  --ease-out:        cubic-bezier(0, 0, 0.2, 1);    /* Entrances */
-  --ease-in-out:     cubic-bezier(0.4, 0, 0.2, 1);  /* Move/scale */
-  --ease-bounce:     cubic-bezier(0.34, 1.56, 0.64, 1); /* Playful (rare) */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1); /* General purpose */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1); /* Exits */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1); /* Entrances */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1); /* Move/scale */
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1); /* Playful (rare) */
 }
 ```
 
@@ -553,7 +546,7 @@ Motion in the Taliman design system should feel **precise and purposeful** — l
 .animate-fade-up {
   opacity: 0;
   transform: translateY(24px);
-  transition: 
+  transition:
     opacity var(--duration-slow) var(--ease-out),
     transform var(--duration-slow) var(--ease-out);
 }
@@ -574,7 +567,7 @@ Motion in the Taliman design system should feel **precise and purposeful** — l
 ```css
 /* Card lift effect */
 .card-hover {
-  transition: 
+  transition:
     transform var(--duration-fast) var(--ease-out),
     box-shadow var(--duration-fast) var(--ease-out);
 }
@@ -619,8 +612,12 @@ Motion in the Taliman design system should feel **precise and purposeful** — l
 }
 
 @keyframes skeleton-shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 /* Button loading spinner */
@@ -846,18 +843,18 @@ export default {
         cloud: '#F2F0ED',
         cream: '#F8F6F3',
         pearl: '#FAFAF8',
-        
+
         // Accent
         accent: {
           DEFAULT: '#6C3461',
           hover: '#824175',
           subtle: 'rgba(108, 52, 97, 0.08)',
         },
-        
+
         // Metallic
         bronze: '#D4A574',
         copper: '#B87333',
-        
+
         // Semantic
         success: '#166534',
         warning: '#A16207',
@@ -892,35 +889,35 @@ export default {
 ```css
 :root {
   /* Colors (referenced from Tailwind config) */
-  --color-charcoal: #1A1A1A;
-  --color-near-black: #2D2D2D;
-  --color-industrial: #4A4A4A;
+  --color-charcoal: #1a1a1a;
+  --color-near-black: #2d2d2d;
+  --color-industrial: #4a4a4a;
   --color-steel: #636466;
-  --color-mist: #A7A9AC;
-  --color-fog: #E5E5E5;
-  --color-cloud: #F2F0ED;
-  --color-cream: #F8F6F3;
-  --color-pearl: #FAFAF8;
-  --color-accent: #6C3461;
+  --color-mist: #a7a9ac;
+  --color-fog: #e5e5e5;
+  --color-cloud: #f2f0ed;
+  --color-cream: #f8f6f3;
+  --color-pearl: #fafaf8;
+  --color-accent: #6c3461;
   --color-accent-hover: #824175;
   --color-accent-subtle: rgba(108, 52, 97, 0.08);
-  --color-bronze: #D4A574;
-  --color-copper: #B87333;
-  
+  --color-bronze: #d4a574;
+  --color-copper: #b87333;
+
   /* Typography */
   --font-heading: 'Vazirmatn', 'Inter', sans-serif;
   --font-body: 'Vazirmatn', 'Inter', sans-serif;
-  
+
   /* Spacing */
   --section-padding: clamp(4rem, 8vw, 8rem);
   --container-max: 1280px;
   --container-padding: clamp(1rem, 4vw, 2rem);
-  
+
   /* Transitions */
   --transition-fast: 150ms ease-out;
   --transition-normal: 200ms ease-out;
   --transition-slow: 300ms ease-out;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
@@ -931,15 +928,15 @@ export default {
 
 ### Performance Guidelines
 
-| Metric | Target | Critical |
-|--------|--------|----------|
-| **First Contentful Paint** | < 1.0s | < 1.5s |
-| **Largest Contentful Paint** | < 1.8s | < 2.5s |
-| **Cumulative Layout Shift** | < 0.05 | < 0.1 |
-| **First Input Delay** | < 50ms | < 100ms |
-| **Total Bundle Size** | < 150KB | < 250KB |
-| **Hero Image Size** | < 150KB | < 300KB |
-| **Hero Video Size** | < 5MB | < 10MB |
+| Metric                       | Target  | Critical |
+| ---------------------------- | ------- | -------- |
+| **First Contentful Paint**   | < 1.0s  | < 1.5s   |
+| **Largest Contentful Paint** | < 1.8s  | < 2.5s   |
+| **Cumulative Layout Shift**  | < 0.05  | < 0.1    |
+| **First Input Delay**        | < 50ms  | < 100ms  |
+| **Total Bundle Size**        | < 150KB | < 250KB  |
+| **Hero Image Size**          | < 150KB | < 300KB  |
+| **Hero Video Size**          | < 5MB   | < 10MB   |
 
 ---
 
@@ -951,17 +948,17 @@ export default {
 
 ### Key Requirements
 
-| Requirement | Implementation |
-|-------------|----------------|
-| **Color Contrast** | Minimum 4.5:1 for normal text, 3:1 for large text |
-| **Focus Indicators** | Visible 2px outline on all interactive elements |
-| **Keyboard Navigation** | Full site navigable via keyboard |
-| **Screen Readers** | Semantic HTML, ARIA labels where needed |
-| **Motion** | Respect `prefers-reduced-motion` |
-| **Touch Targets** | Minimum 44×44px on mobile |
-| **Form Labels** | Every input has an associated label |
-| **Skip Links** | "Skip to main content" link |
-| **Language** | `lang` attribute on `<html>` and language switches |
+| Requirement             | Implementation                                     |
+| ----------------------- | -------------------------------------------------- |
+| **Color Contrast**      | Minimum 4.5:1 for normal text, 3:1 for large text  |
+| **Focus Indicators**    | Visible 2px outline on all interactive elements    |
+| **Keyboard Navigation** | Full site navigable via keyboard                   |
+| **Screen Readers**      | Semantic HTML, ARIA labels where needed            |
+| **Motion**              | Respect `prefers-reduced-motion`                   |
+| **Touch Targets**       | Minimum 44×44px on mobile                          |
+| **Form Labels**         | Every input has an associated label                |
+| **Skip Links**          | "Skip to main content" link                        |
+| **Language**            | `lang` attribute on `<html>` and language switches |
 
 ### RTL Accessibility
 
@@ -1094,6 +1091,7 @@ In:      cubic-bezier(0.4, 0, 1, 1)
 For complex technical specifications (chemical composition, mechanical properties):
 
 **Desktop View:**
+
 ```
 ┌──────────┬────────────┬────────────┬─────────┬─────────┐
 │ Grade    │ Carbon (C) │ Manganese  │ P (max) │ S (max) │
@@ -1104,6 +1102,7 @@ For complex technical specifications (chemical composition, mechanical propertie
 ```
 
 **Mobile View (Card-Stack):**
+
 ```
 ┌─────────────────────────────────┐
 │ 10B21                    [▼]   │
@@ -1120,6 +1119,7 @@ For complex technical specifications (chemical composition, mechanical propertie
 ### Persian Localization Specifics
 
 #### Calendar System
+
 Use **Solar Hijri (Jalali)** calendar for all dates in Persian interface:
 
 ```javascript
@@ -1132,12 +1132,12 @@ import { format } from 'date-fns-jalali';
 
 #### Number Formatting Rules
 
-| Context | Format | Example |
-|---------|--------|---------|
-| Prices | Persian numerals | ۲۵۰,۰۰۰ تومان |
-| Dates | Persian numerals | ۱۴۰۳/۰۹/۱۱ |
-| Technical specs | Western numerals | C: 0.18-0.23 |
-| Phone numbers | Western numerals | +98 21 1234 5678 |
+| Context         | Format           | Example          |
+| --------------- | ---------------- | ---------------- |
+| Prices          | Persian numerals | ۲۵۰,۰۰۰ تومان    |
+| Dates           | Persian numerals | ۱۴۰۳/۰۹/۱۱       |
+| Technical specs | Western numerals | C: 0.18-0.23     |
+| Phone numbers   | Western numerals | +98 21 1234 5678 |
 
 > ⚠️ **Critical:** Always use Western numerals (0-9) in technical specifications, even in Persian text. This is industry standard in Iran to avoid confusion in engineering contexts.
 
@@ -1145,17 +1145,17 @@ import { format } from 'date-fns-jalali';
 
 Replace generic social links with Iran-relevant platforms:
 
-| Priority | Platform | Usage |
-|----------|----------|-------|
-| 1 | **WhatsApp** | Primary B2B communication — add floating chat button |
-| 2 | **Telegram** | Company news, catalog updates, technical articles |
-| 3 | **Instagram** | Factory process videos, machinery showcase, visual proof |
-| 4 | **LinkedIn** | Export market only, international procurement |
-| ❌ | Facebook/Twitter | Blocked in Iran — omit from Persian site |
+| Priority | Platform         | Usage                                                    |
+| -------- | ---------------- | -------------------------------------------------------- |
+| 1        | **WhatsApp**     | Primary B2B communication — add floating chat button     |
+| 2        | **Telegram**     | Company news, catalog updates, technical articles        |
+| 3        | **Instagram**    | Factory process videos, machinery showcase, visual proof |
+| 4        | **LinkedIn**     | Export market only, international procurement            |
+| ❌       | Facebook/Twitter | Blocked in Iran — omit from Persian site                 |
 
 ```html
 <!-- Floating WhatsApp Button -->
-<a 
+<a
   href="https://wa.me/989123456789?text=سلام،%20درخواست%20استعلام%20قیمت%20دارم"
   class="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-white shadow-lg hover:bg-[#128C7E]"
   target="_blank"
@@ -1170,15 +1170,15 @@ Replace generic social links with Iran-relevant platforms:
 
 Target these keywords for organic search in the Iranian market:
 
-| Category | Persian | Transliteration | Search Intent |
-|----------|---------|-----------------|---------------|
-| **Core Product** | سیم مفتول CHQ | Sim Maftool CHQ | Direct sourcing |
-| **Material** | مفتول فولادی | Maftool Fouladi | General research |
-| **Process** | مفتول‌کشی | Maftool Kashi | Capability check |
-| **Treatment** | بازپخت | Baz-pokht | Technical verification |
-| **Specific Grade** | مفتول 10B21 | Maftool 10B21 | Precise procurement |
-| **Application** | سیم پیچ و مهره | Sim Pich o Mohre | Application search |
-| **Industry** | قطعات خودرو | Ghat'at Khodro | Industry targeting |
+| Category           | Persian        | Transliteration  | Search Intent          |
+| ------------------ | -------------- | ---------------- | ---------------------- |
+| **Core Product**   | سیم مفتول CHQ  | Sim Maftool CHQ  | Direct sourcing        |
+| **Material**       | مفتول فولادی   | Maftool Fouladi  | General research       |
+| **Process**        | مفتول‌کشی      | Maftool Kashi    | Capability check       |
+| **Treatment**      | بازپخت         | Baz-pokht        | Technical verification |
+| **Specific Grade** | مفتول 10B21    | Maftool 10B21    | Precise procurement    |
+| **Application**    | سیم پیچ و مهره | Sim Pich o Mohre | Application search     |
+| **Industry**       | قطعات خودرو    | Ghat'at Khodro   | Industry targeting     |
 
 ### Content Layer Schema for CHQ Products
 
@@ -1198,24 +1198,24 @@ const productsCollection = defineCollection({
       fa: z.string(),
       en: z.string(),
     }),
-    
+
     // Technical specifications
     gradeStandard: z.enum(['ASTM', 'JIS', 'DIN', 'ISO']),
     gradeNumber: z.string(), // e.g., "1008", "10B21"
-    
+
     diameterRange: z.object({
       min: z.number().positive(),
       max: z.number().positive(),
       unit: z.literal('mm'),
     }),
-    
+
     surfaceFinish: z.enum([
-      'HRPPD',      // Hot Rolled Pickled Phosphate Drawn
-      'SAPPD',      // Spheroidized Annealed Pickled Phosphate Drawn
+      'HRPPD', // Hot Rolled Pickled Phosphate Drawn
+      'SAPPD', // Spheroidized Annealed Pickled Phosphate Drawn
       'Lime Coated',
       'Bare',
     ]),
-    
+
     chemicalComposition: z.object({
       carbon: z.object({ min: z.number(), max: z.number() }),
       manganese: z.object({ min: z.number(), max: z.number() }),
@@ -1224,22 +1224,20 @@ const productsCollection = defineCollection({
       silicon: z.object({ min: z.number(), max: z.number() }).optional(),
       boron: z.object({ min: z.number(), max: z.number() }).optional(),
     }),
-    
+
     mechanicalProperties: z.object({
       tensileStrength: z.object({ min: z.number(), max: z.number(), unit: z.literal('MPa') }),
       elongation: z.object({ min: z.number(), unit: z.literal('%') }),
       reductionOfArea: z.object({ min: z.number(), unit: z.literal('%') }).optional(),
     }),
-    
-    heatTreatment: z.array(z.enum([
-      'Spheroidized Annealing',
-      'Soft Annealing',
-      'Stress Relief',
-    ])).optional(),
-    
+
+    heatTreatment: z
+      .array(z.enum(['Spheroidized Annealing', 'Soft Annealing', 'Stress Relief']))
+      .optional(),
+
     applications: z.array(z.string()),
     certifications: z.array(z.string()),
-    
+
     // Media
     images: z.array(z.string()),
     datasheetPdf: z.string().optional(),
@@ -1255,12 +1253,12 @@ Given the geopolitical context and history of cyberattacks on Iranian steel prod
 
 **Why Static Site Generation (SSG) is a Defensive Strategy:**
 
-| Attack Vector | Dynamic CMS Risk | Static Site (Astro) |
-|---------------|------------------|---------------------|
-| SQL Injection | High (database exposed) | **Eliminated** (no database) |
-| Remote Code Execution | High (server-side code) | **Eliminated** (pre-rendered HTML) |
-| Admin Panel Brute Force | High (login portals) | **Eliminated** (no admin panel) |
-| XSS via User Input | Medium | **Minimal** (no dynamic forms on most pages) |
+| Attack Vector           | Dynamic CMS Risk        | Static Site (Astro)                          |
+| ----------------------- | ----------------------- | -------------------------------------------- |
+| SQL Injection           | High (database exposed) | **Eliminated** (no database)                 |
+| Remote Code Execution   | High (server-side code) | **Eliminated** (pre-rendered HTML)           |
+| Admin Panel Brute Force | High (login portals)    | **Eliminated** (no admin panel)              |
+| XSS via User Input      | Medium                  | **Minimal** (no dynamic forms on most pages) |
 
 > 💡 **CEO Talking Point:** "Security by architecture" — the website cannot be hacked in traditional ways because there's nothing to hack. It's just files.
 
@@ -1288,23 +1286,25 @@ To ensure resilience against international internet disruptions:
 
 While static generation handles specifications, some data needs real-time updates. Use Astro Server Islands for:
 
-| Component | Data Source | Fallback UI | Update Frequency |
-|-----------|-------------|-------------|------------------|
-| **Stock Status** | ERP/Inventory API | Skeleton shimmer → "Check Availability" | Real-time |
-| **Lead Time** | Production schedule | "Contact for current lead time" | Daily |
-| **Rolling Schedule** | Manufacturing calendar | "Week 42-44" (static estimate) | Weekly |
-| **Dynamic Pricing** | Customer tier detection | "Request Quote" button | Per-session |
+| Component            | Data Source             | Fallback UI                             | Update Frequency |
+| -------------------- | ----------------------- | --------------------------------------- | ---------------- |
+| **Stock Status**     | ERP/Inventory API       | Skeleton shimmer → "Check Availability" | Real-time        |
+| **Lead Time**        | Production schedule     | "Contact for current lead time"         | Daily            |
+| **Rolling Schedule** | Manufacturing calendar  | "Week 42-44" (static estimate)          | Weekly           |
+| **Dynamic Pricing**  | Customer tier detection | "Request Quote" button                  | Per-session      |
 
 ```astro
 <!-- Example: Stock Status Island -->
 <div class="stock-indicator">
-  {Astro.locals.user?.tier === 'verified' ? (
-    <StockStatus grade="10B21" server:defer>
-      <div slot="fallback" class="animate-pulse bg-gray-200 h-6 w-24 rounded" />
-    </StockStatus>
-  ) : (
-    <a href="/contact">Check Availability</a>
-  )}
+  {
+    Astro.locals.user?.tier === 'verified' ? (
+      <StockStatus grade="10B21" server:defer>
+        <div slot="fallback" class="h-6 w-24 animate-pulse rounded bg-gray-200" />
+      </StockStatus>
+    ) : (
+      <a href="/contact">Check Availability</a>
+    )
+  }
 </div>
 ```
 
@@ -1313,6 +1313,7 @@ While static generation handles specifications, some data needs real-time update
 Generate downloadable PDF datasheets at build time from Content Layer data. This ensures the PDF always matches the website (single source of truth).
 
 **Implementation approach:**
+
 ```typescript
 // scripts/generate-pdfs.ts
 import { getCollection } from 'astro:content';
@@ -1320,7 +1321,7 @@ import PDFDocument from 'pdfkit';
 
 export async function generateSpecSheets() {
   const products = await getCollection('products');
-  
+
   for (const product of products) {
     const doc = new PDFDocument();
     // ... generate PDF with product.data
@@ -1330,6 +1331,7 @@ export async function generateSpecSheets() {
 ```
 
 **Benefits:**
+
 - PDFs regenerate automatically when specs change
 - No manual PDF maintenance
 - Version control on specifications
@@ -1360,6 +1362,7 @@ Mobile (vertical):
 ```
 
 **CSS Implementation:**
+
 ```css
 .process-flow {
   display: flex;
@@ -1394,7 +1397,7 @@ Mobile (vertical):
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .process-step::after {
     top: auto;
     left: 12px;
@@ -1448,7 +1451,7 @@ Every page must reference its language counterpart:
       "value": "0.18-0.23%"
     },
     {
-      "@type": "PropertyValue", 
+      "@type": "PropertyValue",
       "name": "Diameter Range",
       "value": "5.5-25mm"
     }
@@ -1500,6 +1503,7 @@ Every page must reference its language counterpart:
 > **"70% of B2B buyers complete their buying journey digitally before speaking to sales."**
 
 **Implication:** The website must answer critical technical questions without human intervention:
+
 - "Can you hold tolerance on 10B21 boron steel?" → Clear spec tables
 - "Do you have spheroidizing annealing in-house?" → Capabilities page with equipment photos
 - "What's your diameter range for alloy steels?" → Filterable product catalog
@@ -1511,12 +1515,14 @@ If the site can't answer these instantly, the buyer moves to Kavir Steel or Zob 
 Iranian B2B buyers rarely use "Add to Cart". The primary conversion goal is **Request for Quotation (RFQ)**.
 
 **Key Conversion Points:**
+
 1. Floating WhatsApp button (always visible)
 2. "درخواست قیمت" (Request Quote) CTA on every product page
 3. Quick RFQ form (minimal fields: Name, Company, Phone, Product, Quantity)
 4. Direct phone number prominently displayed
 
 **RFQ Form Fields (Minimal):**
+
 ```
 نام و نام خانوادگی *     [________________]
 نام شرکت *              [________________]
@@ -1533,18 +1539,15 @@ Iranian B2B buyers rarely use "Add to Cart". The primary conversion goal is **Re
 ## Changelog
 
 ### Version 2.2 (November 2025)
+
 - **Added:** Security by Architecture section (SSG as defense against cyberattacks)
-- **Added:** Dual Hosting Strategy (Global CDN + Iranian mirror for NIN resilience)
-- **Added:** Server Islands use cases (Stock Status, Lead Time, Dynamic Pricing)
-- **Added:** Auto-Generated PDF Spec Sheets workflow
 - **Added:** Processing Flow Visualization (horizontal/vertical timeline)
 - **Added:** Technical SEO Implementation (hreflang, Schema.org Product/Organization)
 - **Added:** B2B Buyer Journey statistic (70% digital before sales contact)
 
 ### Version 2.1 (November 2025)
+
 - **Added:** Iranian Market Adaptations section (Section 11)
-- **Added:** Persian Turquoise as alternative accent color
-- **Added:** Grade-First navigation structure
 - **Added:** Card-Stack mobile table pattern
 - **Added:** Persian localization specifics (calendar, numbers)
 - **Added:** Iran-specific social media strategy
@@ -1553,6 +1556,7 @@ Iranian B2B buyers rarely use "Add to Cart". The primary conversion goal is **Re
 - **Added:** RFQ-first conversion strategy
 
 ### Version 2.0 (November 2025)
+
 - **Typography:** Updated to Vazirmatn as primary Persian font (modern, Google Fonts, variable)
 - **Colors:** Expanded neutral palette with more warm off-whites
 - **Colors:** Added metallic accent colors (Bronze, Copper)
@@ -1563,10 +1567,11 @@ Iranian B2B buyers rarely use "Add to Cart". The primary conversion goal is **Re
 - **Accessibility:** WCAG 2.1 AA compliance guidelines
 
 ### Version 1.0 (Initial)
+
 - Brand foundation from original brand guidelines
 - Basic color palette (limited to original brand book)
 - Typography using Yekan Bakh (brand book spec)
 
 ---
 
-*This design system is a living document. Update as the project evolves.*
+_This design system is a living document. Update as the project evolves._

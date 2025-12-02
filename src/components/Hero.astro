@@ -5,10 +5,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section
-  class="relative min-h-screen flex items-center justify-center overflow-hidden"
-  id="home"
->
+<section class="relative flex min-h-screen items-center justify-center overflow-hidden" id="home">
   <!-- Background Image -->
   <div class="absolute inset-0 z-0">
     <img
@@ -23,7 +20,7 @@ const t = useTranslations(lang);
   <!-- Content -->
   <div class="container relative z-10 mx-auto px-4 py-32 text-center sm:px-6 lg:px-8">
     <div class="animate-in mx-auto max-w-4xl">
-      <h1 class="heading-1 mb-6 text-white text-balance">
+      <h1 class="heading-1 mb-6 text-balance text-white">
         {t('hero.title')}
       </h1>
       <p class="mx-auto mb-10 max-w-2xl text-lg text-white/90 md:text-xl">
@@ -33,7 +30,10 @@ const t = useTranslations(lang);
         <a href={getLocalizedPath('/#processes', lang)} class="btn-white">
           {t('hero.cta.primary')}
         </a>
-        <a href={getLocalizedPath('/#contact', lang)} class="btn-secondary border-white text-white hover:bg-white hover:text-primary-600">
+        <a
+          href={getLocalizedPath('/#contact', lang)}
+          class="btn-secondary border-white text-white hover:bg-white hover:text-primary-600"
+        >
           {t('hero.cta.secondary')}
         </a>
       </div>

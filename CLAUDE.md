@@ -1,229 +1,128 @@
-# Taliman Website - Astro 5.x Corporate Catalog
+# Taliman Website — Astro 5.x
 
-Production-grade bilingual corporate catalog for Taliman Sakhtehaye Felezi Kara, specialists in CHQ (Cold Heading Quality) wire processing for the automotive fastener industry. Built with Astro 5.x for maximum performance and SEO optimization.
-
-## 🚀 Current Status
-
-**Architecture**: Astro 5.x Static-First Corporate Catalog  
-**Phase**: Content Collections Development 🚧  
-**Target**: 100/100 Lighthouse scores across all pages
-
-## 🛠 Development Commands
-
-### Astro Development
+## Commands
 ```bash
-bun run dev          # Start Astro dev server with HMR
-bun run build        # Build static site for production
-bun run preview      # Preview production build locally
-bun run astro check  # TypeScript and content validation
+bun dev              # Dev server with HMR
+bun build            # Production build (runs astro check first)
+bun preview          # Preview production build
+bun check            # TypeScript + content validation
+bun lint:fix         # Fix ESLint issues
+bun format           # Prettier formatting
 ```
 
-### Quality Assurance
-```bash
-bun run lint:fix     # Fix ESLint issues
-bun run format       # Prettier formatting
-bun run type-check   # TypeScript validation
-bun run test         # Run content schema tests
-```
-
-### Performance Analysis
-```bash
-bun run analyze      # Bundle size analysis
-bun run lighthouse   # Performance audit
-bun run audit        # Content and accessibility audit
-```
-
-**Note**: Using Bun package manager for optimal performance in Astro development
-
-## 🎯 Performance Targets
-
-### Lighthouse Scores: 100/100 All Categories
-- **Performance**: 100/100 (FCP < 1.0s, LCP < 1.8s)
-- **Accessibility**: 100/100 (WCAG 2.1 AA compliant)
-- **Best Practices**: 100/100 (Security & modern standards)
-- **SEO**: 100/100 (Bilingual optimization)
-
-### Core Web Vitals Excellence
-- **First Contentful Paint**: < 1.0s
-- **Largest Contentful Paint**: < 1.8s
-- **Cumulative Layout Shift**: < 0.05
-- **First Input Delay**: < 100ms
-- **Total Bundle Size**: < 150KB initial load
-
-## 🏗 Astro 5.x Architecture
-
-### Core Technology Stack
-- **Framework**: Astro 5.x + TypeScript (static-first)
-- **Content Management**: Content Collections + Content Layer API
-- **Internationalization**: Built-in i18n routing (fa/en)
+## Stack
+- **Framework**: Astro 5.x (SSG, TypeScript-first)
 - **Styling**: Tailwind CSS with RTL support
-- **Dynamic Features**: Server Islands for selective hydration
-- **Icons**: Lucide React (client-side only when needed)
-- **Package Manager**: Bun (preferred for Astro performance)
+- **i18n**: Built-in (Persian default `/`, English `/en`)
+- **Package Manager**: Bun
 
-### Architecture Principles
-1. **Static-First**: Zero JavaScript by default, hydrate only when necessary
-2. **Content Collections**: Type-safe manufacturing data and specifications
-3. **Performance-First**: Optimized for Core Web Vitals excellence
-4. **SEO-Optimized**: Built-in meta tags, structured data, bilingual support
-5. **Islands Architecture**: Selective hydration for interactive components
-6. **CDN-Ready**: Optimized for edge deployment and global distribution
-
-## 📋 Development Principles
-
-1. **Static Performance**: Leverage Astro's zero-JS output by default
-2. **Farsi-First**: Primary language for Persian market SEO dominance
-3. **Content-Driven**: Use Content Collections for all manufacturing data
-4. **Mobile-First**: Responsive design with comprehensive RTL support
-5. **Type-Safe**: Content schema validation and TypeScript throughout
-6. **Production-Ready**: VPS deployment with CDN optimization
-
-## 📁 Astro Project Structure
-
+## Project Structure
 ```
 src/
-├── pages/              # File-based routing
-│   ├── index.astro    # Home page (Farsi)
-│   ├── en/            # English routes
-│   ├── processes/     # CHQ process pages
-│   └── equipment/     # Equipment specification pages
-├── content/           # Content Collections
-│   ├── config.ts      # Content schema definitions
-│   ├── processes/     # CHQ manufacturing processes
-│   ├── equipment/     # Technical specifications
-│   └── certifications/ # Quality certifications
-├── components/        # Astro/React components
-│   ├── ui/           # Base UI components
-│   ├── layout/       # Header, Footer, Navigation
-│   ├── sections/     # Page sections (Hero, About)
-│   └── islands/      # Interactive components
-├── layouts/          # Page layout templates
-│   ├── BaseLayout.astro
-│   ├── ProductLayout.astro
-│   └── ProcessLayout.astro
-├── styles/           # Global styles and design system
-│   ├── global.css    # Base styles
-│   └── components/   # Component-specific styles
-└── lib/              # Utilities, constants, types
-    ├── content.ts    # Content collection helpers
-    ├── i18n.ts       # Internationalization utilities
-    └── seo.ts        # SEO optimization helpers
+├── pages/           # File-based routing
+│   ├── index.astro  # Persian (RTL, default)
+│   └── en/          # English (LTR)
+├── components/      # Astro components
+├── layouts/         # BaseLayout.astro
+├── lib/             # i18n.ts, utils
+├── styles/          # global.css, tokens
+└── content/         # Content Collections (Phase 3)
 ```
 
-## 🎯 Development Phases
+## Current Phase: 1 — Tokenization
+Reference: `docs/PHASE-01-TOKENIZATION.md`
 
-### Phase 1: Astro Foundation ✅ COMPLETE
-- [x] Astro 5.x project initialization
-- [x] Content Collections schema design
-- [x] Bilingual routing setup (fa/en)
-- [x] Base layout and component structure
-- [x] Tailwind CSS with RTL configuration
+### Phase 1 Goals
+- Replace legacy `primary-*` blue palette with brand tokens
+- Implement CSS custom properties from branding guide
+- Zero `#FFFFFF` usage — use Cream/Pearl/Cloud
 
-### Phase 2: Content Collections Development (Current)
-- [x] Manufacturing processes content schema
-- [x] Equipment specifications data structure
-- [ ] CHQ wire processing technical content
-- [ ] Quality certifications and standards
-- [ ] Company information and history
-- [ ] Contact information and locations
+## Rules — ALWAYS FOLLOW
 
-### Phase 3: Static Pages & Components
-- [ ] Hero section with performance optimization
-- [ ] About section with company timeline
-- [ ] Processes section with technical details
-- [ ] Equipment section with specifications
-- [ ] Quality section with certifications
-- [ ] Contact section with location data
+### Colors
+- ❌ NEVER use `primary-*` classes (legacy blue)
+- ❌ NEVER use `#FFFFFF` or `bg-white`
+- ✅ USE `bg-cream` (page), `bg-pearl` (cards), `bg-cloud` (alternating sections)
+- ✅ USE `bg-charcoal` (footer), `text-steel` (body text)
+- ✅ USE `text-accent` / `bg-accent` for CTAs (sparingly, ~15%)
 
-### Phase 4: Interactive Features (Server Islands)
-- [ ] Contact form with server-side validation
-- [ ] Language switching functionality
-- [ ] Search functionality for processes/equipment
-- [ ] Interactive product galleries
-- [ ] PDF download capabilities
+### RTL/LTR
+- ✅ USE logical properties: `padding-inline-start`, `margin-inline-end`
+- ❌ NEVER use physical properties: `padding-left`, `margin-right`
+- Persian (`/`) is RTL, English (`/en`) is LTR
 
-### Phase 5: Optimization & Launch
-- [ ] Performance optimization (100/100 Lighthouse)
-- [ ] SEO meta tags and structured data
-- [ ] Accessibility testing and WCAG compliance
-- [ ] Cross-browser testing and polyfills
-- [ ] CDN setup and production deployment
+### Copy
+- ✅ ALL copy in `src/lib/i18n.ts` — NO inline strings in components
+- ✅ Future: Content Collections for structured data
 
-## 🔧 Content Collections Schema
+### Accessibility
+- ✅ Visible focus states on all interactive elements
+- ✅ 4.5:1 contrast ratio minimum
+- ✅ Skip link (Phase 2)
 
-### Manufacturing Processes
-```typescript
-// src/content/config.ts
-const processesCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    title: z.object({ fa: z.string(), en: z.string() }),
-    description: z.object({ fa: z.string(), en: z.string() }),
-    specifications: z.array(z.object({
-      parameter: z.string(),
-      value: z.string(),
-      unit: z.string()
-    })),
-    applications: z.array(z.string()),
-    certifications: z.array(z.string())
-  })
-});
+## Shortcuts
+
+### QTOKEN
+Audit codebase for legacy tokens:
+```bash
+rg "primary-" src --no-heading
+rg "#ffffff" src -i --no-heading
+rg "bg-white" src --no-heading
 ```
 
-### Equipment Specifications
-```typescript
-const equipmentCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    name: z.object({ fa: z.string(), en: z.string() }),
-    model: z.string(),
-    specifications: z.object({
-      wireRange: z.string(),
-      capacity: z.string(),
-      precision: z.string(),
-      certifications: z.array(z.string())
-    }),
-    images: z.array(z.string()),
-    datasheets: z.array(z.string())
-  })
-});
+### QRTL
+Check RTL/LTR parity:
+1. Open `http://localhost:4321/` (Persian/RTL)
+2. Open `http://localhost:4321/en` (English/LTR)
+3. Verify mirrored layouts
+
+### QPERF
+Run performance audit:
+```bash
+bun build && bun preview
+# Then run Lighthouse in Chrome DevTools
 ```
 
-## 🌐 Internationalization Strategy
+## Reference Docs
+| Document | Purpose |
+|----------|---------|
+| `docs/Branding/branding.md` | Colors, typography, motion, components |
+| `docs/PRD.md` | Functional requirements, phases |
+| `docs/PHASE-01-TOKENIZATION.md` | Current phase details |
+| `docs/PHASE-02-GLOBAL-SHELL.md` | Next phase |
 
-### URL Structure
-- **Farsi (Primary)**: `/` (root domain for SEO advantage)
-- **English**: `/en/` (subdirectory for international market)
+## Performance Targets
+- FCP: < 1.0s
+- LCP: < 1.8s
+- CLS: < 0.05
+- Lighthouse: ≥ 95 all categories
 
-### Content Management
-- Content Collections with bilingual schema
-- Automatic route generation for both languages
-- SEO-optimized meta tags per language
-- RTL/LTR layout switching
+## Brand Tokens (Quick Reference)
 
-## 📊 Performance Monitoring
+### Backgrounds
+| Token | Hex | Usage |
+|-------|-----|-------|
+| `cream` | #F8F6F3 | Page background |
+| `pearl` | #FAFAF8 | Cards |
+| `cloud` | #F2F0ED | Alternating sections |
+| `charcoal` | #1A1A1A | Footer |
 
-### Development Metrics
-- Bundle size tracking per route
-- Core Web Vitals monitoring
-- Content validation automation
-- Accessibility testing integration
+### Text
+| Token | Hex | Usage |
+|-------|-----|-------|
+| `near-black` | #2D2D2D | Headings |
+| `steel` | #636466 | Body text |
+| `mist` | #A7A9AC | Muted text |
 
-### Production Analytics
-- Lighthouse CI integration
-- Real User Monitoring (RUM)
-- CDN performance metrics
-- SEO ranking tracking
+### Accent
+| Token | Hex | Usage |
+|-------|-----|-------|
+| `accent` | #6C3461 | CTAs, links (Deep Purple) |
+| `accent-hover` | #824175 | Hover states |
+| `bronze` | #D4A574 | Metallic highlights |
 
-## 🚀 Deployment Strategy
-
-### VPS Optimization
-- Static file generation with Astro build
-- CDN integration for global delivery
-- Gzip/Brotli compression
-- HTTP/2 and HTTP/3 support
-- Edge caching strategies
-
----
-
-*Astro-first development: Static performance, selective hydration, content-driven architecture*
+## Before Committing
+1. `bun check` — TypeScript validation
+2. `bun format` — Prettier
+3. `rg "primary-" src` — Zero matches
+4. Test both `/` and `/en` routes

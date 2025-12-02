@@ -1,4 +1,5 @@
 # Development Guide
+
 # Taliman Website - Astro 5.x
 
 Modern bilingual corporate website built with Astro 5.x, optimized for performance and international markets.
@@ -6,12 +7,14 @@ Modern bilingual corporate website built with Astro 5.x, optimized for performan
 ## Quick Start
 
 ### Prerequisites
+
 - Node.js 18.17.0 or higher
 - Bun 1.0.0 or higher (preferred package manager)
 - Git
 - VS Code with Astro extension (recommended)
 
 ### Installation
+
 ```bash
 # Clone the repository
 git clone <repository-url>
@@ -32,6 +35,7 @@ Visit [http://localhost:4321](http://localhost:4321) to see the application.
 ## Astro Development Environment
 
 ### Package Manager Setup
+
 ```bash
 # Bun is preferred for faster installs and execution
 bun install                    # Install dependencies
@@ -42,6 +46,7 @@ bun outdated                   # Check for updates
 ```
 
 ### Development Server
+
 ```bash
 bun run dev                    # Start dev server with hot reload
 bun run dev --host            # Expose to network
@@ -50,6 +55,7 @@ bun run dev --open           # Auto-open browser
 ```
 
 ### Astro 5.x Project Structure
+
 ```
 taliman-website/
 ├── public/                    # Static assets (images, favicons, etc.)
@@ -85,6 +91,7 @@ taliman-website/
 ## Content Management with Astro
 
 ### Content Collections Setup
+
 ```typescript
 // src/content/config.ts
 import { defineCollection, z } from 'astro:content';
@@ -96,12 +103,14 @@ const pages = defineCollection({
     description: z.string(),
     lang: z.enum(['fa', 'en']),
     lastModified: z.date(),
-    seo: z.object({
-      title: z.string(),
-      description: z.string(),
-      keywords: z.array(z.string())
-    }).optional()
-  })
+    seo: z
+      .object({
+        title: z.string(),
+        description: z.string(),
+        keywords: z.array(z.string()),
+      })
+      .optional(),
+  }),
 });
 
 const products = defineCollection({
@@ -111,14 +120,15 @@ const products = defineCollection({
     category: z.string(),
     specifications: z.array(z.string()),
     images: z.array(z.string()),
-    lang: z.enum(['fa', 'en'])
-  })
+    lang: z.enum(['fa', 'en']),
+  }),
 });
 
 export const collections = { pages, products };
 ```
 
 ### Bilingual Content Organization
+
 ```
 src/content/
 ├── pages/
@@ -138,36 +148,38 @@ src/content/
 ```
 
 ### Content Layer API Configuration
+
 ```typescript
 // astro.config.mjs
 export default defineConfig({
   experimental: {
     contentLayer: true,
-    contentIntellisense: true
+    contentIntellisense: true,
   },
   content: {
     collections: {
       pages: {
         glob: '**/*.{md,mdx}',
-        schema: pagesSchema
-      }
-    }
-  }
+        schema: pagesSchema,
+      },
+    },
+  },
 });
 ```
 
 ### Markdown and MDX Authoring
+
 ```markdown
 ---
 # Frontmatter
-title: "درباره تولیمان"
-description: "متخصص در فرآوری سیم CHQ برای صنعت خودرو"
-lang: "fa"
+title: 'درباره تولیمان'
+description: 'متخصص در فرآوری سیم CHQ برای صنعت خودرو'
+lang: 'fa'
 lastModified: 2024-01-15
 seo:
-  title: "درباره شرکت تولیمان ساختهای فلزی کارا"
-  description: "پیشرو در تولید محصولات CHQ با کیفیت بالا"
-  keywords: ["CHQ", "سیم سردکاری", "قطعات خودرو"]
+  title: 'درباره شرکت تولیمان ساختهای فلزی کارا'
+  description: 'پیشرو در تولید محصولات CHQ با کیفیت بالا'
+  keywords: ['CHQ', 'سیم سردکاری', 'قطعات خودرو']
 ---
 
 # درباره تولیمان
@@ -175,6 +187,7 @@ seo:
 محتوای فارسی صفحه درباره ما...
 
 ## تخصص ما
+
 - فرآوری سیم CHQ
 - تولید قطعات خودرو
 - کنترل کیفیت بالا
@@ -183,6 +196,7 @@ seo:
 ## Component Development
 
 ### Astro Component Syntax
+
 ```astro
 ---
 // Component script (server-side)
@@ -199,27 +213,27 @@ const isRTL = lang === 'fa';
 <!-- Component template -->
 <section class={`hero-section ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'}>
   <div class="container mx-auto px-4">
-    <h1 class="text-4xl font-bold mb-4 text-center">
+    <h1 class="mb-4 text-center text-4xl font-bold">
       {title}
     </h1>
-    {description && (
-      <p class="text-lg text-gray-600 text-center max-w-2xl mx-auto">
-        {description}
-      </p>
-    )}
+    {
+      description && (
+        <p class="mx-auto max-w-2xl text-center text-lg text-gray-600">{description}</p>
+      )
+    }
     <slot />
   </div>
 </section>
 
 <style>
   .hero-section {
-    @apply py-16 bg-gradient-to-r from-blue-600 to-blue-800;
+    @apply bg-gradient-to-r from-blue-600 to-blue-800 py-16;
   }
-  
+
   .rtl {
     font-family: 'Vazir', sans-serif;
   }
-  
+
   .ltr {
     font-family: 'Inter', sans-serif;
   }
@@ -227,6 +241,7 @@ const isRTL = lang === 'fa';
 ```
 
 ### Islands Architecture Implementation
+
 ```astro
 ---
 // Interactive components only when needed
@@ -240,7 +255,7 @@ import ProductCarousel from '../components/ProductCarousel.tsx';
     <h1>اطلاعات تماس</h1>
     <p>آدرس، تلفن، ایمیل...</p>
   </section>
-  
+
   <!-- Interactive islands -->
   <ContactForm client:load />
   <ProductCarousel client:visible />
@@ -248,6 +263,7 @@ import ProductCarousel from '../components/ProductCarousel.tsx';
 ```
 
 ### React Component Integration
+
 ```typescript
 // src/components/ContactForm.tsx
 import { useState } from 'react';
@@ -259,11 +275,11 @@ interface ContactFormProps {
 
 export default function ContactForm({ lang }: ContactFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Form submission logic
     try {
       // Send data to API
@@ -288,20 +304,19 @@ export default function ContactForm({ lang }: ContactFormProps) {
 ```
 
 ### Server Islands for Dynamic Features
+
 ```astro
 ---
 // src/components/ServerIsland.astro
 // Server-side dynamic content
-const recentPosts = await fetch('/api/recent-posts').then(r => r.json());
+const recentPosts = await fetch('/api/recent-posts').then((r) => r.json());
 const currentTime = new Date().toLocaleString('fa-IR');
 ---
 
 <div class="server-island">
   <p>آخرین بروزرسانی: {currentTime}</p>
   <ul>
-    {recentPosts.map(post => (
-      <li>{post.title}</li>
-    ))}
+    {recentPosts.map((post) => <li>{post.title}</li>)}
   </ul>
 </div>
 ```
@@ -309,6 +324,7 @@ const currentTime = new Date().toLocaleString('fa-IR');
 ## Styling and Assets
 
 ### Tailwind CSS with RTL Support
+
 ```javascript
 // tailwind.config.mjs
 import { addDynamicIconSelectors } from '@iconify/tailwind';
@@ -319,20 +335,20 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'vazir': ['Vazir', 'sans-serif'],
-        'inter': ['Inter', 'sans-serif'],
+        vazir: ['Vazir', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
       spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
+        18: '4.5rem',
+        88: '22rem',
       },
       colors: {
-        'primary': {
+        primary: {
           50: '#eff6ff',
           500: '#3b82f6',
           900: '#1e3a8a',
-        }
-      }
+        },
+      },
     },
   },
   plugins: [
@@ -343,11 +359,12 @@ export default {
   // RTL support
   corePlugins: {
     direction: true,
-  }
-}
+  },
+};
 ```
 
 ### Astro's Built-in Image Optimization
+
 ```astro
 ---
 import { Image } from 'astro:assets';
@@ -356,18 +373,18 @@ import companyLogo from '../assets/images/logo.png';
 ---
 
 <!-- Optimized local images -->
-<Image 
+<Image
   src={heroImage}
   alt="تولیمان - تخصص در CHQ"
   width={1920}
   height={1080}
   format="webp"
   quality={85}
-  class="w-full h-auto"
+  class="h-auto w-full"
 />
 
 <!-- Responsive images -->
-<Image 
+<Image
   src={companyLogo}
   alt="لوگو تولیمان"
   widths={[240, 540, 720]}
@@ -377,7 +394,7 @@ import companyLogo from '../assets/images/logo.png';
 />
 
 <!-- External images (CDN) -->
-<img 
+<img
   src="https://cdn.taliman.ir/products/chq-wire.webp"
   alt="سیم CHQ با کیفیت"
   loading="lazy"
@@ -388,6 +405,7 @@ import companyLogo from '../assets/images/logo.png';
 ```
 
 ### Asset Management and Optimization
+
 ```
 public/
 ├── images/
@@ -402,6 +420,7 @@ public/
 ```
 
 ### CSS Logical Properties for i18n
+
 ```css
 /* globals.css */
 :root {
@@ -422,17 +441,17 @@ public/
 }
 
 /* RTL-specific styles */
-[dir="rtl"] .arrow-icon {
+[dir='rtl'] .arrow-icon {
   transform: scaleX(-1);
 }
 
-[dir="rtl"] .numbered-list {
+[dir='rtl'] .numbered-list {
   counter-reset: item;
   list-style: none;
 }
 
-[dir="rtl"] .numbered-list li::before {
-  content: counter(item, decimal) ".";
+[dir='rtl'] .numbered-list li::before {
+  content: counter(item, decimal) '.';
   counter-increment: item;
   margin-inline-end: 0.5rem;
 }
@@ -441,13 +460,14 @@ public/
 ## Build and Deployment
 
 ### Development Scripts
+
 ```bash
 # Development
 bun run dev                    # Start dev server (port 4321)
 bun run dev:network           # Expose to network
 bun run preview               # Preview production build
 
-# Code Quality  
+# Code Quality
 bun run lint                  # ESLint check
 bun run lint:fix              # Fix ESLint issues
 bun run format                # Prettier formatting
@@ -461,6 +481,7 @@ bun run astro check           # Astro-specific checks
 ```
 
 ### Static Site Generation
+
 ```bash
 # Build static site
 bun run build
@@ -473,6 +494,7 @@ bun run preview
 ```
 
 ### Build Optimization and Analysis
+
 ```javascript
 // astro.config.mjs
 export default defineConfig({
@@ -481,7 +503,7 @@ export default defineConfig({
     assets: '_astro',
     assetsPrefix: process.env.CDN_URL || undefined,
     inlineStylesheets: 'auto',
-    split: true
+    split: true,
   },
   image: {
     service: sharpImageService(),
@@ -489,9 +511,9 @@ export default defineConfig({
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**.taliman.ir'
-      }
-    ]
+        hostname: '**.taliman.ir',
+      },
+    ],
   },
   compressHTML: true,
   vite: {
@@ -500,16 +522,17 @@ export default defineConfig({
         output: {
           manualChunks: {
             'react-vendor': ['react', 'react-dom'],
-            'utils': ['./src/lib/utils']
-          }
-        }
-      }
-    }
-  }
+            utils: ['./src/lib/utils'],
+          },
+        },
+      },
+    },
+  },
 });
 ```
 
 ### VPS Deployment Strategies
+
 ```bash
 # Build script for VPS deployment
 #!/bin/bash
@@ -535,37 +558,38 @@ echo "Build complete! Deploy ./dist/ to your web server"
 ```
 
 ### CDN Integration and Caching
+
 ```nginx
 # nginx.conf for VPS deployment
 server {
     listen 443 ssl http2;
     server_name taliman.ir www.taliman.ir;
-    
+
     root /var/www/taliman/dist;
     index index.html;
-    
+
     # Gzip compression
     gzip on;
     gzip_vary on;
     gzip_types text/css application/javascript image/svg+xml;
-    
+
     # Cache static assets
     location ~* \.(jpg|jpeg|png|gif|ico|svg|webp|avif)$ {
         expires 1y;
         add_header Cache-Control "public, immutable";
     }
-    
+
     location ~* \.(css|js)$ {
         expires 1y;
         add_header Cache-Control "public, immutable";
     }
-    
+
     # Handle SPA routing
     location / {
         try_files $uri $uri/ /index.html;
         add_header Content-Encoding gzip;
     }
-    
+
     # Security headers
     add_header X-Frame-Options DENY;
     add_header X-Content-Type-Options nosniff;
@@ -576,6 +600,7 @@ server {
 ## Development Workflows
 
 ### Git Workflow with Astro Projects
+
 ```bash
 # Feature development workflow
 git checkout -b feature/processes-section
@@ -595,17 +620,20 @@ git push origin feature/processes-section
 ```
 
 ### Content Authoring and Review Process
+
 ```markdown
 # Content Review Checklist
 
 ## Persian Content (fa/)
+
 - [ ] Text flows naturally and professionally
 - [ ] Technical terms are accurate
 - [ ] Cultural context is appropriate
 - [ ] RTL layout looks correct
 - [ ] Font rendering is crisp (Vazir font)
 
-## English Content (en/)  
+## English Content (en/)
+
 - [ ] Grammar and spelling checked
 - [ ] Technical accuracy verified
 - [ ] SEO keywords included naturally
@@ -613,6 +641,7 @@ git push origin feature/processes-section
 - [ ] Font rendering is crisp (Inter font)
 
 ## Both Languages
+
 - [ ] Content structure matches between languages
 - [ ] Images and media are appropriate
 - [ ] Links work correctly
@@ -620,6 +649,7 @@ git push origin feature/processes-section
 ```
 
 ### Testing Strategies for Static Sites
+
 ```typescript
 // src/lib/test-utils.ts
 import { getCollection } from 'astro:content';
@@ -628,38 +658,38 @@ import { getCollection } from 'astro:content';
 export async function validateContent() {
   const pages = await getCollection('pages');
   const errors = [];
-  
+
   for (const page of pages) {
     // Check required fields
     if (!page.data.title) {
       errors.push(`Missing title: ${page.id}`);
     }
-    
+
     // Check bilingual parity
     const otherLang = page.data.lang === 'fa' ? 'en' : 'fa';
-    const counterpart = pages.find(p => 
-      p.id.replace(`/${page.data.lang}/`, `/${otherLang}/`) === p.id
+    const counterpart = pages.find(
+      (p) => p.id.replace(`/${page.data.lang}/`, `/${otherLang}/`) === p.id
     );
-    
+
     if (!counterpart) {
       errors.push(`Missing translation: ${page.id}`);
     }
   }
-  
+
   return errors;
 }
 
 // Performance testing
 export function checkPagePerformance(url: string) {
-  return fetch(url)
-    .then(response => ({
-      size: response.headers.get('content-length'),
-      timing: performance.now()
-    }));
+  return fetch(url).then((response) => ({
+    size: response.headers.get('content-length'),
+    timing: performance.now(),
+  }));
 }
 ```
 
 ### Performance Monitoring and Optimization
+
 ```javascript
 // src/lib/performance.ts
 export function trackWebVitals() {
@@ -677,17 +707,17 @@ export function trackWebVitals() {
 export function auditImages() {
   const images = document.querySelectorAll('img');
   const issues = [];
-  
-  images.forEach(img => {
+
+  images.forEach((img) => {
     if (!img.alt) {
       issues.push(`Missing alt text: ${img.src}`);
     }
-    
+
     if (img.loading !== 'lazy' && !img.closest('.above-fold')) {
       issues.push(`Should be lazy loaded: ${img.src}`);
     }
   });
-  
+
   return issues;
 }
 ```
@@ -695,6 +725,7 @@ export function auditImages() {
 ## Tooling Integration
 
 ### ESLint and Prettier Configuration
+
 ```javascript
 // eslint.config.js
 import js from '@eslint/js';
@@ -707,22 +738,22 @@ export default [
   {
     files: ['**/*.ts', '**/*.tsx'],
     plugins: {
-      '@typescript-eslint': typescript
+      '@typescript-eslint': typescript,
     },
     rules: {
       '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/no-explicit-any': 'warn',
       'astro/no-conflict-set-directives': 'error',
-      'astro/no-unused-define-vars-in-style': 'error'
-    }
+      'astro/no-unused-define-vars-in-style': 'error',
+    },
   },
   {
     files: ['**/*.astro'],
     rules: {
       'astro/no-set-html-directive': 'error',
-      'astro/no-set-text-directive': 'error'
-    }
-  }
+      'astro/no-set-text-directive': 'error',
+    },
+  },
 ];
 ```
 
@@ -747,6 +778,7 @@ export default [
 ```
 
 ### TypeScript Configuration
+
 ```json
 // tsconfig.json
 {
@@ -768,14 +800,12 @@ export default [
       "@/content/*": ["./src/content/*"]
     }
   },
-  "include": [
-    "src/**/*",
-    ".astro/**/*"
-  ]
+  "include": ["src/**/*", ".astro/**/*"]
 }
 ```
 
 ### Astro-Specific Developer Tools
+
 ```json
 // package.json - dev dependencies
 {
@@ -790,6 +820,7 @@ export default [
 ```
 
 ### VS Code Extensions and Setup
+
 ```json
 // .vscode/extensions.json
 {
@@ -827,6 +858,7 @@ export default [
 ## Performance and SEO
 
 ### Core Web Vitals Optimization
+
 ```astro
 ---
 // Performance-optimized page structure
@@ -838,7 +870,7 @@ import heroImage from '../assets/hero.jpg';
 <Layout title="تولیمان - متخصص CHQ">
   <!-- Above-the-fold critical content -->
   <section class="hero">
-    <Image 
+    <Image
       src={heroImage}
       alt="تولیمان"
       width={1920}
@@ -849,24 +881,23 @@ import heroImage from '../assets/hero.jpg';
     />
     <h1 class="hero-title">تولیمان ساختهای فلزی کارا</h1>
   </section>
-  
+
   <!-- Below-the-fold content -->
   <section class="content">
     <!-- Lazy-loaded components -->
     <script>
       // Intersection Observer for progressive loading
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             // Load component when visible
-            import('../components/ProductShowcase.tsx')
-              .then(module => {
-                // Initialize component
-              });
+            import('../components/ProductShowcase.tsx').then((module) => {
+              // Initialize component
+            });
           }
         });
       });
-      
+
       observer.observe(document.querySelector('.products-section'));
     </script>
   </section>
@@ -874,6 +905,7 @@ import heroImage from '../assets/hero.jpg';
 ```
 
 ### SEO Meta Tags and Structured Data
+
 ```astro
 ---
 // SEO-optimized layout
@@ -890,65 +922,74 @@ const isRTL = lang === 'fa';
 ---
 
 <html lang={lang} dir={isRTL ? 'rtl' : 'ltr'}>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Primary Meta Tags -->
-  <title>{title}</title>
-  <meta name="description" content={description} />
-  <meta name="language" content={lang} />
-  {canonical && <link rel="canonical" href={canonical} />}
-  
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:locale" content={lang === 'fa' ? 'fa_IR' : 'en_US'} />
-  {image && <meta property="og:image" content={image} />}
-  
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  {image && <meta name="twitter:image" content={image} />}
-  
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "تولیمان ساختهای فلزی کارا",
-      "alternateName": "Taliman Sakhtehaye Felezi Kara",
-      "description": "متخصص در فرآوری سیم CHQ برای صنعت خودرو",
-      "url": "https://taliman.ir",
-      "logo": "https://taliman.ir/logo.png",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+98-21-XXXXXXXX",
-        "contactType": "customer service",
-        "availableLanguage": ["Persian", "English"]
-      }
-    }
-  </script>
-  
-  <!-- Fonts -->
-  {isRTL ? (
-    <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  ) : (
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  )}
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<body class={isRTL ? 'font-vazir' : 'font-inter'}>
-  <slot />
-</body>
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="language" content={lang} />
+    {canonical && <link rel="canonical" href={canonical} />}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:locale" content={lang === 'fa' ? 'fa_IR' : 'en_US'} />
+    {image && <meta property="og:image" content={image} />}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {image && <meta name="twitter:image" content={image} />}
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "تولیمان ساختهای فلزی کارا",
+        "alternateName": "Taliman Sakhtehaye Felezi Kara",
+        "description": "متخصص در فرآوری سیم CHQ برای صنعت خودرو",
+        "url": "https://taliman.ir",
+        "logo": "https://taliman.ir/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+98-21-XXXXXXXX",
+          "contactType": "customer service",
+          "availableLanguage": ["Persian", "English"]
+        }
+      }
+    </script>
+
+    <!-- Fonts -->
+    {
+      isRTL ? (
+        <link
+          href="https://fonts.googleapis.com/css2?family=Vazir:wght@300;400;500;700&display=swap"
+          rel="stylesheet"
+        />
+      ) : (
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
+          rel="stylesheet"
+        />
+      )
+    }
+  </head>
+
+  <body class={isRTL ? 'font-vazir' : 'font-inter'}>
+    <slot />
+  </body>
 </html>
 ```
 
 ## Best Practices
 
 ### Astro Component Patterns
+
 ```astro
 ---
 // Reusable section component
@@ -960,34 +1001,27 @@ export interface Props {
   containerSize?: 'sm' | 'md' | 'lg' | 'xl';
 }
 
-const { 
-  title, 
-  subtitle, 
-  variant = 'default',
-  containerSize = 'lg'
-} = Astro.props;
+const { title, subtitle, variant = 'default', containerSize = 'lg' } = Astro.props;
 
 const variantClasses = {
   default: 'bg-white text-gray-900',
   dark: 'bg-gray-900 text-white',
-  gradient: 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
+  gradient: 'bg-gradient-to-r from-blue-600 to-purple-600 text-white',
 };
 
 const containerClasses = {
   sm: 'max-w-2xl',
-  md: 'max-w-4xl', 
+  md: 'max-w-4xl',
   lg: 'max-w-6xl',
-  xl: 'max-w-7xl'
+  xl: 'max-w-7xl',
 };
 ---
 
 <section class:list={['py-16', variantClasses[variant]]}>
   <div class:list={['mx-auto px-4', containerClasses[containerSize]]}>
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold mb-4">{title}</h2>
-      {subtitle && (
-        <p class="text-lg opacity-80 max-w-2xl mx-auto">{subtitle}</p>
-      )}
+    <div class="mb-12 text-center">
+      <h2 class="mb-4 text-3xl font-bold">{title}</h2>
+      {subtitle && <p class="mx-auto max-w-2xl text-lg opacity-80">{subtitle}</p>}
     </div>
     <slot />
   </div>
@@ -995,6 +1029,7 @@ const containerClasses = {
 ```
 
 ### Performance Best Practices
+
 ```typescript
 // Lazy loading utilities
 export function createIntersectionObserver(
@@ -1004,18 +1039,18 @@ export function createIntersectionObserver(
   const defaultOptions = {
     root: null,
     rootMargin: '50px',
-    threshold: 0.1
+    threshold: 0.1,
   };
-  
+
   return new IntersectionObserver(callback, { ...defaultOptions, ...options });
 }
 
 // Image loading strategy
 export function optimizeImages() {
   const images = document.querySelectorAll('img[data-src]');
-  
+
   const imageObserver = createIntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const img = entry.target as HTMLImageElement;
         img.src = img.dataset.src!;
@@ -1024,17 +1059,18 @@ export function optimizeImages() {
       }
     });
   });
-  
-  images.forEach(img => imageObserver.observe(img));
+
+  images.forEach((img) => imageObserver.observe(img));
 }
 ```
 
 ### Internationalization Best Practices
+
 ```typescript
 // i18n utilities for Astro
 export const LANGUAGES = {
   fa: 'فارسی',
-  en: 'English'
+  en: 'English',
 } as const;
 
 export type Language = keyof typeof LANGUAGES;
@@ -1047,11 +1083,11 @@ export function getLanguageFromUrl(url: URL): Language {
 
 export function translatePath(path: string, targetLang: Language): string {
   const [, currentLang, ...segments] = path.split('/');
-  
+
   if (targetLang === 'fa') {
     return '/' + segments.join('/');
   }
-  
+
   return `/${targetLang}/${segments.join('/')}`;
 }
 
@@ -1059,7 +1095,7 @@ export function translatePath(path: string, targetLang: Language): string {
 export async function getLocalizedContent(collection: string, lang: Language) {
   const { getCollection } = await import('astro:content');
   const entries = await getCollection(collection as any);
-  return entries.filter(entry => entry.data.lang === lang);
+  return entries.filter((entry) => entry.data.lang === lang);
 }
 ```
 
@@ -1068,6 +1104,7 @@ export async function getLocalizedContent(collection: string, lang: Language) {
 ### Common Astro Issues
 
 **Build fails with content collection errors:**
+
 ```bash
 # Check content schema validation
 bun run astro check
@@ -1077,6 +1114,7 @@ find src/content -name "*.md" -exec head -10 {} \;
 ```
 
 **TypeScript errors in .astro files:**
+
 ```bash
 # Restart TypeScript server
 # In VS Code: Cmd+Shift+P > "TypeScript: Restart TS Server"
@@ -1086,6 +1124,7 @@ bun add -D @astro/ts-plugin
 ```
 
 **Hot reload not working:**
+
 ```bash
 # Clear Astro cache
 rm -rf node_modules/.astro
@@ -1095,6 +1134,7 @@ bun run dev
 ```
 
 **Images not optimizing:**
+
 ```javascript
 // Check astro.config.mjs
 export default defineConfig({
@@ -1102,11 +1142,12 @@ export default defineConfig({
     service: sharpImageService(),
     // Ensure Sharp is installed
     // bun add sharp
-  }
+  },
 });
 ```
 
 ### Performance Debugging
+
 ```typescript
 // Performance monitoring in development
 if (import.meta.env.DEV) {
@@ -1118,7 +1159,7 @@ if (import.meta.env.DEV) {
     getLCP(console.log);
     getTTFB(console.log);
   });
-  
+
   // Bundle size analysis
   console.log('Build info available at: http://localhost:4321/__inspect/');
 }
@@ -1127,6 +1168,7 @@ if (import.meta.env.DEV) {
 ## Resources and Documentation
 
 ### Essential Links
+
 - [Astro Documentation](https://docs.astro.build/)
 - [Content Collections Guide](https://docs.astro.build/en/guides/content-collections/)
 - [Image Optimization](https://docs.astro.build/en/guides/images/)
@@ -1134,10 +1176,11 @@ if (import.meta.env.DEV) {
 - [Performance Optimization](https://docs.astro.build/en/guides/performance/)
 
 ### Development Tools
+
 - [Astro DevTools](https://github.com/withastro/astro-devtools)
 - [Astro Language Tools](https://github.com/withastro/language-tools)
 - [Bundle Analyzer](https://docs.astro.build/en/guides/development-tools/#bundle-analyzer)
 
 ---
 
-*This comprehensive development guide covers all aspects of building and maintaining the Taliman corporate website with Astro 5.x. Keep it updated as the project evolves and new Astro features become available.*
+_This comprehensive development guide covers all aspects of building and maintaining the Taliman corporate website with Astro 5.x. Keep it updated as the project evolves and new Astro features become available._

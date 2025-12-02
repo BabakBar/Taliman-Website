@@ -1,4 +1,5 @@
 # Content Strategy - Astro Content Collections Architecture
+
 # Taliman Sakhtehaye Felezi Kara Manufacturing Catalog
 
 ## 1. Astro Content Collections Architecture
@@ -12,24 +13,24 @@ Our content management strategy leverages Astro's Content Collections API for ty
 export const collections = {
   products: defineCollection({
     type: 'content',
-    schema: productSchema
+    schema: productSchema,
   }),
   processes: defineCollection({
-    type: 'content', 
-    schema: processSchema
+    type: 'content',
+    schema: processSchema,
   }),
   equipment: defineCollection({
     type: 'content',
-    schema: equipmentSchema
+    schema: equipmentSchema,
   }),
   company: defineCollection({
     type: 'content',
-    schema: companySchema
+    schema: companySchema,
   }),
   blog: defineCollection({
     type: 'content',
-    schema: blogSchema
-  })
+    schema: blogSchema,
+  }),
 };
 ```
 
@@ -38,6 +39,7 @@ export const collections = {
 **Purpose:** Technical specifications, material properties, and product data sheets for Cold Heading Quality wire products.
 
 **Schema Definition:**
+
 ```typescript
 const productSchema = z.object({
   title: z.string(),
@@ -50,7 +52,7 @@ const productSchema = z.object({
     tensile_strength: z.string(),
     carbon_content: z.string(),
     surface_finish: z.string(),
-    tolerance: z.string()
+    tolerance: z.string(),
   }),
   applications: z.array(z.string()),
   certifications: z.array(z.string()),
@@ -60,11 +62,12 @@ const productSchema = z.object({
   order: z.number().default(0),
   language: z.enum(['en', 'fa']),
   published_date: z.date(),
-  last_updated: z.date()
+  last_updated: z.date(),
 });
 ```
 
 **File Structure:**
+
 ```
 src/content/products/
 ├── en/
@@ -84,41 +87,47 @@ src/content/products/
 **Purpose:** Detailed documentation of manufacturing processes, quality control procedures, and technical workflows.
 
 **Schema Definition:**
+
 ```typescript
 const processSchema = z.object({
   title: z.string(),
   slug: z.string(),
   description: z.string(),
   category: z.enum(['annealing', 'spheroidizing', 'drawing', 'quality-control']),
-  process_steps: z.array(z.object({
-    step_number: z.number(),
-    title: z.string(),
-    description: z.string(),
-    parameters: z.object({
-      temperature: z.string().optional(),
-      atmosphere: z.string().optional(),
-      duration: z.string().optional(),
-      pressure: z.string().optional()
-    }).optional(),
-    quality_checks: z.array(z.string()).optional()
-  })),
+  process_steps: z.array(
+    z.object({
+      step_number: z.number(),
+      title: z.string(),
+      description: z.string(),
+      parameters: z
+        .object({
+          temperature: z.string().optional(),
+          atmosphere: z.string().optional(),
+          duration: z.string().optional(),
+          pressure: z.string().optional(),
+        })
+        .optional(),
+      quality_checks: z.array(z.string()).optional(),
+    })
+  ),
   equipment_required: z.array(z.string()),
   input_materials: z.array(z.string()),
   output_specifications: z.object({
     dimensional_tolerance: z.string(),
     surface_finish: z.string(),
-    mechanical_properties: z.string()
+    mechanical_properties: z.string(),
   }),
   safety_requirements: z.array(z.string()),
   process_diagram: z.string().optional(),
   technical_drawings: z.array(z.string()).optional(),
   language: z.enum(['en', 'fa']),
   complexity_level: z.enum(['basic', 'intermediate', 'advanced']),
-  published_date: z.date()
+  published_date: z.date(),
 });
 ```
 
 **File Structure:**
+
 ```
 src/content/processes/
 ├── en/
@@ -138,6 +147,7 @@ src/content/processes/
 **Purpose:** Technical specifications, capabilities, and operational parameters for manufacturing equipment.
 
 **Schema Definition:**
+
 ```typescript
 const equipmentSchema = z.object({
   title: z.string(),
@@ -153,7 +163,7 @@ const equipmentSchema = z.object({
     atmosphere_control: z.string(),
     automation_level: z.string(),
     energy_consumption: z.string().optional(),
-    footprint: z.string().optional()
+    footprint: z.string().optional(),
   }),
   capabilities: z.array(z.string()),
   compatible_materials: z.array(z.string()),
@@ -161,7 +171,7 @@ const equipmentSchema = z.object({
     max_temperature: z.string(),
     processing_speed: z.string(),
     batch_size: z.string(),
-    cycle_time: z.string()
+    cycle_time: z.string(),
   }),
   maintenance_schedule: z.string(),
   safety_features: z.array(z.string()),
@@ -170,7 +180,7 @@ const equipmentSchema = z.object({
   images: z.array(z.string()),
   language: z.enum(['en', 'fa']),
   status: z.enum(['operational', 'maintenance', 'planned']),
-  published_date: z.date()
+  published_date: z.date(),
 });
 ```
 
@@ -179,6 +189,7 @@ const equipmentSchema = z.object({
 **Purpose:** Company information, certifications, leadership, and corporate governance content.
 
 **Schema Definition:**
+
 ```typescript
 const companySchema = z.object({
   title: z.string(),
@@ -190,24 +201,32 @@ const companySchema = z.object({
     established: z.number().optional(),
     location: z.string().optional(),
     employees: z.string().optional(),
-    certifications: z.array(z.string()).optional()
+    certifications: z.array(z.string()).optional(),
   }),
-  leadership: z.array(z.object({
-    name: z.string(),
-    position: z.string(),
-    bio: z.string(),
-    image: z.string().optional(),
-    linkedin: z.string().optional()
-  })).optional(),
-  certifications: z.array(z.object({
-    name: z.string(),
-    issuer: z.string(),
-    valid_until: z.date().optional(),
-    certificate_url: z.string().optional()
-  })).optional(),
+  leadership: z
+    .array(
+      z.object({
+        name: z.string(),
+        position: z.string(),
+        bio: z.string(),
+        image: z.string().optional(),
+        linkedin: z.string().optional(),
+      })
+    )
+    .optional(),
+  certifications: z
+    .array(
+      z.object({
+        name: z.string(),
+        issuer: z.string(),
+        valid_until: z.date().optional(),
+        certificate_url: z.string().optional(),
+      })
+    )
+    .optional(),
   images: z.array(z.string()),
   language: z.enum(['en', 'fa']),
-  published_date: z.date()
+  published_date: z.date(),
 });
 ```
 
@@ -216,6 +235,7 @@ const companySchema = z.object({
 **Purpose:** Industry news, company announcements, technical articles, and thought leadership content.
 
 **Schema Definition:**
+
 ```typescript
 const blogSchema = z.object({
   title: z.string(),
@@ -230,12 +250,12 @@ const blogSchema = z.object({
   featured: z.boolean().default(false),
   seo: z.object({
     meta_description: z.string(),
-    keywords: z.array(z.string())
+    keywords: z.array(z.string()),
   }),
   language: z.enum(['en', 'fa']),
   published_date: z.date(),
   last_updated: z.date(),
-  status: z.enum(['draft', 'published', 'archived'])
+  status: z.enum(['draft', 'published', 'archived']),
 });
 ```
 
@@ -244,13 +264,14 @@ const blogSchema = z.object({
 ### 2.1 Type-Safe Content Management
 
 **Content Query Utilities:**
+
 ```typescript
 // src/lib/content.ts
 export async function getProductsByCategory(category: string, lang: 'en' | 'fa') {
   const products = await getCollection('products', ({ data }) => {
     return data.category === category && data.language === lang;
   });
-  
+
   return products.sort((a, b) => a.data.order - b.data.order);
 }
 
@@ -263,7 +284,7 @@ export async function getFeaturedEquipment(lang: 'en' | 'fa') {
   const equipment = await getCollection('equipment', ({ data }) => {
     return data.status === 'operational' && data.language === lang;
   });
-  
+
   return equipment.slice(0, 3);
 }
 ```
@@ -271,6 +292,7 @@ export async function getFeaturedEquipment(lang: 'en' | 'fa') {
 ### 2.2 Bilingual Content Organization
 
 **Directory Structure:**
+
 ```
 src/content/
 ├── products/
@@ -293,6 +315,7 @@ src/content/
 ### 2.3 Asset Management and Optimization
 
 **Asset Organization:**
+
 ```
 public/assets/
 ├── products/
@@ -322,32 +345,33 @@ public/assets/
 ### 3.1 Frontmatter Specifications
 
 **Product Content Template:**
+
 ```markdown
 ---
-title: "CHQ Wire for Automotive Fasteners"
-slug: "chq-wire-automotive"
-description: "High-quality CHQ wire specifically engineered for automotive fastener applications"
-category: "chq-wire"
+title: 'CHQ Wire for Automotive Fasteners'
+slug: 'chq-wire-automotive'
+description: 'High-quality CHQ wire specifically engineered for automotive fastener applications'
+category: 'chq-wire'
 specifications:
-  diameter_range: "5.5mm - 22mm"
-  material_grade: "SWRCH35K, SWRCH45K"
-  tensile_strength: "400-600 N/mm²"
-  carbon_content: "0.32-0.47%"
-  surface_finish: "Bright, Phosphate"
-  tolerance: "±0.05mm"
+  diameter_range: '5.5mm - 22mm'
+  material_grade: 'SWRCH35K, SWRCH45K'
+  tensile_strength: '400-600 N/mm²'
+  carbon_content: '0.32-0.47%'
+  surface_finish: 'Bright, Phosphate'
+  tolerance: '±0.05mm'
 applications:
-  - "Engine bolts"
-  - "Chassis fasteners"
-  - "Suspension components"
+  - 'Engine bolts'
+  - 'Chassis fasteners'
+  - 'Suspension components'
 certifications:
-  - "ISO/TS 16949"
-  - "DIN 17223"
+  - 'ISO/TS 16949'
+  - 'DIN 17223'
 images:
-  - "/assets/products/chq-wire/samples/automotive-wire.jpg"
-  - "/assets/products/chq-wire/specifications/dimensional-chart.jpg"
+  - '/assets/products/chq-wire/samples/automotive-wire.jpg'
+  - '/assets/products/chq-wire/specifications/dimensional-chart.jpg'
 featured: true
 order: 1
-language: "en"
+language: 'en'
 published_date: 2024-01-15
 last_updated: 2024-01-15
 ---
@@ -361,58 +385,62 @@ Our Cold Heading Quality (CHQ) wire is specifically engineered for the demanding
 ## Technical Specifications
 
 ### Material Properties
+
 - **Tensile Strength**: 400-600 N/mm²
 - **Elongation**: 25-35%
 - **Reduction of Area**: 60-70%
 
 ### Applications
+
 This CHQ wire is ideally suited for:
+
 - High-strength automotive bolts
 - Engine mounting hardware
 - Suspension system fasteners
 ```
 
 **Process Documentation Template:**
+
 ```markdown
 ---
-title: "Bell-Type Annealing Process"
-slug: "bell-type-annealing"
-description: "Comprehensive guide to our bell-type annealing process for CHQ wire treatment"
-category: "annealing"
+title: 'Bell-Type Annealing Process'
+slug: 'bell-type-annealing'
+description: 'Comprehensive guide to our bell-type annealing process for CHQ wire treatment'
+category: 'annealing'
 process_steps:
   - step_number: 1
-    title: "Material Preparation"
-    description: "Incoming wire rod inspection and preparation"
+    title: 'Material Preparation'
+    description: 'Incoming wire rod inspection and preparation'
     parameters:
-      temperature: "Ambient"
-      duration: "30 minutes"
+      temperature: 'Ambient'
+      duration: '30 minutes'
     quality_checks:
-      - "Visual inspection"
-      - "Dimensional verification"
+      - 'Visual inspection'
+      - 'Dimensional verification'
   - step_number: 2
-    title: "Furnace Loading"
-    description: "Systematic loading of wire coils into bell-type furnace"
+    title: 'Furnace Loading'
+    description: 'Systematic loading of wire coils into bell-type furnace'
     parameters:
-      temperature: "650-750°C"
-      atmosphere: "Hydrogen/Nitrogen mixture"
-      duration: "12-16 hours"
+      temperature: '650-750°C'
+      atmosphere: 'Hydrogen/Nitrogen mixture'
+      duration: '12-16 hours'
 equipment_required:
-  - "Bell-type annealing furnace"
-  - "Atmosphere control system"
-  - "Temperature monitoring equipment"
+  - 'Bell-type annealing furnace'
+  - 'Atmosphere control system'
+  - 'Temperature monitoring equipment'
 input_materials:
-  - "Hot-rolled wire rod"
-  - "SWRCH35K, SWRCH45K grades"
+  - 'Hot-rolled wire rod'
+  - 'SWRCH35K, SWRCH45K grades'
 output_specifications:
-  dimensional_tolerance: "±0.02mm"
-  surface_finish: "Scale-free, uniform"
-  mechanical_properties: "Optimized for cold heading"
+  dimensional_tolerance: '±0.02mm'
+  surface_finish: 'Scale-free, uniform'
+  mechanical_properties: 'Optimized for cold heading'
 safety_requirements:
-  - "Atmosphere monitoring"
-  - "Temperature safety interlocks"
-  - "Personal protective equipment"
-language: "en"
-complexity_level: "advanced"
+  - 'Atmosphere monitoring'
+  - 'Temperature safety interlocks'
+  - 'Personal protective equipment'
+language: 'en'
+complexity_level: 'advanced'
 published_date: 2024-01-15
 ---
 
@@ -426,45 +454,46 @@ Bell-type annealing is a controlled atmosphere heat treatment process...
 ### 3.2 Technical Specification Templates
 
 **Equipment Specification Template:**
+
 ```markdown
 ---
-title: "Bell-Type Annealing Furnace - Line 1"
-slug: "bell-furnace-line-1"
-description: "High-capacity bell-type annealing furnace for CHQ wire processing"
-category: "furnaces"
-manufacturer: "Aichelin Group"
-model: "EcoSeal Bell"
+title: 'Bell-Type Annealing Furnace - Line 1'
+slug: 'bell-furnace-line-1'
+description: 'High-capacity bell-type annealing furnace for CHQ wire processing'
+category: 'furnaces'
+manufacturer: 'Aichelin Group'
+model: 'EcoSeal Bell'
 year_installed: 2020
 specifications:
-  capacity: "25 tons per batch"
-  temperature_range: "600-900°C"
-  atmosphere_control: "H2/N2 mixture, CO monitoring"
-  automation_level: "Fully automated PLC control"
-  energy_consumption: "850 kWh per batch"
-  footprint: "15m × 12m"
+  capacity: '25 tons per batch'
+  temperature_range: '600-900°C'
+  atmosphere_control: 'H2/N2 mixture, CO monitoring'
+  automation_level: 'Fully automated PLC control'
+  energy_consumption: '850 kWh per batch'
+  footprint: '15m × 12m'
 capabilities:
-  - "Batch annealing of wire rod coils"
-  - "Spheroidizing heat treatment"
-  - "Controlled cooling cycles"
+  - 'Batch annealing of wire rod coils'
+  - 'Spheroidizing heat treatment'
+  - 'Controlled cooling cycles'
 compatible_materials:
-  - "Carbon steel wire rod"
-  - "Alloy steel grades"
-  - "Stainless steel wire"
+  - 'Carbon steel wire rod'
+  - 'Alloy steel grades'
+  - 'Stainless steel wire'
 operating_parameters:
-  max_temperature: "900°C"
-  processing_speed: "2 batches per day"
-  batch_size: "25 tons"
-  cycle_time: "24 hours"
-maintenance_schedule: "Weekly preventive maintenance"
+  max_temperature: '900°C'
+  processing_speed: '2 batches per day'
+  batch_size: '25 tons'
+  cycle_time: '24 hours'
+maintenance_schedule: 'Weekly preventive maintenance'
 safety_features:
-  - "Atmosphere monitoring system"
-  - "Emergency shutdown procedures"
-  - "Fire suppression system"
+  - 'Atmosphere monitoring system'
+  - 'Emergency shutdown procedures'
+  - 'Fire suppression system'
 images:
-  - "/assets/equipment/furnaces/bell-furnace-exterior.jpg"
-  - "/assets/equipment/furnaces/control-panel.jpg"
-language: "en"
-status: "operational"
+  - '/assets/equipment/furnaces/bell-furnace-exterior.jpg'
+  - '/assets/equipment/furnaces/control-panel.jpg'
+language: 'en'
+status: 'operational'
 published_date: 2024-01-15
 ---
 
@@ -480,6 +509,7 @@ Our state-of-the-art bell-type annealing furnace represents the pinnacle of heat
 ### 4.1 Manufacturing Industry Schema Markup
 
 **Product Schema Implementation:**
+
 ```typescript
 // src/components/seo/ProductSchema.astro
 ---
@@ -520,36 +550,36 @@ const productSchema = {
 ```
 
 **Organization Schema:**
+
 ```typescript
 const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Taliman Sakhtehaye Felezi Kara",
-  "alternateName": "Taliman Steel Wire Processing",
-  "url": "https://taliman.com",
-  "logo": "https://taliman.com/assets/logo.svg",
-  "description": "Leading provider of CHQ wire rod processing services",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "IR",
-    "addressLocality": "[City]",
-    "addressRegion": "[Region]"
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Taliman Sakhtehaye Felezi Kara',
+  alternateName: 'Taliman Steel Wire Processing',
+  url: 'https://taliman.com',
+  logo: 'https://taliman.com/assets/logo.svg',
+  description: 'Leading provider of CHQ wire rod processing services',
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'IR',
+    addressLocality: '[City]',
+    addressRegion: '[Region]',
   },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "[Phone]",
-    "contactType": "customer service",
-    "availableLanguage": ["Persian", "English"]
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '[Phone]',
+    contactType: 'customer service',
+    availableLanguage: ['Persian', 'English'],
   },
-  "sameAs": [
-    "https://linkedin.com/company/taliman"
-  ]
+  sameAs: ['https://linkedin.com/company/taliman'],
 };
 ```
 
 ### 4.2 Multilingual SEO Optimization
 
 **Hreflang Implementation:**
+
 ```typescript
 // src/components/seo/HreflangTags.astro
 ---
@@ -578,7 +608,7 @@ src/content/
 │   ├── en/
 │   │   ├── _templates/          # Content templates
 │   │   ├── chq-wire/           # CHQ wire products
-│   │   ├── wire-rod/           # Wire rod products  
+│   │   ├── wire-rod/           # Wire rod products
 │   │   └── special-alloys/     # Special alloy products
 │   └── fa/                     # Mirror structure in Farsi
 ├── processes/
@@ -612,12 +642,14 @@ src/content/
 ### 5.2 Asset Organization and Naming Conventions
 
 **Naming Conventions:**
+
 - Use kebab-case for all file names
 - Include language prefix for shared assets: `product-name-en.jpg`, `product-name-fa.jpg`
 - Version control for updated content: `v1`, `v2` suffixes
 - Date-based naming for time-sensitive content: `YYYY-MM-DD-content-name`
 
 **Directory Structure:**
+
 ```
 public/assets/
 ├── images/
@@ -654,6 +686,7 @@ public/assets/
 ### 6.1 Image Optimization Strategies
 
 **Astro Image Integration:**
+
 ```typescript
 // src/components/ui/OptimizedImage.astro
 ---
@@ -687,6 +720,7 @@ const { src, alt, width, height, loading = 'lazy', class: className } = Astro.pr
 ### 6.2 Lazy Loading for Technical Diagrams
 
 **Progressive Loading Strategy:**
+
 ```typescript
 // src/components/technical/TechnicalDiagram.astro
 ---
@@ -698,7 +732,7 @@ interface Props {
 ---
 
 <div class="technical-diagram" data-diagram-loader>
-  <img 
+  <img
     src={Astro.props.fallbackSrc}
     data-src={Astro.props.diagramSrc}
     alt={Astro.props.title}
@@ -714,6 +748,7 @@ interface Props {
 ### 6.3 PDF Specification Sheet Handling
 
 **PDF Optimization:**
+
 ```typescript
 // src/components/documents/SpecSheet.astro
 ---
@@ -728,7 +763,7 @@ const { specSheetUrl, title, language } = Astro.props;
 
 <div class="spec-sheet-container">
   <div class="spec-sheet-preview">
-    <iframe 
+    <iframe
       src={`/pdf-viewer?file=${encodeURIComponent(specSheetUrl)}&lang=${language}`}
       loading="lazy"
       title={title}
@@ -747,6 +782,7 @@ const { specSheetUrl, title, language } = Astro.props;
 ### 7.1 Translation Workflow and Tools
 
 **Content Sync Utilities:**
+
 ```typescript
 // src/lib/i18n-utils.ts
 export function getTranslatedContent<T>(
@@ -760,26 +796,27 @@ export function getTranslatedContent<T>(
 export function getContentLanguages(collection: string, slug: string) {
   const languages = ['en', 'fa'];
   return Promise.all(
-    languages.map(async lang => {
+    languages.map(async (lang) => {
       const entry = await getEntry(collection as any, `${lang}/${slug}`);
       return entry ? lang : null;
     })
-  ).then(results => results.filter(Boolean));
+  ).then((results) => results.filter(Boolean));
 }
 ```
 
 ### 7.2 RTL Layout Considerations
 
 **CSS Configuration:**
+
 ```css
 /* src/styles/rtl.css */
-[dir="rtl"] {
+[dir='rtl'] {
   --text-align: right;
   --margin-inline-start: 0;
   --margin-inline-end: auto;
 }
 
-[dir="ltr"] {
+[dir='ltr'] {
   --text-align: left;
   --margin-inline-start: auto;
   --margin-inline-end: 0;
@@ -794,7 +831,7 @@ export function getContentLanguages(collection: string, slug: string) {
   transform: scaleX(var(--direction-scale, 1));
 }
 
-[dir="rtl"] .process-flow-diagram {
+[dir='rtl'] .process-flow-diagram {
   --direction-scale: -1;
 }
 ```
@@ -804,18 +841,21 @@ export function getContentLanguages(collection: string, slug: string) {
 **Market-Specific Content Guidelines:**
 
 **Technical Terminology:**
+
 - Maintain English technical terms with Farsi explanations
 - Use standardized industrial Persian terminology
 - Include metric measurements with local equivalents
 - Reference Iranian/MENA industry standards where applicable
 
 **Business Context:**
+
 - Emphasize quality certifications relevant to Iranian market
 - Reference compliance with local regulations
 - Include culturally appropriate business relationship language
 - Adapt testimonials and case studies for regional relevance
 
 **Visual Adaptation:**
+
 - Right-to-left process flow diagrams
 - Persian typography considerations (Vazir, Sahel fonts)
 - Cultural color considerations for technical diagrams
@@ -826,6 +866,7 @@ export function getContentLanguages(collection: string, slug: string) {
 ### 8.1 Version Control Workflow
 
 **Content Branching Strategy:**
+
 ```
 main/
 ├── content/draft/     # Draft content for review
@@ -834,6 +875,7 @@ main/
 ```
 
 **Content Review Process:**
+
 1. **Technical Review**: Engineering team validates specifications
 2. **Language Review**: Native speakers review translations
 3. **SEO Review**: Marketing team optimizes for search
@@ -843,19 +885,18 @@ main/
 ### 8.2 Automated Content Validation
 
 **Content Validation Pipeline:**
+
 ```typescript
 // src/scripts/validate-content.ts
 export async function validateTechnicalSpecs(content: any) {
   const requiredFields = [
     'specifications.material_grade',
     'specifications.tensile_strength',
-    'specifications.diameter_range'
+    'specifications.diameter_range',
   ];
-  
-  const missingFields = requiredFields.filter(field => 
-    !getNestedProperty(content, field)
-  );
-  
+
+  const missingFields = requiredFields.filter((field) => !getNestedProperty(content, field));
+
   if (missingFields.length > 0) {
     throw new Error(`Missing required specifications: ${missingFields.join(', ')}`);
   }
@@ -864,7 +905,7 @@ export async function validateTechnicalSpecs(content: any) {
 export async function validateBilingualContent(slug: string) {
   const enContent = await getEntry('products', `en/${slug}`);
   const faContent = await getEntry('products', `fa/${slug}`);
-  
+
   if (!enContent || !faContent) {
     console.warn(`Missing translation for: ${slug}`);
   }
@@ -875,4 +916,4 @@ This comprehensive content strategy leverages Astro's Content Collections API to
 
 ---
 
-*This strategy document establishes the foundation for a scalable, maintainable content architecture that supports Taliman's technical documentation needs while optimizing for both Persian and English-speaking markets.*
+_This strategy document establishes the foundation for a scalable, maintainable content architecture that supports Taliman's technical documentation needs while optimizing for both Persian and English-speaking markets._

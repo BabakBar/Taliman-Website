@@ -53,14 +53,10 @@ const currentYear = new Date().getFullYear();
         </h3>
         <ul class="space-y-2 text-sm text-industrial-300">
           <li>
-            {lang === 'fa'
-              ? 'ایران، تهران'
-              : 'Tehran, Iran'}
+            {lang === 'fa' ? 'ایران، تهران' : 'Tehran, Iran'}
           </li>
           <li>
-            <a href="mailto:info@taliman.com" class="hover:text-white">
-              info@taliman.com
-            </a>
+            <a href="mailto:info@taliman.com" class="hover:text-white"> info@taliman.com </a>
           </li>
         </ul>
       </div>
@@ -69,7 +65,8 @@ const currentYear = new Date().getFullYear();
     <!-- Copyright -->
     <div class="mt-8 border-t border-industrial-800 pt-8 text-center text-sm text-industrial-400">
       <p>
-        © {currentYear} {t('site.title')}. {t('footer.rights')}.
+        © {currentYear}
+        {t('site.title')}. {t('footer.rights')}.
       </p>
     </div>
   </div>

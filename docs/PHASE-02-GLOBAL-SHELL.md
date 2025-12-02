@@ -49,7 +49,7 @@
        <source src="/video/hero.mp4" type="video/mp4" />
        <source src="/video/hero.webm" type="video/webm" />
      </video>
-     <div class="absolute inset-0 bg-gradient-hero-overlay" />
+     <div class="bg-gradient-hero-overlay absolute inset-0"></div>
      ```
    - Add `<div class="hero-mobile-fallback" aria-hidden="true"></div>` styled via media queries to swap image on mobile.
    - CTA buttons: primary gradient + secondary ghost, crossing to localized anchors.
@@ -75,8 +75,8 @@
 
 ## Roles & Owners
 
-| Role | Responsibility |
-| --- | --- |
+| Role     | Responsibility                                             |
+| -------- | ---------------------------------------------------------- |
 | Frontend | Component rewrites, responsive behavior, autoplay fallback |
-| Design | Supply approve logo lockups, hero footage/poster, icon set |
-| QA | RTL keyboard nav, mobile fallback, Lighthouse runs |
+| Design   | Supply approve logo lockups, hero footage/poster, icon set |
+| QA       | RTL keyboard nav, mobile fallback, Lighthouse runs         |

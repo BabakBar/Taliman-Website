@@ -4,12 +4,7 @@ import { getLangFromUrl, useTranslations } from '../lib/i18n';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const standards = [
-  'ISO 9001:2015',
-  'IATF 16949',
-  'DIN EN 10277',
-  'ASTM A29/A29M',
-];
+const standards = ['ISO 9001:2015', 'IATF 16949', 'DIN EN 10277', 'ASTM A29/A29M'];
 ---
 
 <section class="section gradient-industrial text-white" id="quality">
@@ -35,7 +30,9 @@ const standards = [
     <!-- Quality Features -->
     <div class="mt-16 grid gap-8 md:grid-cols-3">
       <div class="text-center">
-        <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white/10">
+        <div
+          class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white/10"
+        >
           <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               stroke-linecap="round"
@@ -57,7 +54,9 @@ const standards = [
       </div>
 
       <div class="text-center">
-        <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white/10">
+        <div
+          class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white/10"
+        >
           <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               stroke-linecap="round"
@@ -80,7 +79,9 @@ const standards = [
       </div>
 
       <div class="text-center">
-        <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white/10">
+        <div
+          class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white/10"
+        >
           <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
               stroke-linecap="round"

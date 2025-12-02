@@ -139,7 +139,7 @@
 
   /* Glass effect */
   .glass {
-    @apply backdrop-blur-md bg-white/80;
+    @apply bg-white/80 backdrop-blur-md;
   }
 
   /* Animation utilities */

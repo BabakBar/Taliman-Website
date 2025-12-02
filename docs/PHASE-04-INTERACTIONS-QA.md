@@ -110,9 +110,9 @@
 
 ## Roles & Owners
 
-| Role | Responsibility |
-| --- | --- |
-| Frontend | Motion utilities, contact UI, CTA components, media optimization |
-| Backend/Infra | Contact endpoint, logging, rate limiting, deployment pipeline |
-| QA | Accessibility + performance audits, RTL/manual testing, doc storage |
-| Marketing/Content | WhatsApp/Telegram messaging, RFQ copy, SEO keyword validation |
+| Role              | Responsibility                                                      |
+| ----------------- | ------------------------------------------------------------------- |
+| Frontend          | Motion utilities, contact UI, CTA components, media optimization    |
+| Backend/Infra     | Contact endpoint, logging, rate limiting, deployment pipeline       |
+| QA                | Accessibility + performance audits, RTL/manual testing, doc storage |
+| Marketing/Content | WhatsApp/Telegram messaging, RFQ copy, SEO keyword validation       |

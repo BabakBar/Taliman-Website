@@ -38,12 +38,14 @@
 ### Technology Stack
 
 #### Core Framework
+
 - **Astro 5.x**: Modern static site generator with islands architecture
 - **TypeScript 5+**: Enhanced type system with Astro's strict type checking
 - **Vite**: Built-in ultra-fast build system and HMR development server
 - **Bun**: High-performance package manager for development workflow
 
 #### Static-First Performance
+
 - **Zero-JavaScript by Default**: No client-side JS unless explicitly needed
 - **Server Islands**: Server-rendered dynamic components for forms
 - **Selective Hydration**: Island architecture for interactive components only
@@ -51,18 +53,21 @@
 - **View Transitions**: Smooth SPA-like navigation with native browser APIs
 
 #### Content Management
+
 - **Content Collections**: Type-safe, schema-validated content management
 - **Content Layer API**: Unified content sourcing from files, APIs, or CMS
 - **Markdown/MDX**: Rich content authoring with component integration
 - **Schema Validation**: Zod-powered content type safety
 
 #### Styling & UI
+
 - **Tailwind CSS 4.x**: Latest utility-first framework with container queries
 - **CSS Logical Properties**: Native RTL/LTR layout support
 - **Astro Components**: Framework-agnostic, zero-runtime components
 - **Built-in CSS Processing**: PostCSS integration and optimization
 
 #### Internationalization
+
 - **Astro i18n**: Built-in internationalization with routing
 - **Content Collections i18n**: Localized content management
 - **RTL Support**: Native CSS logical properties implementation
@@ -187,11 +192,13 @@ const equipment = defineCollection({
     title: z.string(),
     description: z.string(),
     category: z.enum(['furnaces', 'drawing', 'testing']),
-    specifications: z.array(z.object({
-      name: z.string(),
-      value: z.string(),
-      unit: z.string().optional(),
-    })),
+    specifications: z.array(
+      z.object({
+        name: z.string(),
+        value: z.string(),
+        unit: z.string().optional(),
+      })
+    ),
     images: z.array(z.string()),
     features: z.array(z.string()),
     publishDate: z.date(),
@@ -204,11 +211,13 @@ const processes = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    steps: z.array(z.object({
-      step: z.number(),
-      title: z.string(),
-      description: z.string(),
-    })),
+    steps: z.array(
+      z.object({
+        step: z.number(),
+        title: z.string(),
+        description: z.string(),
+      })
+    ),
     benefits: z.array(z.string()),
     applications: z.array(z.string()),
     publishDate: z.date(),
@@ -249,11 +258,11 @@ const contentStructure = {
 // Usage in pages
 export async function getStaticPaths() {
   const equipment = await getCollection('equipment');
-  
+
   return equipment.map((entry) => ({
-    params: { 
+    params: {
       slug: entry.slug,
-      lang: entry.slug.includes('/en/') ? 'en' : 'fa'
+      lang: entry.slug.includes('/en/') ? 'en' : 'fa',
     },
     props: { entry },
   }));
@@ -280,7 +289,7 @@ const { title, subtitle, ctaText, ctaLink, backgroundImage, locale } = Astro.pro
 const isRTL = locale === 'fa';
 ---
 
-<section 
+<section
   class={`hero-section ${isRTL ? 'rtl' : 'ltr'}`}
   style={`background-image: url(${backgroundImage})`}
 >
@@ -305,21 +314,21 @@ const isRTL = locale === 'fa';
     background-size: cover;
     background-position: center;
   }
-  
+
   .hero-content {
     container-type: inline-size;
     max-inline-size: 1200px;
     margin-inline: auto;
     padding-inline: 2rem;
   }
-  
+
   .hero-title {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     margin-block-end: 1rem;
     color: white;
   }
-  
+
   .rtl .hero-title {
     font-family: 'Vazir', system-ui, sans-serif;
   }
@@ -345,7 +354,7 @@ export default function ContactForm({ locale }: { locale: 'en' | 'fa' }) {
     name: '',
     email: '',
     company: '',
-    message: ''
+    message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -353,14 +362,14 @@ export default function ContactForm({ locale }: { locale: 'en' | 'fa' }) {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, locale })
+        body: JSON.stringify({ ...formData, locale }),
       });
-      
+
       if (response.ok) {
         setSubmitted(true);
         setFormData({ name: '', email: '', company: '', message: '' });
@@ -376,7 +385,7 @@ export default function ContactForm({ locale }: { locale: 'en' | 'fa' }) {
     return (
       <div className="success-message">
         <h3>{locale === 'en' ? 'Thank you!' : 'متشکریم!'}</h3>
-        <p>{locale === 'en' ? 'We\'ll be in touch soon.' : 'به زودی با شما تماس خواهیم گرفت.'}</p>
+        <p>{locale === 'en' ? "We'll be in touch soon." : 'به زودی با شما تماس خواهیم گرفت.'}</p>
       </div>
     );
   }
@@ -400,8 +409,8 @@ export default defineConfig({
     defaultLocale: 'fa',
     locales: ['en', 'fa'],
     routing: {
-      prefixDefaultLocale: false
-    }
+      prefixDefaultLocale: false,
+    },
   },
   integrations: [
     tailwind({
@@ -420,7 +429,7 @@ export function getStaticPaths() {
   return [
     { params: { locale: undefined } }, // Root path defaults to Farsi
     { params: { locale: 'en' } },
-    { params: { locale: 'fa' } }
+    { params: { locale: 'fa' } },
   ];
 }
 
@@ -444,12 +453,12 @@ const currentLocale = locale as 'en' | 'fa';
   --container-padding: 2rem;
 }
 
-[data-locale="fa"] {
+[data-locale='fa'] {
   direction: rtl;
   font-family: 'Vazir', system-ui, sans-serif;
 }
 
-[data-locale="en"] {
+[data-locale='en'] {
   direction: ltr;
   font-family: 'Inter', system-ui, sans-serif;
 }
@@ -486,7 +495,7 @@ const currentLocale = locale as 'en' | 'fa';
   transition: transform 0.2s ease;
 }
 
-[dir="rtl"] .arrow-icon {
+[dir='rtl'] .arrow-icon {
   transform: scaleX(-1);
 }
 ```
@@ -501,7 +510,7 @@ const currentLocale = locale as 'en' | 'fa';
 interface Props {
   equipment: {
     title: string;
-    specs: Array<{name: string, value: string}>;
+    specs: Array<{ name: string; value: string }>;
     image: string;
   }[];
 }
@@ -511,25 +520,22 @@ const { equipment } = Astro.props;
 
 <!-- Pure HTML/CSS - no JavaScript shipped -->
 <section class="equipment-grid">
-  {equipment.map((item) => (
-    <article class="equipment-card">
-      <img 
-        src={item.image} 
-        alt={item.title}
-        loading="lazy"
-        decoding="async"
-      />
-      <h3>{item.title}</h3>
-      <dl class="specs-list">
-        {item.specs.map(({name, value}) => (
-          <>
-            <dt>{name}</dt>
-            <dd>{value}</dd>
-          </>
-        ))}
-      </dl>
-    </article>
-  ))}
+  {
+    equipment.map((item) => (
+      <article class="equipment-card">
+        <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
+        <h3>{item.title}</h3>
+        <dl class="specs-list">
+          {item.specs.map(({ name, value }) => (
+            <>
+              <dt>{name}</dt>
+              <dd>{value}</dd>
+            </>
+          ))}
+        </dl>
+      </article>
+    ))
+  }
 </section>
 
 <style>
@@ -539,7 +545,7 @@ const { equipment } = Astro.props;
     gap: 2rem;
     container-type: inline-size;
   }
-  
+
   @container (min-width: 600px) {
     .equipment-card {
       display: grid;
@@ -567,7 +573,11 @@ import furnaceImage from '../assets/images/bell-furnace.jpg';
   height={600}
   format="webp"
   quality={80}
-  loading="eager" /* Above fold */
+  loading="eager"
+  *
+  Above
+  fold
+  *
   decoding="async"
 />
 
@@ -578,7 +588,11 @@ import furnaceImage from '../assets/images/bell-furnace.jpg';
   height={300}
   format="webp"
   quality={75}
-  loading="lazy" /* Below fold */
+  loading="lazy"
+  *
+  Below
+  fold
+  *
   decoding="async"
 />
 ```
@@ -586,7 +600,7 @@ import furnaceImage from '../assets/images/bell-furnace.jpg';
 ### Core Web Vitals Targets
 
 - **Largest Contentful Paint (LCP)**: < 1.8 seconds
-- **First Input Delay (FID)**: < 50 milliseconds  
+- **First Input Delay (FID)**: < 50 milliseconds
 - **Cumulative Layout Shift (CLS)**: < 0.05
 - **Time to Interactive (TTI)**: < 2.5 seconds
 - **Total Blocking Time (TBT)**: < 150 milliseconds
@@ -621,18 +635,18 @@ export const POST: APIRoute = async ({ request }) => {
   const name = formData.get('name') as string;
   const email = formData.get('email') as string;
   const message = formData.get('message') as string;
-  
+
   // Validate and process form
   try {
     // Send email, save to database, etc.
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
     });
   } catch (error) {
     return new Response(JSON.stringify({ error: 'Submission failed' }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
     });
   }
 };
@@ -685,53 +699,59 @@ const siteUrl = 'https://taliman.com';
 ---
 
 <html lang={locale} dir={locale === 'fa' ? 'rtl' : 'ltr'} data-locale={locale}>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <!-- Primary SEO -->
-  <title>{title} | Taliman</title>
-  <meta name="description" content={description} />
-  
-  <!-- Canonical URLs -->
-  <link rel="canonical" href={canonical || Astro.url.href} />
-  
-  <!-- Language alternatives -->
-  <link rel="alternate" hreflang="en" href={`${siteUrl}/en/`} />
-  <link rel="alternate" hreflang="fa" href={`${siteUrl}/fa/`} />
-  <link rel="alternate" hreflang="x-default" href={`${siteUrl}/`} />
-  
-  <!-- Open Graph -->
-  {openGraph && (
-    <>
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={openGraph.title} />
-      <meta property="og:description" content={openGraph.description} />
-      <meta property="og:image" content={openGraph.image} />
-      <meta property="og:url" content={Astro.url.href} />
-      <meta property="og:locale" content={locale === 'fa' ? 'fa_IR' : 'en_US'} />
-    </>
-  )}
-  
-  <!-- Schema.org structured data -->
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Taliman Sakhtehaye Felezi Kara",
-    "description": locale === 'en' 
-      ? "Leading CHQ wire rod processing specialist" 
-      : "متخصص برجسته پردازش سیم CHQ",
-    "url": siteUrl,
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+98-xxx-xxx-xxxx",
-      "contactType": "sales"
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Primary SEO -->
+    <title>{title} | Taliman</title>
+    <meta name="description" content={description} />
+
+    <!-- Canonical URLs -->
+    <link rel="canonical" href={canonical || Astro.url.href} />
+
+    <!-- Language alternatives -->
+    <link rel="alternate" hreflang="en" href={`${siteUrl}/en/`} />
+    <link rel="alternate" hreflang="fa" href={`${siteUrl}/fa/`} />
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}/`} />
+
+    <!-- Open Graph -->
+    {
+      openGraph && (
+        <>
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={openGraph.title} />
+          <meta property="og:description" content={openGraph.description} />
+          <meta property="og:image" content={openGraph.image} />
+          <meta property="og:url" content={Astro.url.href} />
+          <meta property="og:locale" content={locale === 'fa' ? 'fa_IR' : 'en_US'} />
+        </>
+      )
     }
-  })} />
-</head>
-<body>
-  <slot />
-</body>
+
+    <!-- Schema.org structured data -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Taliman Sakhtehaye Felezi Kara',
+        description:
+          locale === 'en'
+            ? 'Leading CHQ wire rod processing specialist'
+            : 'متخصص برجسته پردازش سیم CHQ',
+        url: siteUrl,
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+98-xxx-xxx-xxxx',
+          contactType: 'sales',
+        },
+      })}
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 ```
 
@@ -748,17 +768,17 @@ import compressor from 'astro-compressor';
 
 export default defineConfig({
   site: 'https://taliman.com',
-  
+
   output: 'static', // 100% static generation
-  
+
   i18n: {
     defaultLocale: 'fa',
     locales: ['en', 'fa'],
     routing: {
-      prefixDefaultLocale: false
-    }
+      prefixDefaultLocale: false,
+    },
   },
-  
+
   integrations: [
     tailwind({
       configFile: './tailwind.config.mjs',
@@ -768,43 +788,44 @@ export default defineConfig({
         defaultLocale: 'fa',
         locales: {
           en: 'en',
-          fa: 'fa'
-        }
-      }
+          fa: 'fa',
+        },
+      },
     }),
     compressor({
       gzip: true,
-      brotli: true
-    })
+      brotli: true,
+    }),
   ],
-  
+
   build: {
     assets: 'assets',
     inlineStylesheets: 'auto',
   },
-  
+
   image: {
     domains: ['taliman.com'],
-    remotePatterns: [{ protocol: 'https' }]
+    remotePatterns: [{ protocol: 'https' }],
   },
-  
+
   vite: {
     build: {
       rollupOptions: {
         output: {
           manualChunks: {
-            'contact-form': ['src/components/islands/ContactForm.tsx']
-          }
-        }
-      }
-    }
-  }
+            'contact-form': ['src/components/islands/ContactForm.tsx'],
+          },
+        },
+      },
+    },
+  },
 });
 ```
 
 ### Production Deployment Targets
 
 #### VPS with CDN (Recommended)
+
 ```bash
 # Build and deploy pipeline
 bun run build
@@ -812,6 +833,7 @@ rsync -avz --delete dist/ user@server:/var/www/taliman/
 ```
 
 #### Static Hosting Options
+
 - **Netlify**: Drag-and-drop deployment with form handling
 - **Vercel**: Zero-config deployment with edge functions
 - **AWS S3 + CloudFront**: Enterprise CDN setup
@@ -894,8 +916,8 @@ test('HeroSection renders correctly', async () => {
       ctaText: 'Click Here',
       ctaLink: '/contact',
       backgroundImage: '/test-bg.jpg',
-      locale: 'en'
-    }
+      locale: 'en',
+    },
   });
 
   expect(result).toContain('Test Title');
@@ -913,12 +935,12 @@ import chromeLauncher from 'chrome-launcher';
 test('Lighthouse performance score', async () => {
   const chrome = await chromeLauncher.launch({ chromeFlags: ['--headless'] });
   const options = { logLevel: 'info', output: 'json', port: chrome.port };
-  
+
   const runnerResult = await lighthouse('http://localhost:4321', options);
   const score = runnerResult.lhr.categories.performance.score * 100;
-  
+
   await chrome.kill();
-  
+
   expect(score).toBeGreaterThan(95); // Target 95+ performance score
 });
 ```
@@ -936,21 +958,21 @@ const equipmentContent = {
       description: 'State-of-the-art heat treatment equipment...',
       specifications: [
         { name: 'Temperature Range', value: '600-900°C', unit: '°C' },
-        { name: 'Capacity', value: '10 tons', unit: 'tons' }
-      ]
+        { name: 'Capacity', value: '10 tons', unit: 'tons' },
+      ],
     },
     fa: {
       title: 'کوره‌های آنیل نوع زنگوله‌ای',
       description: 'تجهیزات پیشرفته عملیات حرارتی...',
       specifications: [
         { name: 'محدوده دما', value: '600-900', unit: 'درجه سانتیگراد' },
-        { name: 'ظرفیت', value: '10', unit: 'تن' }
-      ]
-    }
-  }
+        { name: 'ظرفیت', value: '10', unit: 'تن' },
+      ],
+    },
+  },
 };
 ```
 
 ---
 
-*This technical specification provides a complete implementation guide for building the Taliman website using Astro 5.x architecture, ensuring optimal performance, SEO, and user experience for both Persian and English markets.*
+_This technical specification provides a complete implementation guide for building the Taliman website using Astro 5.x architecture, ensuring optimal performance, SEO, and user experience for both Persian and English markets._

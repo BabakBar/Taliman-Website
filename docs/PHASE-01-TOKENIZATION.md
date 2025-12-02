@@ -78,9 +78,8 @@
 
 ## Roles & Owners
 
-| Role | Responsibility |
-| --- | --- |
-| Frontend | Tailwind/theme refactor, CSS tokens, layout import order |
-| Design QA | Visual verification against Figma/brand doc |
-| DevOps | Wire palette lint into CI |
-
+| Role      | Responsibility                                           |
+| --------- | -------------------------------------------------------- |
+| Frontend  | Tailwind/theme refactor, CSS tokens, layout import order |
+| Design QA | Visual verification against Figma/brand doc              |
+| DevOps    | Wire palette lint into CI                                |
